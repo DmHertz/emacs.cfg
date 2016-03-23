@@ -8,12 +8,6 @@
    "(do (require 'weasel.repl.websocket) 
     (cemerick.piggieback/cljs-repl
       (weasel.repl.websocket/repl-env :ip \"127.0.0.1\" :port 9001)))" t)
- ;; '(package-archives
- ;;   (quote
- ;;    (("gnu" . "http://elpa.gnu.org/packages/")
- ;;     ("ELPA" . "http://tromey.com/elpa/")
- ;;     ("marmalade" . "http://marmalade-repo.org/packages/")
- ;;     ("SC" . "http://joseito.republika.pl/sunrise-commander/"))))
  '(racket-images-inline t)
  '(markdown-command "multimarkdown"))
 
