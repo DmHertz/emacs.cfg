@@ -16,7 +16,8 @@
   '(progn
      (add-parens-hooks
       '(lisp common-lisp slime-repl emacs-lisp ielm racket racket-repl clojure cider-repl
-             css html 
+             css html
+             c javascript 
              eshell gimp markdown))
      ;;; customize
      (sp-pair "(" ")"   :wrap "C-)")
