@@ -1,4 +1,6 @@
-;; setup DB access
+;; +----------------------------------+
+;; |   setup Postgres DB access       |
+;; +----------------------------------+
 (setq sql-postgres-login-params
       '((user :default "postgres")
         (database :default "postgres")
@@ -8,3 +10,9 @@
 (add-hook 'sql-interactive-mode-hook
           (lambda ()
             (toggle-truncate-lines t)))
+
+;; +----------------------------------+
+;; |   setup SQLite3 DB access        |
+;; +----------------------------------+
+
+;; It section empty yet.
