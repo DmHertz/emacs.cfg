@@ -11,10 +11,6 @@
 ;;; recipes 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
-;; Simple package names
-;;(el-get-bundle yasnippet)
-;;(el-get-bundle color-moccur)
-
 ;; Locally defined recipe
 ;; (el-get-bundle yaicomplete
 ;;   :url "https://github.com/tarao/elisp.git"
@@ -23,26 +19,26 @@
 (setq my:el-get-packages
       '(smex                ;;; | 
         escreen             ;;; |
-        dash
-        slime
-        cider
-        cl-lib
-        neotree
-        solarized-emacs
-        smartparens
-        switch-window
-        company-mode
-        company-statistics
-        rainbow-delimiters
-        rainbow-mode
-        emacs-fish))
-
-(el-get-bundle pft/gimpmode)
-(el-get-bundle clojure-emacs/inf-clojure)
-(el-get-bundle johnwalker/pixie-mode)
+        dash                ;;; |
+        slime               ;;; |
+        cider               ;;; |
+        cl-lib              ;;; |
+        neotree             ;;; |
+        solarized-emacs     ;;; |
+        smartparens         ;;; |
+        switch-window       ;;; |
+        company-mode        ;;; |
+        company-statistics  ;;; |
+        rainbow-delimiters  ;;; |
+        rainbow-mode        ;;; |
+        emacs-fish))        ;;; |
+;;; simple package names
+(el-get-bundle pft/gimpmode)              ;;; script-fu support
+(el-get-bundle clojure-emacs/inf-clojure) ;;; inferior clojure
+(el-get-bundle johnwalker/pixie-mode)     ;;; pixie-lang support
 
 ;; parinfer
-;;(el-get-bundle edpaget/parinfer-mode)
+;;(el-get-bundle edpaget/parinfer-mode)   ;;; I don't understood how it use
 
 ;; With initialization code
 ;;(el-get-bundle zenburn-theme

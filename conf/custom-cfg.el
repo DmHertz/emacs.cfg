@@ -21,7 +21,7 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:foreground "#222222" :slant normal))))
  '(linum ((t (:background "#000000" :foreground "#003366"))))
- '(rainbow-delimiters-depth-1-face ((t (:foreground "#FF3300"))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "#FF5500"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#FFFF00"))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "#FF0000"))))
  '(rainbow-delimiters-depth-4-face ((t (:foreground "#00FF00"))))
