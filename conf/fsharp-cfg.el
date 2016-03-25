@@ -12,7 +12,5 @@
 ;;; msvs keybindings
 (add-hook 'fsharp-mode-hook
           (lambda ()
-            (define-key fsharp-mode-map (kbd "M-RET") 'fsharp-eval-region)
-            (define-key fsharp-mode-map (kbd "C-SPC") 'fsharp-ac/complete-at-point)))
-
-
+            (define-key fsharp-mode-map (kbd "M-RET") #'fsharp-eval-region)
+            (define-key fsharp-mode-map (kbd "C-SPC") #'fsharp-ac/complete-at-point)))
