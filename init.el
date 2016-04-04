@@ -17,7 +17,9 @@
 ;;   :features yaicomplete)
 
 (setq my:el-get-packages
-      '(smex                ;;; | 
+      '(smex                ;;; |
+        tramp               ;;; | connect to remote server via ssh
+;;;     dired+              ;;; |
         escreen             ;;; |
         dash                ;;; |
         slime               ;;; |
@@ -28,6 +30,7 @@
         smartparens         ;;; |
         switch-window       ;;; |
         company-mode        ;;; |
+        emmet-mode          ;;; | 
         company-statistics  ;;; |
         rainbow-delimiters  ;;; |
         rainbow-mode        ;;; |

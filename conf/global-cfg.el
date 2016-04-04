@@ -40,7 +40,8 @@
             "Maintainer: " my-name " " my-email "\n"
             "Depends: \n"
             "Priority: optional\n"
-            "Description: fixme")))
+            "Description-en: fixme\n")
+    (backward-char)))
 
 (defun make-deb-control-description ()
   (interactive)
@@ -58,7 +59,7 @@
             "Maintainer: " my-name " " my-email "\n"
             "Depends: \n"
             "Priority: optional\n"
-            "Description: fixme\n")
+            "Description-en: fixme\n")
     (backward-char)
     (write-file (concat debian-dir "/control"))))
 
