@@ -6,7 +6,27 @@
 
 (setq inhibit-splash-screen t) ;; no splash
 (line-number-mode 1)
-(column-number-mode 1)
+
+(blink-cursor-mode 0)         ;; no blinking cursor
+
+;; Mode bar preferences
+(column-number-mode 1)            ; show column number in mode-line
+(setq display-time-day-and-date t ; display the day and date in the mode line
+      display-time-24hr-format t  ; use 24hr format
+      display-time-interval 10    ; redisplay every ten seconds
+      display-time-default-load-average nil) ; don't display the system load average
+(display-time)
+
+;; Enable mouse wheel
+(mouse-wheel-mode 1)
+(setq mouse-wheel-scroll-amount '(1) ; mouse scroll one line at a time
+      mouse-wheel-progressive-speed nil ; don't accelerate scrolling
+      mouse-wheel-follow-mouse t        ; scroll window under mouse
+      scroll-conservatively 10000) ; scroll one line at a time if point moves off-screen
+
+(setq x-select-enable-clipboard t   ; cut and paste to the X clipboard
+      mouse-yank-at-point t)        ; paste at point NOT at cursor
+
 ;; after init
 
 ;; Nerd tree
@@ -27,6 +47,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; Always show column numbers
 (setq-default column-number-mode t)
+
 ;; Display full pathname for files
 (add-hook 'find-file-hooks
           '(lambda ()
