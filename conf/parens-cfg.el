@@ -1,5 +1,5 @@
 ;; Set smartparens config
-(require 'smartparens)
+(require 'smartparens-config)
 
 (defun add-parens-hooks (lst)
   (when lst
@@ -12,7 +12,7 @@
     (add-parens-hooks (cdr lst))))
 
 (eval-after-load
-    'smartparens
+    'smartparens-config
   '(progn
      (add-parens-hooks
       '(lisp common-lisp slime-repl emacs-lisp ielm racket racket-repl clojure cider-repl

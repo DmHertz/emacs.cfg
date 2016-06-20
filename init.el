@@ -18,7 +18,7 @@
 
 (setq my:el-get-packages
       '(smex                ;;; |
-        tramp               ;;; | connect to remote server via ssh
+;;;     tramp               ;;; | connect to remote server via ssh
 ;;;     dired+              ;;; |
         escreen             ;;; |
         dash                ;;; |
@@ -72,7 +72,7 @@ configs names all config files must have «-cfg» suffix in it's own names."
    elisp       ;;; emacs lisp
    lisp        ;;; common lisp
    slime       ;;; slime and common lisp
-   clojure     ;;; clojure
+;;;   clojure     ;;; clojure
    cider       ;;; cider and clojure
    racket      ;;; racket
    gimp        ;;; gimp-mode settings
