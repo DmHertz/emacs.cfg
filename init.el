@@ -1,4 +1,11 @@
 ;; start
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get") ;;; | load el-get
 (setq debug-on-error nil)                           ;;; | 
 ;;; use el-get and download it if not found
@@ -21,6 +28,7 @@
 ;;;     tramp               ;;; | connect to remote server via ssh
 ;;;     dired+              ;;; |
         escreen             ;;; |
+        edit-server         ;;; |
         dash                ;;; |
         slime               ;;; |
         cider               ;;; |
