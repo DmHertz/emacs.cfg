@@ -1,3 +1,6 @@
+(setq initial-frame-alist '((font . "Terminus-12")))
+(setq default-frame-alist '((font . "Terminus-12")))
+
 ;; start
 
 ;; Added by Package.el.  This must come before configurations of
@@ -25,8 +28,8 @@
 
 (setq my:el-get-packages
       '(smex                ;;; |
-;;;     tramp               ;;; | connect to remote server via ssh
-;;;     dired+              ;;; |
+        tramp               ;;; | connect to remote server via ssh
+        dired+              ;;; |
         escreen             ;;; |
         edit-server         ;;; |
         dash                ;;; |
@@ -44,9 +47,10 @@
         rainbow-mode        ;;; |
         emacs-fish))        ;;; |
 ;;; simple package names
-(el-get-bundle pft/gimpmode)              ;;; script-fu support
-(el-get-bundle clojure-emacs/inf-clojure) ;;; inferior clojure
-(el-get-bundle johnwalker/pixie-mode)     ;;; pixie-lang support
+(el-get-bundle pft/gimpmode)                ;;; script-fu support
+(el-get-bundle clojure-emacs/inf-clojure)   ;;; inferior clojure
+(el-get-bundle johnwalker/pixie-mode)       ;;; pixie-lang support
+(el-get-bundle greghendershott/racket-mode) ;;; racket-lang support
 
 ;; parinfer
 ;;(el-get-bundle edpaget/parinfer-mode)   ;;; I don't understood how it use
