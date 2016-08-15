@@ -1,5 +1,5 @@
-(setq initial-frame-alist '((font . "Terminus-12")))
-(setq default-frame-alist '((font . "Terminus-12")))
+;;(setq initial-frame-alist '((font . "Terminus-12")))
+;;(setq default-frame-alist '((font . "Terminus-12")))
 
 ;; start
 
@@ -29,23 +29,24 @@
 (setq my:el-get-packages
       '(smex                ;;; |
         tramp               ;;; | connect to remote server via ssh
-        dired+              ;;; |
+        dired+              ;;; | improved ancient file manager
         escreen             ;;; |
         edit-server         ;;; |
         dash                ;;; |
-        slime               ;;; |
-        cider               ;;; |
-        cl-lib              ;;; |
-        neotree             ;;; |
-        solarized-emacs     ;;; |
+        lua-mode            ;;; | work with lua
+        slime               ;;; | work with common lisp
+        cider               ;;; | work with clojure
+        cl-lib              ;;; | improve support CL features in .el
+        neotree             ;;; | 
+        solarized-emacs     ;;; | 
         smartparens         ;;; |
         switch-window       ;;; |
+        emmet-mode          ;;; |
         company-mode        ;;; |
-        emmet-mode          ;;; | 
         company-statistics  ;;; |
         rainbow-delimiters  ;;; |
-        rainbow-mode        ;;; |
-        emacs-fish))        ;;; |
+        rainbow-mode        ;;; | colorize parens
+        emacs-fish))        ;;; | fish shell support
 ;;; simple package names
 (el-get-bundle pft/gimpmode)                ;;; script-fu support
 (el-get-bundle clojure-emacs/inf-clojure)   ;;; inferior clojure

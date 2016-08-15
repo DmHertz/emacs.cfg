@@ -11,7 +11,6 @@ url
 abbrev_defs
 ac-comphist.dat
 cider-repl-history
-company-statistics-cache.el
 company-statistics-cache.el~
 ido.last
 places
