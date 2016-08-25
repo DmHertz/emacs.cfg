@@ -7,7 +7,7 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
+;;;(package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get") ;;; | load el-get
 (setq debug-on-error nil)                           ;;; | 
@@ -45,6 +45,8 @@
         company-mode        ;;; |
         company-statistics  ;;; |
         rainbow-delimiters  ;;; |
+        websocket           ;;; | websocket support
+        markdown-preview-mode ; | dynamic markdown 
         rainbow-mode        ;;; | colorize parens
         emacs-fish))        ;;; | fish shell support
 ;;; simple package names
@@ -96,3 +98,5 @@ configs names all config files must have «-cfg» suffix in it's own names."
    custom      ;;; custom vars and faces
    backup      ;;; backup settings
    aliases))   ;;; short aliases of most often use commands
+
+
