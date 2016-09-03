@@ -1,14 +1,3 @@
-;;(setq initial-frame-alist '((font . "Terminus-12")))
-;;(setq default-frame-alist '((font . "Terminus-12")))
-
-;; start
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-;;;(package-initialize)
-
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get") ;;; | load el-get
 (setq debug-on-error nil)                           ;;; | 
 ;;; use el-get and download it if not found
@@ -27,24 +16,25 @@
 ;;   :features yaicomplete)
 
 (setq my:el-get-packages
-      '(smex                ;;; |
+      '(smex                ;;; | autocomplete an emacs commands in M-x menu
         tramp               ;;; | connect to remote server via ssh
         dired+              ;;; | improved ancient file manager
         escreen             ;;; |
         edit-server         ;;; |
-        dash                ;;; |
+        emacs-jabber        ;;; | emacs jabber support
+        dash                ;;; | clojure subset in elisp
         lua-mode            ;;; | work with lua
         slime               ;;; | work with common lisp
         cider               ;;; | work with clojure
         cl-lib              ;;; | improve support CL features in .el
-        neotree             ;;; | 
-        solarized-emacs     ;;; | 
-        smartparens         ;;; |
+        neotree             ;;; | view directory tree of the current project
+        solarized-emacs     ;;; | my favorite color theme for Emacs
+        smartparens         ;;; | better support for operations on parens
         switch-window       ;;; |
         emmet-mode          ;;; |
         company-mode        ;;; |
         company-statistics  ;;; |
-        rainbow-delimiters  ;;; |
+        rainbow-delimiters  ;;; | makes color difference between parens
         websocket           ;;; | websocket support
         markdown-preview-mode ; | dynamic markdown 
         rainbow-mode        ;;; | colorize parens
@@ -85,9 +75,7 @@ configs names all config files must have «-cfg» suffix in it's own names."
    parens      ;;; smartparens, rainbow delimiters
    eshell      ;;; emacs shell 
    elisp       ;;; emacs lisp
-   lisp        ;;; common lisp
    slime       ;;; slime and common lisp
-;;;   clojure     ;;; clojure
    cider       ;;; cider and clojure
    racket      ;;; racket
    gimp        ;;; gimp-mode settings
@@ -98,5 +86,3 @@ configs names all config files must have «-cfg» suffix in it's own names."
    custom      ;;; custom vars and faces
    backup      ;;; backup settings
    aliases))   ;;; short aliases of most often use commands
-
-
