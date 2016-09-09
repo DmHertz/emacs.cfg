@@ -5,3 +5,5 @@
 ;; (add-hook 'css-mode-hook (lambda ()
 ;;                            (rainbow-delimiters-mode)
 ;;                            (rainbow-mode)))
+
+(provide 'web-cfg)

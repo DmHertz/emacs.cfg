@@ -14,3 +14,5 @@
           (lambda ()
             (define-key fsharp-mode-map (kbd "M-RET") #'fsharp-eval-region)
             (define-key fsharp-mode-map (kbd "C-SPC") #'fsharp-ac/complete-at-point)))
+
+(provide 'fsharp-cfg)

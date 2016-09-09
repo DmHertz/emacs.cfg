@@ -14,3 +14,5 @@
 ;;                 (list "C:/Program Files (x86)/Microsoft SDKs/F#/4.0/Framework/v4.0") ";")))
 
 ;; (setq eshell-aliases-file "~/.emacs.d/eshell/alias")
+
+(provide 'eshell-cfg)

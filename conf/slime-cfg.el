@@ -12,4 +12,4 @@
                                               (slime-setup)
                                               (slime)))
 
-
+(provide 'slime-cfg)

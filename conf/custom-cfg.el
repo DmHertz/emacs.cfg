@@ -37,3 +37,5 @@
 ;;; set off disables of up- and downcase fns
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+
+(provide 'custom-cfg)

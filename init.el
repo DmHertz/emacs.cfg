@@ -40,9 +40,9 @@
         rainbow-mode        ;;; | colorize parens
         emacs-fish))        ;;; | fish shell support
 ;;; simple package names
-(el-get-bundle pft/gimpmode)                ;;; script-fu support
+;;; (el-get-bundle pft/gimpmode)                ;;; script-fu support
 (el-get-bundle clojure-emacs/inf-clojure)   ;;; inferior clojure
-(el-get-bundle johnwalker/pixie-mode)       ;;; pixie-lang support
+;;; (el-get-bundle johnwalker/pixie-mode)       ;;; pixie-lang support
 (el-get-bundle greghendershott/racket-mode) ;;; racket-lang support
 
 ;; parinfer
@@ -56,36 +56,40 @@
 ;;; sync
 (el-get 'sync my:el-get-packages)
 ;;; ----------------------------------------------------------------------------
-(require 'cl-lib) ;;; common lisp subset
-(require 'dash)   ;;; clojure subset
-;;; ----------------------------------------------------------------------------
-(defun load-configs (lst)
-  "Load configs recursively. To avoid conflicts between libraries and
-configs names all config files must have «-cfg» suffix in it's own names."
-  (when lst
-    (-> lst car symbol-name (concat "-cfg") load-library) ;;; doesn't work without dash
-;;;    (load-library (concat (symbol-name (car lst)) "-cfg"))
-    (load-configs (cdr lst))))
-
-;; load preferences
 (add-to-list 'load-path "~/.emacs.d/conf/")
-(load-configs
- '(global      ;;; some global setiings
-   interface   ;;; iface settings, colour theme
-   erc         ;;; IRC settings
-   parens      ;;; smartparens, rainbow delimiters
-   eshell      ;;; emacs shell 
-   elisp       ;;; emacs lisp
-   slime       ;;; slime and common lisp
-   cider       ;;; cider and clojure
-   racket      ;;; racket
-   gimp        ;;; gimp-mode settings
-   web         ;;; html5 and css settings
-   fsharp      ;;; fsharp
-   db          ;;; settings for access to databases
-   keybindings ;;; global set keys for global cases
-   custom      ;;; custom vars and faces
-   backup      ;;; backup settings
-   aliases))   ;;; short aliases of most often use commands
+;;"Load configs. To avoid conflicts between libraries and
+;; configs names all config files must have «-cfg» suffix in it's own names."
+(defvar conf-list
+      (mapcar
+       (lambda (s) (intern (concat (symbol-name s) "-cfg")))
+       '(global      ;;; some global setiings
+         interface   ;;; iface settings, colour theme
+         erc         ;;; IRC settings
+         parens      ;;; smartparens, rainbow delimiters
+         eshell      ;;; emacs shell 
+         elisp       ;;; emacs lisp
+         slime       ;;; slime and common lisp
+         cider       ;;; cider and clojure
+         racket      ;;; racket
+         gimp        ;;; gimp-mode settings
+         web         ;;; html5 and css settings
+         fsharp      ;;; fsharp
+         db          ;;; settings for access to databases
+         keybindings ;;; global set keys for global cases
+         custom      ;;; custom vars and faces
+         backup      ;;; backup settings
+         aliases)))  ;;; short aliases of most often use commands
 
-(require 'erc-cfg)
+;; requires
+(defun require-config (config)
+  (message "Loading %s..." config)
+  (require config)
+  (message "Loaded %s." config))
+;;; load configs
+(dolist (cfg conf-list)
+  (load-library (symbol-name cfg)))
+;; require all the configs automatically
+(dolist (cfg (append '(cl-lib ;;; common lisp subset
+                       dash)  ;;; clojure subset
+                     conf-list))
+  (require-config cfg))

@@ -32,3 +32,5 @@
 ;;   (windmove-down)
 ;;   (set-buffer "Messages")
 ;;   (windmove-left))
+
+(provide 'clojure-cfg)

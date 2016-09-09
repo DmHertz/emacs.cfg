@@ -14,3 +14,5 @@
 ;; The usual M-x complete-symbol -- bound by default to C-M-i -- works,
 ;; drawing on all symbols in the current Racket namespace.
 (setq tab-always-indent 'complete)
+
+(provide 'racket-cfg)

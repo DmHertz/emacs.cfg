@@ -92,3 +92,5 @@
                          :font-height 120))
   ('windows-nt (set-face! :face-font "Terminus (TTF)"
                           :font-height 120)))
+
+(provide 'interface-cfg)

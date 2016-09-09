@@ -70,3 +70,4 @@
   (find-file "~/.config/fish/config.fish"))
 
 
+(provide 'global-cfg)

@@ -16,3 +16,5 @@
 ;; +----------------------------------+
 
 ;; It section empty yet.
+
+(provide 'db-cfg)

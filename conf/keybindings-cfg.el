@@ -60,3 +60,5 @@
 
 ;;; snippets
 (global-set-key (kbd "C-c <f10>") 'debian-control-description)
+
+(provide 'keybindings-cfg)

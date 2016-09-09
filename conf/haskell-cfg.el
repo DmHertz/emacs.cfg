@@ -10,3 +10,4 @@
 (custom-set-variables '(haskell-process-type 'cabal-repl))
 ;;
 
+(provide 'haskell-cfg)

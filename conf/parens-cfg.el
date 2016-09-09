@@ -29,3 +29,5 @@
 
      ;; adds `' as a local pair in emacs-lisp-mode
      (sp-local-pair 'emacs-lisp-mode "`" "'")))
+
+(provide 'parens-cfg)
