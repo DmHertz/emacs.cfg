@@ -72,6 +72,7 @@ configs names all config files must have «-cfg» suffix in it's own names."
 (load-configs
  '(global      ;;; some global setiings
    interface   ;;; iface settings, colour theme
+   erc         ;;; IRC settings
    parens      ;;; smartparens, rainbow delimiters
    eshell      ;;; emacs shell 
    elisp       ;;; emacs lisp
@@ -86,3 +87,5 @@ configs names all config files must have «-cfg» suffix in it's own names."
    custom      ;;; custom vars and faces
    backup      ;;; backup settings
    aliases))   ;;; short aliases of most often use commands
+
+(require 'erc-cfg)
