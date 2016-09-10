@@ -34,7 +34,29 @@
 
 ;; Join the a couple of interesting channels whenever connecting to Freenode.
 (setq erc-autojoin-channels-alist '(("freenode.net"
-;;;                                     "#emacs" "#clojure" "#lisp"
+                                     ;; "#archlinux"
+                                     ;; "##british"
+                                     ;; "#ccl"
+                                     ;; "#deadbeefplayer"
+                                     ;; "#deadbeef-ru"
+                                     ;; "#emacs-es"
+                                     ;; "##English"
+                                     ;; "##espanol"
+                                     ;; "##francais"
+                                     ;; "##italiano"
+                                     ;; "##libertarian"
+                                     ;; "#libertarians"
+                                     ;; "#libervis"
+                                     ;; "#linuxchixar"
+                                     ;; "##portuguese"
+                                     ;; "##russia"
+                                     ;; "##russian"
+                                     ;; "##russkij"
+                                     ;; "#sanluix"
+                                     ;; "##vahvuus"
+                                     ;; "#emacs"
+                                     ;; "#clojure"
+                                     ;; "#lisp"
                                      "#lor")))
 
 ;; Interpret mIRC-style color commands in IRC chats
