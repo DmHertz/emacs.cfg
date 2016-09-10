@@ -93,3 +93,6 @@
                        dash)  ;;; clojure subset
                      conf-list))
   (require-config cfg))
+
+;;; todo: make it better
+(eval-face-settings)

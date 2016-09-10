@@ -1,23 +1,23 @@
-;; Interface setup
-;; menu, tool and scroll bars to /dev/null
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
+;; ;; Interface setup
+;; ;; menu, tool and scroll bars to /dev/null
+ (menu-bar-mode -1)
+ (tool-bar-mode -1)
+ (scroll-bar-mode -1)
 
-(setq inhibit-splash-screen t) ;; no splash
-(line-number-mode 1)
+ (setq inhibit-splash-screen t) ;; no splash
+ (line-number-mode 1)
 
-(blink-cursor-mode 0)         ;; no blinking cursor
+ (blink-cursor-mode 0)         ;; no blinking cursor
 
-;; Mode bar preferences
-(column-number-mode 1)            ; show column number in mode-line
+;; ;; Mode bar preferences
+ (column-number-mode 1)            ; show column number in mode-line
 (setq display-time-day-and-date t ; display the day and date in the mode line
       display-time-24hr-format t  ; use 24hr format
       display-time-interval 10    ; redisplay every ten seconds
       display-time-default-load-average nil) ; don't display the system load average
 (display-time)
 
-;; Enable mouse wheel
+;; ;; Enable mouse wheel
 (mouse-wheel-mode 1)
 (setq mouse-wheel-scroll-amount '(1) ; mouse scroll one line at a time
       mouse-wheel-progressive-speed nil ; don't accelerate scrolling
@@ -27,13 +27,13 @@
 (setq x-select-enable-clipboard t   ; cut and paste to the X clipboard
       mouse-yank-at-point t)        ; paste at point NOT at cursor
 
-;; after init
+;; ;; after init
 
-;; Nerd tree
-(require 'neotree)
-(add-hook 'neotree-mode-hook 'hl-line-mode)
-;;; limit line length
-(require 'whitespace)
+;; ;; Nerd tree
+ (require 'neotree)
+ (add-hook 'neotree-mode-hook 'hl-line-mode)
+;; ;;; limit line length
+ (require 'whitespace)
 (setq whitespace-line-column 80)
 (setq whitespace-style '(face lines-tail))
 ;; don't show start up screen, message; and define size
@@ -56,7 +56,7 @@
 ;; 
 (font-lock-mode -1)
 ;; Spaces only, without tab chars
-(setq-default indent-tabs-mode nil)
+ (setq-default indent-tabs-mode nil)
 ;;; ┌──────────────────────────────────┐
 ;;; │          color settings          │
 ;;; └──────────────────────────────────┘
@@ -78,7 +78,7 @@
 ;; transparency '(alpha `active `inactive)
 (set-frame-parameter (selected-frame) 'alpha '(87 80))
 (add-to-list 'default-frame-alist '(alpha 87 80))
-;;; face font, bg and fg
+;;;face font, bg and fg
 (cl-defun set-face! (&key (bg-color "#000000")
                           face-font font-height)
   (set-face-background 'fringe bg-color) ;;; l, r borders around frame
@@ -87,10 +87,12 @@
                       :font face-font
                       :height font-height))
 
-(case system-type
-  ('gnu/linux (set-face! :face-font "Terminus"
-                         :font-height 120))
-  ('windows-nt (set-face! :face-font "Terminus (TTF)"
-                          :font-height 120)))
+(defun eval-face-settings ()
+  (interactive)
+  (case system-type
+    ('gnu/linux (set-face! :face-font "Terminus"
+                           :font-height 120))
+    ('windows-nt (set-face! :face-font "Terminus (TTF)"
+                            :font-height 120))))
 
 (provide 'interface-cfg)
