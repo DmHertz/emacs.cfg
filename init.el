@@ -31,6 +31,7 @@
         solarized-emacs     ;;; | my favorite color theme for Emacs
         smartparens         ;;; | better support for operations on parens
         switch-window       ;;; |
+        systemd-mode        ;;; | systemd units syntax support
         emmet-mode          ;;; |
         company-mode        ;;; |
         company-statistics  ;;; |
