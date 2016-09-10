@@ -1,16 +1,17 @@
 ;; ;; Interface setup
 ;; ;; menu, tool and scroll bars to /dev/null
- (menu-bar-mode -1)
- (tool-bar-mode -1)
- (scroll-bar-mode -1)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 
- (setq inhibit-splash-screen t) ;; no splash
- (line-number-mode 1)
+(setq inhibit-splash-screen t) ;; no splash
+(line-number-mode 1)
 
- (blink-cursor-mode 0)         ;; no blinking cursor
-
+(blink-cursor-mode 0)         ;; no blinking cursor
+;; fullscreen
+(add-to-list 'default-frame-alist '(fullscreen . fullboth)) 
 ;; ;; Mode bar preferences
- (column-number-mode 1)            ; show column number in mode-line
+(column-number-mode 1)            ; show column number in mode-line
 (setq display-time-day-and-date t ; display the day and date in the mode line
       display-time-24hr-format t  ; use 24hr format
       display-time-interval 10    ; redisplay every ten seconds

@@ -79,13 +79,18 @@
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
                                 "324" "329" "332" "333" "353" "477"))
 
-;; logging
+;; loggin
 (setq erc-log-channels-directory "~/.erc/logs/")
+(setq erc-log-insert-log-on-open nil)
+(setq erc-log-channels t)
+(setq erc-save-buffer-on-part t)
+(setq erc-hide-timestamps nil)
+
+(add-hook 'erc-insert-post-hook 'erc-save-buffer-in-logs)
 
 (if (not (file-exists-p erc-log-channels-directory))
     (mkdir erc-log-channels-directory t))
 
-(setq erc-save-buffer-on-part t)
 (defadvice save-buffers-kill-emacs (before save-logs (arg) activate)
   (save-some-buffers t (lambda () (when (eq major-mode 'erc-mode) t))))
 
@@ -136,7 +141,7 @@
   (dolist (buffer (filter-server-buffers))
     (message "Server buffer: %s" (buffer-name buffer))
     (with-current-buffer buffer
-      (erc-quit-server "hasta la vista"))))
+      (erc-quit-server "Всем пока! // Goodbye everyone!"))))
 
 (provide 'erc-cfg)
 ;;; erc-cfg.el ends here
