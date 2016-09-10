@@ -71,7 +71,7 @@
          slime       ;;; slime and common lisp
          cider       ;;; cider and clojure
          racket      ;;; racket
-         gimp        ;;; gimp-mode settings
+;;;         gimp        ;;; gimp-mode settings
          web         ;;; html5 and css settings
          fsharp      ;;; fsharp
          db          ;;; settings for access to databases
