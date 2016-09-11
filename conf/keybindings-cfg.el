@@ -58,6 +58,18 @@
 ;; parinfer
 ;;(global-set-key (kbd "C-c <f8>") 'parinfer-mode)
 
+;;; cyrillic binds
+(global-set-key (kbd "C-а") 'forward-char)
+(global-set-key (kbd "C-и") 'backward-char)
+
+(global-set-key (kbd "M-а") 'forward-word)
+(global-set-key (kbd "M-и") 'backward-word)
+
+(global-set-key (kbd "C-ф") 'move-beginning-of-line)
+(global-set-key (kbd "C-у") 'move-end-of-line)
+
+(global-set-key (kbd "C-з") 'previous-line)
+(global-set-key (kbd "C-т") 'next-line)
 ;;; snippets
 (global-set-key (kbd "C-c <f10>") 'debian-control-description)
 
