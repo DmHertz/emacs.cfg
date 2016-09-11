@@ -88,12 +88,12 @@
                       :font face-font
                       :height font-height))
 
-(defun eval-face-settings ()
-  (interactive)
-  (case system-type
-    ('gnu/linux (set-face! :face-font "Terminus"
-                           :font-height 120))
-    ('windows-nt (set-face! :face-font "Terminus (TTF)"
-                            :font-height 120))))
+(add-hook #'window-setup-hook
+          (lambda ()
+            (case system-type
+              ('gnu/linux (set-face! :face-font "Terminus"
+                                     :font-height 120))
+              ('windows-nt (set-face! :face-font "Terminus (TTF)"
+                                      :font-height 120)))))
 
 (provide 'interface-cfg)

@@ -61,7 +61,10 @@
 ;;"Load configs. To avoid conflicts between libraries and
 ;; configs names all config files must have «-cfg» suffix in it's own names."
 (defvar conf-list
-      (mapcar
+  (append
+   '(cl-lib          ;;; common lisp subset
+     dash)           ;;; clojure subset)
+   (mapcar
        (lambda (s) (intern (concat (symbol-name s) "-cfg")))
        '(global      ;;; some global setiings
          interface   ;;; iface settings, colour theme
@@ -79,21 +82,13 @@
          keybindings ;;; global set keys for global cases
          custom      ;;; custom vars and faces
          backup      ;;; backup settings
-         aliases)))  ;;; short aliases of most often use commands
+         aliases)))) ;;; short aliases of most often use commands
 
 ;; requires
 (defun require-config (config)
   (message "Loading %s..." config)
   (require config)
   (message "Loaded %s." config))
-;;; load configs
-(dolist (cfg conf-list)
-  (load-library (symbol-name cfg)))
 ;; require all the configs automatically
-(dolist (cfg (append '(cl-lib ;;; common lisp subset
-                       dash)  ;;; clojure subset
-                     conf-list))
+(dolist (cfg conf-list)
   (require-config cfg))
-
-;;; todo: make it better
-(eval-face-settings)
