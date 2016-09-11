@@ -29,18 +29,28 @@
 
 (require 'erc)
 (require 'erc-log)
-(require 'erc-spelling)
+;;(require 'erc-spelling)
 (require 'erc-autoaway)
 
+;; auto identify
+(let ((ercpassfile "~/.ercpass"))
+  (when (file-exists-p (expand-file-name ercpassfile))
+    (load ercpassfile)
+    (require 'erc-services)
+    (erc-services-mode 1)
+    (setq erc-prompt-for-nickserv-password nil)
+    (setq erc-nickserv-passwords
+          `((freenode (("MetaHertz" . ,freenode-metahertz)))))))
+
+(setq erc-autojoin-timing 'ident) 
 ;; Join the a couple of interesting channels whenever connecting to Freenode.
 (setq erc-autojoin-channels-alist '(("freenode.net"
-                                     ;; "#archlinux"
-                                     ;; "##british"
-                                     ;; "#ccl"
-                                     ;; "#deadbeefplayer"
-                                     ;; "#deadbeef-ru"
+                                     "##british"
+                                     "#ccl"
+                                     "#deadbeefplayer"
+                                     "#deadbeef-ru"
                                      ;; "#emacs-es"
-                                     ;; "##English"
+                                     "##English"
                                      ;; "##espanol"
                                      ;; "##francais"
                                      ;; "##italiano"
@@ -57,6 +67,7 @@
                                      ;; "#emacs"
                                      ;; "#clojure"
                                      ;; "#lisp"
+                                     "#archlinux"
                                      "#lor")))
 
 ;; utf-8 always and forever
@@ -82,11 +93,14 @@
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
                                 "324" "329" "332" "333" "353" "477"))
 
-;; logging
-(setq erc-log-channels-directory "~/.erc/logs/")
-
+;; logging:
 (setq erc-log-enable t)
 (setq erc-log-file-coding-system 'utf-8)
+(setq erc-log-insert-log-on-open nil)
+(setq erc-log-channels t)
+(setq erc-log-channels-directory "~/.erc/logs/")
+(setq erc-save-buffer-on-part t)
+(setq erc-hide-timestamps nil)
 
 (setq erc-log-channels-directory "~/.erc/logs/")
 
@@ -97,6 +111,8 @@
 (defadvice save-buffers-kill-emacs (before save-logs (arg) activate)
   (save-some-buffers t (lambda () (when (eq major-mode 'erc-mode) t))))
 
+(add-hook 'erc-insert-post-hook 'erc-save-buffer-in-logs)
+
 ;; truncate long irc buffers
 (erc-truncate-mode +1)
 
@@ -104,7 +120,7 @@
 (setq erc-user-full-name "Dmitry Buhaev")
 
 ;; enable spell checking
-(erc-spelling-mode 1)
+;;(erc-spelling-mode 1)
 ;; set different dictionaries by different servers/channels
 ;;(setq erc-spelling-dictionaries '(("#emacs" "american")))
 
@@ -112,16 +128,6 @@
 (setq erc-auto-discard-away t)
 (setq erc-autoaway-idle-seconds 600)
 (setq erc-autoaway-use-emacs-idle t)
-
-;; auto identify
-(when (file-exists-p (expand-file-name "~/.ercpass"))
-  (load "~/.ercpass")
-  (require 'erc-services)
-  (erc-services-mode 1)
-  (setq erc-prompt-for-nickserv-password nil)
-  (setq erc-nickserv-passwords
-        `((freenode (("MetaHertz" . ,freenode-metahertz)))))
-)
 
 (defun start-irc ()
   "Connect to IRC."
@@ -138,7 +144,6 @@
 (defun stop-irc ()
   "Disconnects from all irc servers"
   (interactive)
-  (erc-save-buffer-in-logs) ;;; at first, save all erc logs
   (dolist (buffer (filter-server-buffers))
     (message "Server buffer: %s" (buffer-name buffer))
     (with-current-buffer buffer
@@ -146,4 +151,3 @@
 
 (provide 'erc-cfg)
 ;;; erc-cfg.el ends here
-
