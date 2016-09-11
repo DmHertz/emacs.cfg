@@ -77,7 +77,7 @@
          racket      ;;; racket
 ;;;         gimp        ;;; gimp-mode settings
          web         ;;; html5 and css settings
-         fsharp      ;;; fsharp
+;;;         fsharp      ;;; fsharp
          db          ;;; settings for access to databases
          keybindings ;;; global set keys for global cases
          custom      ;;; custom vars and faces
