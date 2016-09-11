@@ -59,6 +59,9 @@
                                      ;; "#lisp"
                                      "#lor")))
 
+;; utf-8 always and forever
+(setq erc-server-coding-system '(utf-8 . utf-8))
+
 ;; Interpret mIRC-style color commands in IRC chats
 (setq erc-interpret-mirc-color t)
 
@@ -79,18 +82,18 @@
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
                                 "324" "329" "332" "333" "353" "477"))
 
-;; loggin
+;; logging
 (setq erc-log-channels-directory "~/.erc/logs/")
-(setq erc-log-insert-log-on-open nil)
-(setq erc-log-channels t)
-(setq erc-save-buffer-on-part t)
-(setq erc-hide-timestamps nil)
 
-(add-hook 'erc-insert-post-hook 'erc-save-buffer-in-logs)
+(setq erc-log-enable t)
+(setq erc-log-file-coding-system 'utf-8)
+
+(setq erc-log-channels-directory "~/.erc/logs/")
 
 (if (not (file-exists-p erc-log-channels-directory))
     (mkdir erc-log-channels-directory t))
 
+(setq erc-save-buffer-on-part t)
 (defadvice save-buffers-kill-emacs (before save-logs (arg) activate)
   (save-some-buffers t (lambda () (when (eq major-mode 'erc-mode) t))))
 
@@ -120,9 +123,6 @@
         `((freenode (("MetaHertz" . ,freenode-metahertz)))))
 )
 
-;; utf-8 always and forever
-(setq erc-server-coding-system '(utf-8 . utf-8))
-
 (defun start-irc ()
   "Connect to IRC."
   (interactive)
@@ -138,6 +138,7 @@
 (defun stop-irc ()
   "Disconnects from all irc servers"
   (interactive)
+  (erc-save-buffer-in-logs) ;;; at first, save all erc logs
   (dolist (buffer (filter-server-buffers))
     (message "Server buffer: %s" (buffer-name buffer))
     (with-current-buffer buffer
@@ -145,3 +146,4 @@
 
 (provide 'erc-cfg)
 ;;; erc-cfg.el ends here
+
