@@ -88,12 +88,19 @@
                       :font face-font
                       :height font-height))
 
-(add-hook #'window-setup-hook
-          (lambda ()
-            (case system-type
-              ('gnu/linux (set-face! :face-font "Terminus"
-                                     :font-height 120))
-              ('windows-nt (set-face! :face-font "Terminus (TTF)"
-                                      :font-height 120)))))
+(defun face-settings ()
+  (case system-type
+    ('gnu/linux (set-face! :face-font "Terminus"
+                           :font-height 120))
+    ('windows-nt (set-face! :face-font "Terminus (TTF)"
+                            :font-height 120))))
+
+(defun load--theme (frame)
+  (select-frame frame)
+  (face-settings))
+
+(if (daemonp)
+    (add-hook 'after-make-frame-functions #'load--theme)
+  (face-settings))
 
 (provide 'interface-cfg)
