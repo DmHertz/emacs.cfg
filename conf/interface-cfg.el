@@ -95,12 +95,11 @@
     ('windows-nt (set-face! :face-font "Terminus (TTF)"
                             :font-height 120))))
 
-(defun load--theme (frame)
-  (select-frame frame)
-  (face-settings))
-
 (if (daemonp)
-    (add-hook 'after-make-frame-functions #'load--theme)
+    (add-hook 'after-make-frame-functions
+              (lambda (frame)
+                (select-frame frame)
+                (face-settings)))
   (face-settings))
 
 (provide 'interface-cfg)
