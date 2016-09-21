@@ -20,6 +20,7 @@
       '(smex                ;;; | autocomplete an emacs commands in M-x menu
         tramp               ;;; | connect to remote server via ssh
         dired+              ;;; | improved ancient file manager
+        dired-k             ;;; | highlighting dired buffer like k
         escreen             ;;; |
         edit-server         ;;; | editing textareas in Chromium
         emacs-jabber        ;;; | emacs jabber support
