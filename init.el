@@ -1,3 +1,4 @@
+(package-initialize)
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get") ;;; | load el-get
 (setq debug-on-error nil)                           ;;; | 
 ;;; use el-get and download it if not found
@@ -20,7 +21,7 @@
         tramp               ;;; | connect to remote server via ssh
         dired+              ;;; | improved ancient file manager
         escreen             ;;; |
-        edit-server         ;;; |
+        edit-server         ;;; | editing textareas in Chromium
         emacs-jabber        ;;; | emacs jabber support
         dash                ;;; | clojure subset in elisp
         lua-mode            ;;; | work with lua

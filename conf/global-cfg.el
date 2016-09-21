@@ -13,6 +13,10 @@
 ;;; archiver, needs for 'windows-nt
 (when (eq 'windows-nt system-type)
   (add-to-list 'exec-path "C:/Program Files/7-Zip"))
+
+;;; Whether confirmation is requested before visiting a new file or buffer.
+;;; If nil, confirmation is not requested.
+(setq confirm-nonexistent-file-or-buffer nil)
 ;;; -----------------------------------
 (defun arch ()
   (if (string-equal "x86_64" (substring (shell-command-to-string "arch") 0 -1))
@@ -66,8 +70,16 @@
   (interactive)
   (find-file "~/.config/fish/config.fish"))
 
-;; edit server
-(require 'edit-server)
-(edit-server-start)
+;; edit serve
+(when (and (daemonp) (locate-library "edit-server"))
+  (require 'edit-server)
+  (edit-server-start))
+
+;; The edit To open pages for editing in a new buffer
+;; instead of a new frame on your running Emacs instance do:
+;; (when (locate-library "edit-server")
+;;   (require 'edit-server)
+;;   (setq edit-server-new-frame nil)
+;;   (edit-server-start))
 
 (provide 'global-cfg)

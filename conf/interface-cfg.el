@@ -9,7 +9,7 @@
 
 (blink-cursor-mode 0)         ;; no blinking cursor
 ;; fullscreen
-(add-to-list 'default-frame-alist '(fullscreen . fullboth)) 
+(add-to-list 'default-frame-alist '(fullscreen . fullboth)) ;; broken in 25.1 --with-cairo
 ;; ;; Mode bar preferences
 (column-number-mode 1)            ; show column number in mode-line
 (setq display-time-day-and-date t ; display the day and date in the mode line
