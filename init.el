@@ -74,6 +74,8 @@
        '(global      ;;; some global setiings
          interface   ;;; iface settings, colour theme
          erc         ;;; IRC settings
+         dired       ;;; dired customizations
+         eww         ;;; eww settings
          parens      ;;; smartparens, rainbow delimiters
          eshell      ;;; emacs shell 
          elisp       ;;; emacs lisp
