@@ -21,6 +21,7 @@
         pdf-tools           ;;; | provides fast rendering a pdf docs
         tramp               ;;; | connect to remote server via ssh
         dired+              ;;; | improved ancient file manager
+        image-dired+        ;;; | create an image and image thumbnail viewer
         dired-k             ;;; | highlighting dired buffer like k
         escreen             ;;; |
         edit-server         ;;; | editing textareas in Chromium
