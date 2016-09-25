@@ -18,6 +18,7 @@
 
 (setq my:el-get-packages
       '(smex                ;;; | autocomplete an emacs commands in M-x menu
+        pdf-tools           ;;; | provides fast rendering a pdf docs
         tramp               ;;; | connect to remote server via ssh
         dired+              ;;; | improved ancient file manager
         dired-k             ;;; | highlighting dired buffer like k
@@ -43,10 +44,11 @@
         rainbow-mode        ;;; | colorize parens
         emacs-fish))        ;;; | fish shell support
 ;;; simple package names
-;;; (el-get-bundle pft/gimpmode)                ;;; script-fu support
-(el-get-bundle clojure-emacs/inf-clojure)   ;;; inferior clojure
-;;; (el-get-bundle johnwalker/pixie-mode)       ;;; pixie-lang support
-(el-get-bundle greghendershott/racket-mode) ;;; racket-lang support
+;;; (el-get-bundle pft/gimpmode)                ;;; | script-fu support
+(el-get-bundle clojure-emacs/inf-clojure)   ;;; | inferior clojure
+;;; (el-get-bundle johnwalker/pixie-mode)       ;;; | pixie-lang support
+(el-get-bundle greghendershott/racket-mode) ;;; | racket-lang support
+(el-get-bundle skeeto/emacsql)              ;;; | improved db support
 
 ;; parinfer
 ;;(el-get-bundle edpaget/parinfer-mode)   ;;; I don't understood how it use

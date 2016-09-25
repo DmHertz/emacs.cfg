@@ -15,6 +15,6 @@
 ;; |   setup SQLite3 DB access        |
 ;; +----------------------------------+
 
-;; It section empty yet.
+;; It section is empty yet.
 
 (provide 'db-cfg)

@@ -77,8 +77,8 @@
 (create-solarized-theme 'dark 'solarized-dark)
 (provide-theme 'solarized-dark)
 ;; transparency '(alpha `active `inactive)
-(set-frame-parameter (selected-frame) 'alpha '(87 80))
-(add-to-list 'default-frame-alist '(alpha 87 80))
+(set-frame-parameter (selected-frame) 'alpha '(90 80))
+(add-to-list 'default-frame-alist '(alpha 90 80))
 ;;;face font, bg and fg
 (cl-defun set-face! (&key (bg-color "#000000")
                           face-font font-height)

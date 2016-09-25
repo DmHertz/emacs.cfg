@@ -17,6 +17,9 @@
    ;;; kill this buffer
    ("C-x C-k" kill-this-buffer)
 
+   ;; comment line
+   ("C-;" comment-line)
+
    ;;; for easy window scrolling up and down
    ("M-n" scroll-up-line)
    ("M-p" scroll-down-line)
