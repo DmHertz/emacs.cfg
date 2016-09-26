@@ -20,6 +20,9 @@
    ;; comment line
    ("C-;" comment-line)
 
+   ;; string rectangle
+   ("C-x r v" string-rectangle)
+
    ;;; for easy window scrolling up and down
    ("M-n" scroll-up-line)
    ("M-p" scroll-down-line)
