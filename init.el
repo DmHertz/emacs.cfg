@@ -23,7 +23,7 @@
         dired+              ;;; | improved ancient file manager
         image-dired+        ;;; | create an image and image thumbnail viewer
         dired-k             ;;; | highlighting dired buffer like k
-        escreen             ;;; |
+;;;        escreen             ;;; |
         edit-server         ;;; | editing textareas in Chromium
         emacs-jabber        ;;; | emacs jabber support
         dash                ;;; | clojure subset in elisp
@@ -34,11 +34,11 @@
         neotree             ;;; | view directory tree of the current project
         solarized-emacs     ;;; | my favorite color theme for Emacs
         smartparens         ;;; | better support for operations on parens
-        switch-window       ;;; |
+        switch-window       ;;; | Offer a *visual* way to choose a window to switch to
         systemd-mode        ;;; | systemd units syntax support
-        emmet-mode          ;;; |
-        company-mode        ;;; |
-        company-statistics  ;;; |
+        emmet-mode          ;;; | producing HTML from CSS-like selectors
+        company-mode        ;;; | a text completion framework
+        company-statistics  ;;; | company text completion statistics
         rainbow-delimiters  ;;; | makes color difference between parens
         websocket           ;;; | websocket support
         markdown-preview-mode ; | dynamic markdown 
@@ -46,8 +46,8 @@
         emacs-fish))        ;;; | fish shell support
 ;;; simple package names
 ;;; (el-get-bundle pft/gimpmode)                ;;; | script-fu support
-(el-get-bundle clojure-emacs/inf-clojure)   ;;; | inferior clojure
 ;;; (el-get-bundle johnwalker/pixie-mode)       ;;; | pixie-lang support
+(el-get-bundle clojure-emacs/inf-clojure)   ;;; | inferior clojure
 (el-get-bundle greghendershott/racket-mode) ;;; | racket-lang support
 (el-get-bundle skeeto/emacsql)              ;;; | improved db support
 

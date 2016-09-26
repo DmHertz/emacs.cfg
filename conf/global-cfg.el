@@ -9,6 +9,7 @@
 (global-company-mode)
 (load-file "~/.emacs.d/company-statistics-cache.el")
 ;;; global hooks
+(add-hook 'after-init-hook #'global-company-mode)
 (add-hook 'after-init-hook #'company-statistics-mode)
 ;;; archiver, needs for 'windows-nt
 (when (eq 'windows-nt system-type)
@@ -70,7 +71,7 @@
   (interactive)
   (find-file "~/.config/fish/config.fish"))
 
-;; edit serve
+;; edit server
 (when (and (daemonp) (locate-library "edit-server"))
   (require 'edit-server)
   (edit-server-start))
