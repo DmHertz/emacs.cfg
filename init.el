@@ -23,7 +23,6 @@
         dired+              ;;; | improved ancient file manager
         image-dired+        ;;; | create an image and image thumbnail viewer
         dired-k             ;;; | highlighting dired buffer like k
-;;;        escreen             ;;; |
         edit-server         ;;; | editing textareas in Chromium
         emacs-jabber        ;;; | emacs jabber support
         dash                ;;; | clojure subset in elisp
@@ -97,5 +96,5 @@
   (require config)
   (message "Loaded %s." config))
 ;; require all the configs automatically
-(dolist (cfg conf-list)
+(seq-doseq (cfg conf-list)
   (require-config cfg))
