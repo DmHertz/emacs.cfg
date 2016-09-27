@@ -23,6 +23,12 @@
    ;; string rectangle
    ("C-x r v" string-rectangle)
 
+   ;; aligning with whitespaces
+   ("C-c <f8>" (lambda ()
+                 (interactive)
+                 (align-regexp
+                  (region-beginning) (region-end) (rx (group (one-or-more space))))))
+
    ;;; for easy window scrolling up and down
    ("M-n" scroll-up-line)
    ("M-p" scroll-down-line)
