@@ -48,12 +48,13 @@
 ;;; (el-get-bundle johnwalker/pixie-mode)       ;;; | pixie-lang support
 (el-get-bundle clojure-emacs/inf-clojure)   ;;; | inferior clojure
 (el-get-bundle greghendershott/racket-mode) ;;; | racket-lang support
+(el-get-bundle cask/cask)                   ;;; | project management tool for emacs
 (el-get-bundle skeeto/emacsql)              ;;; | improved db support
 
 ;; parinfer
-;;(el-get-bundle edpaget/parinfer-mode)   ;;; I don't understood how it use
+;;(el-get-bundle edpaget/parinfer-mode)   ;;; i don't understood how it use
 
-;; With initialization code
+;; with initialization code
 ;;(el-get-bundle zenburn-theme
 ;;  :url "https://raw.githubusercontent.com/bbatsov/zenburn-emacs/master/zenburn-theme.el"
 ;;    (load-theme 'zenburn t))
@@ -62,7 +63,7 @@
 (el-get 'sync my:el-get-packages)
 ;;; ----------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/conf/")
-;;"Load configs. To avoid conflicts between libraries and
+;;"load configs. to avoid conflicts between libraries and
 ;; configs names all config files must have «-cfg» suffix in it's own names."
 (defvar conf-list
   (append
@@ -72,7 +73,7 @@
        (lambda (s) (intern (concat (symbol-name s) "-cfg")))
        '(global      ;;; some global setiings
          interface   ;;; iface settings, colour theme
-         erc         ;;; IRC settings
+         erc         ;;; irc settings
          dired       ;;; dired customizations
          eww         ;;; eww settings
          parens      ;;; smartparens, rainbow delimiters
@@ -92,9 +93,9 @@
 
 ;; requires
 (defun require-config (config)
-  (message "Loading %s..." config)
+  (message "loading %s..." config)
   (require config)
-  (message "Loaded %s." config))
+  (message "loaded %s." config))
 ;; require all the configs automatically
 (seq-doseq (cfg conf-list)
   (require-config cfg))
