@@ -49,7 +49,6 @@
 (el-get-bundle clojure-emacs/inf-clojure)   ;;; | inferior clojure
 (el-get-bundle greghendershott/racket-mode) ;;; | racket-lang support
 (el-get-bundle cask/cask)                   ;;; | project management tool for emacs
-(el-get-bundle skeeto/emacsql)              ;;; | improved db support
 
 ;; parinfer
 ;;(el-get-bundle edpaget/parinfer-mode)   ;;; I don't understood how it use
