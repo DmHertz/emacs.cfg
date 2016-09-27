@@ -52,9 +52,9 @@
 (el-get-bundle skeeto/emacsql)              ;;; | improved db support
 
 ;; parinfer
-;;(el-get-bundle edpaget/parinfer-mode)   ;;; i don't understood how it use
+;;(el-get-bundle edpaget/parinfer-mode)   ;;; I don't understood how it use
 
-;; with initialization code
+;; With initialization code
 ;;(el-get-bundle zenburn-theme
 ;;  :url "https://raw.githubusercontent.com/bbatsov/zenburn-emacs/master/zenburn-theme.el"
 ;;    (load-theme 'zenburn t))
@@ -63,39 +63,39 @@
 (el-get 'sync my:el-get-packages)
 ;;; ----------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/conf/")
-;;"load configs. to avoid conflicts between libraries and
+;;"Load configs. To avoid conflicts between libraries and
 ;; configs names all config files must have «-cfg» suffix in it's own names."
 (defvar conf-list
   (append
-   '(cl-lib          ;;; common lisp subset
-     dash)           ;;; clojure subset)
+   '(cl-lib          ;;; | common lisp subset
+     dash)           ;;; | clojure subset)
    (mapcar
        (lambda (s) (intern (concat (symbol-name s) "-cfg")))
-       '(global      ;;; some global setiings
-         interface   ;;; iface settings, colour theme
-         erc         ;;; irc settings
-         dired       ;;; dired customizations
-         eww         ;;; eww settings
-         parens      ;;; smartparens, rainbow delimiters
-         eshell      ;;; emacs shell 
-         elisp       ;;; emacs lisp
-         slime       ;;; slime and common lisp
-         cider       ;;; cider and clojure
-         racket      ;;; racket
-;;;         gimp        ;;; gimp-mode settings
-         web         ;;; html5 and css settings
-;;;         fsharp      ;;; fsharp
-         db          ;;; settings for access to databases
-         keybindings ;;; global set keys for global cases
-         custom      ;;; custom vars and faces
-         backup      ;;; backup settings
-         aliases)))) ;;; short aliases of most often use commands
+       '(global      ;;; | some global setiings
+         interface   ;;; | iface settings, colour theme
+         erc         ;;; | IRC settings
+         dired       ;;; | dired customizations
+         eww         ;;; | eww settings
+         parens      ;;; | smartparens, rainbow delimiters
+         eshell      ;;; | emacs shell 
+         elisp       ;;; | emacs lisp
+         slime       ;;; | slime and common lisp
+         cider       ;;; | cider and clojure
+         racket      ;;; | racket
+         web         ;;; | html5 and css settings
+;;;         gimp        ;;; | gimp-mode settings
+;;;         fsharp      ;;; | fsharp
+         db          ;;; | settings for access to databases
+         keybindings ;;; | global set keys for global cases
+         custom      ;;; | custom vars and faces
+         backup      ;;; | backup settings
+         aliases)))) ;;; | short aliases of most often use commands
 
 ;; requires
 (defun require-config (config)
-  (message "loading %s..." config)
+  (message "Loading %s..." config)
   (require config)
-  (message "loaded %s." config))
+  (message "Loaded %s." config))
 ;; require all the configs automatically
 (seq-doseq (cfg conf-list)
   (require-config cfg))
