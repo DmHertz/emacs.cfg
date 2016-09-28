@@ -28,7 +28,22 @@
                  (interactive)
                  (align-regexp
                   (region-beginning) (region-end) (rx (group (one-or-more space))))))
+   ;; aligning with pipes
+   ("C-c <f9>" (lambda ()
+                 (interactive)
 
+                 (align-regexp (region-beginning) (region-end)
+                               (concat "\\(\\s-+\\)" "\\(|\\)") 1 1 t)
+                 
+                 ;; (save-restriction
+                 ;;   (narrow-to-region (region-beginning) (region-end))
+                 ;;   (goto-char (point-min))
+                   
+                 ;;   (while (search-forward "|" nil t)
+                 ;;     (replace-match "| " nil t)))
+                 
+                 ))
+   
    ;;; for easy window scrolling up and down
    ("M-n" scroll-up-line)
    ("M-p" scroll-down-line)
