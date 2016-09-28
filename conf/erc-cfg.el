@@ -44,31 +44,15 @@
 
 (setq erc-autojoin-timing 'ident) 
 ;; Join the a couple of interesting channels whenever connecting to Freenode.
-(setq erc-autojoin-channels-alist '(("freenode.net"
-                                     "##british"
-                                     "#ccl"
-                                     "#deadbeefplayer"
-                                     "#deadbeef-ru"
-                                     ;; "#emacs-es"
-                                     "##English"
-                                     ;; "##espanol"
-                                     ;; "##francais"
-                                     ;; "##italiano"
-                                     ;; "##libertarian"
-                                     ;; "#libertarians"
-                                     ;; "#libervis"
-                                     ;; "#linuxchixar"
-                                     ;; "##portuguese"
-                                     "##russia"
-                                     "##russian"
-                                     "##russkij"
-                                     ;; "#sanluix"
-                                     ;; "##vahvuus"
-                                     ;; "#emacs"
-                                     ;; "#clojure"
-                                     ;; "#lisp"
-                                     "#archlinux"
-                                     "#lor")))
+(defmacro ercchannels (filepath)
+  (let* ((ws (replace-regexp-in-string
+              ";[\#\-\;\sa-z]+\n" ""
+              (substring (read-file-as-str filepath) 0 -1)))
+         (wl (split-string ws "\n")))
+    `'(,wl)))
+;;;(macroexpand-1 (ercchannels "~/.erc/channels"))
+
+(setq erc-autojoin-channels-alist (ercchannels "~/.erc/channels"))
 
 ;; utf-8 always and forever
 (setq erc-server-coding-system '(utf-8 . utf-8))
@@ -101,8 +85,6 @@
 (setq erc-log-channels-directory "~/.erc/logs/")
 (setq erc-save-buffer-on-part t)
 (setq erc-hide-timestamps nil)
-
-(setq erc-log-channels-directory "~/.erc/logs/")
 
 (if (not (file-exists-p erc-log-channels-directory))
     (mkdir erc-log-channels-directory t))
