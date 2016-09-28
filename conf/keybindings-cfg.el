@@ -31,18 +31,17 @@
    ;; aligning with pipes
    ("C-c <f9>" (lambda ()
                  (interactive)
-
-                 (align-regexp (region-beginning) (region-end)
-                               (concat "\\(\\s-+\\)" "\\(|\\)") 1 1 t)
-                 
-                 ;; (save-restriction
-                 ;;   (narrow-to-region (region-beginning) (region-end))
-                 ;;   (goto-char (point-min))
-                   
-                 ;;   (while (search-forward "|" nil t)
-                 ;;     (replace-match "| " nil t)))
-                 
-                 ))
+                 (let ((m (region-beginning))
+                       (n (region-end)))
+                   ;;; firstly move "|" to "| "
+                   (save-restriction
+                     (narrow-to-region m n)
+                     (goto-char m)
+                     (while (search-forward "|" nil t)
+                       (replace-match "| " nil t)))
+                   ;;; aligning
+                   (align-regexp m n
+                                 (concat "\\(\\s-*\\)" "\\(|\\)") 1 1 t))))
    
    ;;; for easy window scrolling up and down
    ("M-n" scroll-up-line)
