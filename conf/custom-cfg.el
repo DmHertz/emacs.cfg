@@ -11,7 +11,9 @@
    "(do (require 'weasel.repl.websocket) 
     (cemerick.piggieback/cljs-repl
       (weasel.repl.websocket/repl-env :ip \"127.0.0.1\" :port 9001)))" t)
- '(erc-log-insert-log-on-open t)
+ '(doc-view-resolution 96)
+ '(eww-bookmarks-directory "~/.emacs.d/eww/bookmarks/")
+ '(eww-use-external-browser-for-content-type "\\`\\(video/\\|audio/\\|application/ogg\\)")
  '(markdown-command "multimarkdown")
  '(neo-theme (quote arrow))
  '(racket-images-inline t))
