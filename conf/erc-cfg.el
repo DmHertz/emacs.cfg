@@ -44,13 +44,18 @@
 
 (setq erc-autojoin-timing 'ident) 
 ;; Join the a couple of interesting channels whenever connecting to Freenode.
+(defun parse-channels-file (filepath)
+  "read file, delete comments, add entries to list, remove empties"
+  (remove ""
+          (split-string
+           (replace-regexp-in-string
+            ";[\#\-\;\sa-z]+\n" "" ;;; removes all entries which starts with ;
+            (read-file-as-str filepath)) "\n")))
+
 (defmacro ercchannels (filepath)
-  (let* ((ws (replace-regexp-in-string
-              ";[\#\-\;\sa-z]+\n" ""
-              (substring (read-file-as-str filepath) 0 -1)))
-         (wl (split-string ws "\n")))
-    `'(,wl)))
-;;;(macroexpand-1 (ercchannels "~/.erc/channels"))
+  `'(,(parse-channels-file filepath)))
+;; for test (parse-channels-file "~/.erc/channels")
+;; for test (macroexpand-1 (ercchannels "~/.erc/channels"))
 
 (setq erc-autojoin-channels-alist (ercchannels "~/.erc/channels"))
 
