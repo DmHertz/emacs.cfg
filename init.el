@@ -74,34 +74,37 @@
 ;;; sync
 (el-get 'sync my:el-get-packages)
 ;;; ----------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/conf/")
+(setq confdir "~/.emacs.d/conf/") 
+(add-to-list 'load-path confdir)
 ;;"Load configs. To avoid conflicts between libraries and
 ;; configs names all config files must have «-cfg» suffix in it's own names."
 (defvar conf-list
   (append
-   '(cl-lib          ;;; | common lisp subset
-     dash)           ;;; | clojure subset
+   '(cl-lib       ;;; | common lisp subset
+     dash)        ;;; | clojure subset
    (mapcar
-       (lambda (s) (intern (concat (symbol-name s) "-cfg")))
-       '(global      ;;; | some global setiings
-         interface   ;;; | iface settings, colour theme
-         erc         ;;; | IRC settings
-         dired       ;;; | dired customizations
-         eww         ;;; | eww settings
-         parens      ;;; | smartparens, rainbow delimiters
-         eshell      ;;; | emacs shell 
-         elisp       ;;; | emacs lisp
-         slime       ;;; | slime and common lisp
-         cider       ;;; | cider and clojure
-         racket      ;;; | racket
-         web         ;;; | html5 and css settings
-;;;         gimp        ;;; | gimp-mode settings
-;;;         fsharp      ;;; | fsharp
-         db          ;;; | settings for access to databases
-         keybindings ;;; | global set keys for global cases
-         custom      ;;; | custom vars and faces
-         backup      ;;; | backup settings
-         aliases)))) ;;; | short aliases of most often use commands
+    (lambda (s)
+      "append -cfg postfix to symbol"
+      (intern (concat (symbol-name s) "-cfg")))
+    '(global      ;;; | some global setiings
+      interface   ;;; | iface settings, colour theme
+      erc         ;;; | IRC settings
+      dired       ;;; | dired customizations
+      eww         ;;; | eww settings
+      parens      ;;; | smartparens, rainbow delimiters
+      eshell      ;;; | emacs shell 
+      elisp       ;;; | emacs lisp
+      slime       ;;; | slime and common lisp
+      cider       ;;; | cider and clojure
+      racket      ;;; | racket
+      web         ;;; | html5 and css settings
+;;    gimp        ;;; | gimp-mode settings
+;;    fsharp      ;;; | fsharp
+      db          ;;; | settings for access to databases
+      keybindings ;;; | global set keys for global cases
+      custom      ;;; | custom vars and faces
+      backup      ;;; | backup settings
+      aliases)))) ;;; | short aliases of most often use commands
 
 ;; requires
 (defun require-config (config)
@@ -111,3 +114,7 @@
 ;; require all the configs automatically
 (seq-doseq (cfg conf-list)
   (require-config cfg))
+;;; custom-file, if set then customizations will be
+;;; saved where it's set, otherwise its will be saved
+;;; to the end of init.el
+(setq custom-file (concat confdir "custom-cfg.el"))

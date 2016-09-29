@@ -11,8 +11,10 @@
    "(do (require 'weasel.repl.websocket) 
     (cemerick.piggieback/cljs-repl
       (weasel.repl.websocket/repl-env :ip \"127.0.0.1\" :port 9001)))" t)
- '(racket-images-inline t)
- '(markdown-command "multimarkdown"))
+ '(erc-log-insert-log-on-open t)
+ '(markdown-command "multimarkdown")
+ '(neo-theme (quote arrow))
+ '(racket-images-inline t))
 
 ;;; +---------------------------------------------------------------+
 ;;; |            custom faces                                       |
@@ -24,6 +26,7 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:foreground "#222222" :slant normal))))
  '(linum ((t (:background "#000000" :foreground "#003366"))))
+ '(neo-banner-face ((t (:foreground "#f86e75"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#FF4C00"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#FFFF00"))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "#FF0000"))))
