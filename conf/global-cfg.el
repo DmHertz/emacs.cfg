@@ -30,10 +30,9 @@
 ;;       (file-name-directory (directory-file-name default-directory))
 ;;     (message "You aren't in DEBIAN dir!")))
 
-(defun read-file-as-str (fpath)
+(defun slurp (fpath)
   (with-temp-buffer
   (insert-file-contents fpath)
-;;;  (substring (buffer-string) 0 -1)
   (buffer-string)))
 
 (defun debian-control-description ()

@@ -46,11 +46,10 @@
 ;; Join the a couple of interesting channels whenever connecting to Freenode.
 (defun parse-channels-file (filepath)
   "read file, delete comments, add entries to list, remove empties"
-  (remove ""
-          (split-string
-           (replace-regexp-in-string
-            ";[\#\-\;\sa-z]+\n" "" ;;; removes all entries which starts with ;
-            (read-file-as-str filepath)) "\n")))
+  (split-string
+   (replace-regexp-in-string
+    ";[\#\-\;\sa-z]+\n" "" ;;; removes all entries which starts with ;
+    (slurp filepath)) "\n" t))
 
 (defmacro ercchannels (filepath)
   `'(,(parse-channels-file filepath)))
