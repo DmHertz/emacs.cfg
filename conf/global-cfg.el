@@ -19,6 +19,10 @@
 ;;; If nil, confirmation is not requested.
 (setq confirm-nonexistent-file-or-buffer nil)
 ;;; -----------------------------------
+;;; fictionbook support
+(add-to-list 'load-path "~/.emacs.d/el-get/fb2-mode")
+(require 'fb2-mode)
+;;; -----------------------------------
 (defun arch ()
   (if (string-equal "x86_64" (substring (shell-command-to-string "arch") 0 -1))
       "amd64" "x86"))

@@ -19,13 +19,13 @@
 ;;   (package-install 'el-get)
 ;;   (require 'el-get))
 
-;;; recipes 
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-
 ;; Locally defined recipe
 ;; (el-get-bundle yaicomplete
 ;;   :url "https://github.com/tarao/elisp.git"
 ;;   :features yaicomplete)
+
+;;; recipes 
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
 (setq my:el-get-packages
       '(smex                ;;; | autocomplete an emacs commands in M-x menu
@@ -59,6 +59,7 @@
 ;;; (el-get-bundle johnwalker/pixie-mode)       ;;; | pixie-lang support
 (el-get-bundle clojure-emacs/inf-clojure)   ;;; | inferior clojure
 (el-get-bundle greghendershott/racket-mode) ;;; | racket-lang support
+(el-get-bundle spline1986/fb2-mode)         ;;; | fb2 support
 ;;; (el-get-bundle cask/cask)                   ;;; | project management tool for emacs
 ;;; (el-get-bundle skeeto/emacsql)              ;;; | improved sql support
 
@@ -79,7 +80,7 @@
 (defvar conf-list
   (append
    '(cl-lib          ;;; | common lisp subset
-     dash)           ;;; | clojure subset)
+     dash)           ;;; | clojure subset
    (mapcar
        (lambda (s) (intern (concat (symbol-name s) "-cfg")))
        '(global      ;;; | some global setiings
