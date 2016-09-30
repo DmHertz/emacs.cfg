@@ -42,7 +42,7 @@
     (setq erc-nickserv-passwords
           `((freenode (("MetaHertz" . ,freenode-metahertz)))))))
 
-(Setq erc-autojoin-timing 'ident) 
+(setq erc-autojoin-timing 'ident) 
 ;; Join the a couple of interesting channels whenever connecting to Freenode.
 (defun parse-channels-file (filepath)
   "read file, delete comments, add entries to list, remove empties"
