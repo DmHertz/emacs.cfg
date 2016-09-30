@@ -42,7 +42,7 @@
     (setq erc-nickserv-passwords
           `((freenode (("MetaHertz" . ,freenode-metahertz)))))))
 
-(setq erc-autojoin-timing 'ident) 
+(Setq erc-autojoin-timing 'ident) 
 ;; Join the a couple of interesting channels whenever connecting to Freenode.
 (defun parse-channels-file (filepath)
   "read file, delete comments, add entries to list, remove empties"
@@ -57,21 +57,7 @@
 ;; for test (macroexpand-1 (ercchannels "~/.erc/channels"))
 
 (setq erc-autojoin-channels-alist (ercchannels "~/.erc/channels"))
-;;; ---------------------------------------------
 
-;; a simple major mode, erc-channels-mode
-
-(setq erc-channels-highlights
-      '((";[\#\-\;\sa-z]+" . font-lock-comment-face)
-        ("\\sw+\\.[a-z0-9\\.]+\\s-" . font-lock-keyword-face)
-;        ("\\(^\\|\\s-\\)[a-z0-9]+\\s-" . font-lock-warning-face)
-        ("\\(^\\|\\s-\\)\\(#\\|##\\)[a-z0-9]+\\s-" . font-lock-variable-name-face)))
-
-(define-derived-mode erc-channels-mode fundamental-mode "erc-channels"
-  "major mode for editing erc-channels markup."
-  (setq font-lock-defaults '(erc-channels-highlights)))
-
-;;; ---------------------------------------------
 ;; utf-8 always and forever
 (setq erc-server-coding-system '(utf-8 . utf-8))
 
