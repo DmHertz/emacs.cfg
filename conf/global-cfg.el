@@ -19,6 +19,10 @@
 ;;; If nil, confirmation is not requested.
 (setq confirm-nonexistent-file-or-buffer nil)
 ;;; -----------------------------------
+;;; rainbow mode
+(seq-doseq (m '(css html emacs-lisp))
+  (add-hook (intern (concat (symbol-name m) "-mode-hook")) #'rainbow-mode))
+;;; -----------------------------------
 ;;; fictionbook support
 (add-to-list 'load-path "~/.emacs.d/el-get/fb2-mode")
 (require 'fb2-mode)
