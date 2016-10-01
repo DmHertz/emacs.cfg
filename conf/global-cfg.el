@@ -22,6 +22,9 @@
 ;;; rainbow mode
 (seq-doseq (m '(css html emacs-lisp))
   (add-hook (append-sym-postfix m "-mode-hook") #'rainbow-mode))
+;;; eldoc mode
+(seq-doseq (m '(emacs-lisp c))
+  (add-hook (append-sym-postfix m "-mode-hook") #'eldoc-mode))
 ;;; -----------------------------------
 ;;; fictionbook support
 (add-to-list 'load-path "~/.emacs.d/el-get/fb2-mode")
