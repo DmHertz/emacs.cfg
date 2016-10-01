@@ -81,6 +81,10 @@
 ;;; saved where it's set, otherwise its will be saved
 ;;; to the end of init.el
 (setq custom-file (concat confdir "custom-cfg.el"))
+;; useful util
+(defun append-sym-postfix (sym postfix-str)
+  "append postfix to symbol"
+  (intern (concat (symbol-name sym) postfix-str)))
 ;;"Load configs. To avoid conflicts between libraries and
 ;; configs names all config files must have «-cfg» suffix in it's own names."
 (defvar conf-list
@@ -90,7 +94,7 @@
    (mapcar
     (lambda (s)
       "append -cfg postfix to symbol"
-      (intern (concat (symbol-name s) "-cfg")))
+      (append-sym-postfix s "-cfg"))
     '(global      ;;; | some global setiings
       interface   ;;; | iface settings, colour theme
       erc         ;;; | IRC settings
