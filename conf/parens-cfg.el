@@ -7,7 +7,6 @@
               (lambda ()
                 (show-smartparens-mode 1)
                 (smartparens-strict-mode 1)
-                (rainbow-mode 1)
                 (rainbow-delimiters-mode 1)))
     (add-parens-hooks (cdr lst))))
 

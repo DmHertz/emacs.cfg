@@ -1,5 +1,3 @@
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "google-chrome-beta")
 ;;; custom variables
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -7,6 +5,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(browse-url-browser-function (quote browse-url-generic))
+ '(c-default-style
+   (quote
+    ((c-mode . "linux")
+     (java-mode . "java")
+     (awk-mode . "awk")
+     (other . "gnu"))))
  '(cider-cljs-lein-repl
    "(do (require 'weasel.repl.websocket) 
     (cemerick.piggieback/cljs-repl

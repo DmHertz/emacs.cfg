@@ -26,7 +26,8 @@
 
 (setq auto-mode-alist
       (append
-       '(("channels" . erc-channels-mode))
+       '(("channels" . erc-channels-mode)
+         ("PKGBUILD" . shell-script-mode))
        auto-mode-alist))
 ;;; -----------------------------------
 (defun arch ()

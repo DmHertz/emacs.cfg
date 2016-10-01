@@ -74,8 +74,13 @@
 ;;; sync
 (el-get 'sync my:el-get-packages)
 ;;; ----------------------------------------------------------------------------
-(setq confdir "~/.emacs.d/conf/") 
+;;; set confdir and add it to load-path
+(setq confdir "~/.emacs.d/conf/")
 (add-to-list 'load-path confdir)
+;;; custom-file, if set then customizations will be
+;;; saved where it's set, otherwise its will be saved
+;;; to the end of init.el
+(setq custom-file (concat confdir "custom-cfg.el"))
 ;;"Load configs. To avoid conflicts between libraries and
 ;; configs names all config files must have «-cfg» suffix in it's own names."
 (defvar conf-list
@@ -114,7 +119,6 @@
 ;; require all the configs automatically
 (seq-doseq (cfg conf-list)
   (require-config cfg))
-;;; custom-file, if set then customizations will be
-;;; saved where it's set, otherwise its will be saved
-;;; to the end of init.el
-(setq custom-file (concat confdir "custom-cfg.el"))
+
+(load-library "erc-channels-mode")
+(require 'erc-channels-mode)
