@@ -12,6 +12,7 @@ abbrev_defs
 ac-comphist.dat
 cider-repl-history
 company-statistics-cache.el~
+*.data
 ido.last
 places
 smex-items
