@@ -1,7 +1,14 @@
 ;; +----------------------------------+
 ;; |   setup emacsql settings         |
 ;; +----------------------------------+
-
+(seq-doseq (eql (mapc (lambda (s) (concat "emacsql/" s))
+                      '("emacsql-compiler"
+                        "emacsql-system"
+                        ;; "emacsql-mysql"
+                        ;; "emacsql-pg"
+                        ;; "emacsql-psql"
+                        "emacsql-sqlite")))
+  (load-library eql))
 ;; +----------------------------------+
 ;; |   setup global db settings       |
 ;; +----------------------------------+

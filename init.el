@@ -41,6 +41,7 @@
         slime               ;;; | work with common lisp
         cider               ;;; | work with clojure
         cl-lib              ;;; | improve support CL features in .el
+        pg                  ;;; | an emacs lisp inteface to postgreql
         emacs-neotree       ;;; | view directory tree of the current project
         solarized-emacs     ;;; | my favorite color theme for Emacs
         smartparens         ;;; | better support for operations on parens
@@ -54,17 +55,16 @@
         markdown-preview-mode ; | dynamic markdown 
         rainbow-mode        ;;; | colorize parens
         emacs-fish))        ;;; | fish shell support
-;;; simple package names
-;;; (el-get-bundle pft/gimpmode)                ;;; | script-fu support
-;;; (el-get-bundle johnwalker/pixie-mode)       ;;; | pixie-lang support
+;; simple package names
+;; (el-get-bundle cask/cask)                   ;;; | project management tool for emacs
+;; (el-get-bundle edpaget/parinfer-mode)       ;;; I don't understood how it use
+;; (el-get-bundle pft/gimpmode)                ;;; | script-fu support
+;; (el-get-bundle johnwalker/pixie-mode)       ;;; | pixie-lang support
 (el-get-bundle clojure-emacs/inf-clojure)   ;;; | inferior clojure
 (el-get-bundle greghendershott/racket-mode) ;;; | racket-lang support
 (el-get-bundle spline1986/fb2-mode)         ;;; | fb2 support
-;;; (el-get-bundle cask/cask)                   ;;; | project management tool for emacs
-;;; (el-get-bundle skeeto/emacsql)              ;;; | improved sql support
-
-;; parinfer
-;;(el-get-bundle edpaget/parinfer-mode)   ;;; I don't understood how it use
+(el-get-bundle skeeto/elisp-finalize)       ;;; | finalizers for elisp
+(el-get-bundle skeeto/emacsql)              ;;; | improved sql support
 
 ;; With initialization code
 ;;(el-get-bundle zenburn-theme
