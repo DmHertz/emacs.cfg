@@ -10,7 +10,7 @@
 
 (define-derived-mode erc-channels-mode fundamental-mode "erc-channels"
   "major mode for editing erc-channels markup."
-;;;  (setq-local comment-start ";; ")
+  (setq-local comment-start ";; ")
   (setq-local font-lock-defaults '(erc-channels-highlights)))
 
 (provide 'erc-channels-mode)

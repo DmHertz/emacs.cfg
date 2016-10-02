@@ -18,7 +18,9 @@
    ("C-x C-k" kill-this-buffer)
 
    ;; comment line
-   ("C-;" comment-line)
+   ("C-;"     comment-line)
+   ("C-c ;"   comment-line)
+   ("C-c C-;" comment-line)
 
    ;; string rectangle
    ("C-x r v" string-rectangle)
