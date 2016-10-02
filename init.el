@@ -44,7 +44,7 @@
         emacs-neotree       ;;; | view directory tree of the current project
         solarized-emacs     ;;; | my favorite color theme for Emacs
         smartparens         ;;; | better support for operations on parens
-        switch-window       ;;; | Offer a *visual* way to choose a window to switch to
+        switch-window       ;;; | Offer a *visual* way to switch window
         systemd-mode        ;;; | systemd units syntax support
         emmet-mode          ;;; | producing HTML from CSS-like selectors
         company-mode        ;;; | a text completion framework
@@ -54,18 +54,18 @@
         markdown-preview-mode ; | dynamic markdown 
         rainbow-mode        ;;; | colorize parens
         emacs-fish))        ;;; | fish shell support
-;; simple package names
-(el-get-bundle clojure-emacs/inf-clojure)   ;;; | inferior clojure
-(el-get-bundle greghendershott/racket-mode) ;;; | racket-lang support
-(el-get-bundle spline1986/fb2-mode)         ;;; | fb2 support
-;; (el-get-bundle edpaget/parinfer-mode)    ;;; | improved parens support
-;; (el-get-bundle pft/gimpmode)             ;;; | script-fu support
-;; (el-get-bundle johnwalker/pixie-mode)    ;;; | pixie-lang support
-;; (el-get-bundle skeeto/emacsql)           ;;; | improved sql support; broken for me
+;; simple package names     ;;; +-----------++
+(el-get-bundle clojure-emacs/inf-clojure)   ;; inferior clojure
+(el-get-bundle greghendershott/racket-mode) ;; racket-lang support
+(el-get-bundle spline1986/fb2-mode)         ;; fb2 support
+;; (el-get-bundle edpaget/parinfer-mode)    ;; improved parens support
+;; (el-get-bundle pft/gimpmode)             ;; script-fu support
+;; (el-get-bundle johnwalker/pixie-mode)    ;; pixie-lang support
+;; (el-get-bundle skeeto/emacsql)           ;; improved sql support; broken
 
 ;; With initialization code
 ;;(el-get-bundle zenburn-theme
-;;  :url "https://raw.githubusercontent.com/bbatsov/zenburn-emacs/master/zenburn-theme.el"
+;;  :url "https://.../bbatsov/zenburn-emacs/master/zenburn-theme.el"
 ;;    (load-theme 'zenburn t))
 
 ;;; sync
