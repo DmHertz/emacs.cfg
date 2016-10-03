@@ -14,6 +14,10 @@
    ("M-x" smex)
    ("M-X" smex-major-mode-commands)
 
+   ;; magit
+   ("C-x g"   magit-status)
+   ("C-x M-g" magit-dispatch-popup)
+
    ;;; kill this buffer
    ("C-x C-k" kill-this-buffer)
 
