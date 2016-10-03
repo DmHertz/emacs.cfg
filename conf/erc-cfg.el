@@ -135,5 +135,10 @@
     (with-current-buffer buffer
       (erc-quit-server "Всем пока! // Goodbye everyone!"))))
 
+(defun find-erc-channels-file ()
+  "find and open ~/.erc/channels"
+  (interactive)
+  (find-file "~/.erc/channels"))
+
 (provide 'erc-cfg)
 ;;; erc-cfg.el ends here
