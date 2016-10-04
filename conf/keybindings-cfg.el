@@ -56,9 +56,6 @@
    ;;; Neo tree toggle
    ("<f3>" neotree-toggle)
 
-   ;;; dired
-   ("<f4>" dired)
-
    ;;; Navigation between windows
    ("<up>" windmove-up)
    ("<down>" windmove-down)
