@@ -57,9 +57,9 @@
    ("<f3>" neotree-toggle)
 
    ;;; Navigation between windows
-   ("<up>" windmove-up)
-   ("<down>" windmove-down)
-   ("<left>" windmove-left)
+   ("<up>"    windmove-up)
+   ("<down>"  windmove-down)
+   ("<left>"  windmove-left)
    ("<right>" windmove-right)
 
    ;;; visual way window switching
@@ -69,11 +69,11 @@
    ("C-x ." next-buffer)
 
    ;;; Comment/uncomment block
-   ("C-x /" comment-or-uncomment-region)
+   ("C-x /"   comment-or-uncomment-region)
    ("C-x C-_" uncomment-region)
 
    ;;; undo, redo
-   ("C-z" undo)
+   ("C-z"   undo)
    ("C-M-z" redo)
 
    ;;; save
