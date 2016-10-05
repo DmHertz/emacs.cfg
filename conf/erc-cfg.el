@@ -26,9 +26,22 @@
 ;;(require 'erc-spelling)
 (require 'erc-autoaway)
 
+(defun parse-channels-file (filepath)
+  "read file, delete comments, add entries to list, remove empties"
+  (split-string
+   (replace-regexp-in-string
+    ";[\#\-\;\sa-z]+\n" "" ;;; removes all entries which starts with ;
+    (slurp filepath)) "\n" t))
+
+(defmacro ercchannels (filepath)
+  `'(,(parse-channels-file filepath)))
+;; for test (parse-channels-file "~/.erc/channels")
+;; for test (macroexpand-1 (ercchannels "~/.erc/channels"))
+
 (setq erc-user-full-name "Dmitry Buhaev"        ;; share my real name
       erc-server-coding-system '(utf-8 . utf-8) ;; utf-8 always and forever
       erc-autojoin-timing 'ident
+      ;; join the a couple of interesting channels whenever connecting to.
       erc-autojoin-channels-alist (ercchannels "~/.erc/channels")      
       ;; Interpret mIRC-style color commands in IRC chats
       erc-interpret-mirc-color t
@@ -68,19 +81,6 @@
     (setq erc-prompt-for-nickserv-password nil
           erc-nickserv-passwords
           `((freenode (("MetaHertz" . ,freenode-metahertz)))))))
-
-;; Join the a couple of interesting channels whenever connecting to Freenode.
-(defun parse-channels-file (filepath)
-  "read file, delete comments, add entries to list, remove empties"
-  (split-string
-   (replace-regexp-in-string
-    ";[\#\-\;\sa-z]+\n" "" ;;; removes all entries which starts with ;
-    (slurp filepath)) "\n" t))
-
-(defmacro ercchannels (filepath)
-  `'(,(parse-channels-file filepath)))
-;; for test (parse-channels-file "~/.erc/channels")
-;; for test (macroexpand-1 (ercchannels "~/.erc/channels"))
 
 ;; exclude boring stuff from tracking
 (erc-track-mode t)
