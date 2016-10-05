@@ -1,4 +1,10 @@
 ;; ;; Interface setup
+
+;; set symbol for the border
+(set-display-table-slot standard-display-table
+                        'vertical-border
+                        (make-glyph-code ?│))
+
 ;; ;; menu, tool and scroll bars to /dev/null
 (menu-bar-mode -1)
 (tool-bar-mode -1)
