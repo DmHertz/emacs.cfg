@@ -92,25 +92,55 @@
 (add-to-list 'default-frame-alist '(alpha 90 80))
 ;;;face font, bg and fg
 (cl-defun set-face! (&key (bg-color "#000000")
-                          face-font font-height)
+                          (font-height 120)
+                          face-font)
   (set-face-background 'fringe bg-color) ;;; l, r borders around frame
   (set-face-attribute 'default nil
                       :background bg-color
                       :font face-font
                       :height font-height))
 
-(defun face-settings ()
+(setq face-font-height 120
+      face-font-step 10
+      face-fonts '("Terminus" "Terminus (TTF)"
+                   "Monospace" "Liberation Mono"
+                   "DejaVu Sans Mono"))
+
+(defun choose-font (fontname)
+  (interactive
+   (list
+    (completing-read "Choose font: " face-fonts)))
+  (set-face! :face-font fontname))
+
+(defun set-face-settings ()
   (case system-type
-    ('gnu/linux (set-face! :face-font "Terminus"
-                           :font-height 120))
-    ('windows-nt (set-face! :face-font "Terminus (TTF)"
-                            :font-height 120))))
+    ('gnu/linux (set-face! :face-font (car face-fonts)))
+    ('windows-nt (set-face! :face-font (cadr face-fonts)))))
+
+(defun apply-font-height (fn)
+  (setq face-font-height
+        (mod (funcall fn face-font-height face-font-step) 360)))
+
+(defun set-font-height (num)
+  (interactive "nEnter height: ")
+  (setq face-font-height num)
+  (set-face-settings))
+
+(defun -font-height ()
+  (interactive)
+  (apply-font-height #'-)
+  (set-face-settings))
+
+(defun +font-height ()
+  (interactive)
+  (apply-font-height #'+)
+  (set-face-settings))
 
 (if (daemonp)
     (add-hook 'after-make-frame-functions
               (lambda (frame)
                 (select-frame frame)
-                (face-settings)))
-  (face-settings))
+                (set-face-settings)))
+  (set-face-settings))
 
 (provide 'interface-cfg)
