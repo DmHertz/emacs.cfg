@@ -10,10 +10,16 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-(setq inhibit-splash-screen t) ;; no splash
+;; no splash
+(setq inhibit-splash-screen t)
+;; don't show start up screen, message; and define size
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
 (line-number-mode 1)
-
-(blink-cursor-mode 0)         ;; no blinking cursor
+ ;; no blinking cursor
+(blink-cursor-mode 0)
+(setq cursor-type 'bar)
+;; (set-cursor-color "#ffff00")
 ;; fullscreen
 (add-to-list 'default-frame-alist '(fullscreen . fullboth)) ;; broken in 25.1 --with-cairo
 ;; ;; Mode bar preferences
@@ -22,6 +28,7 @@
       display-time-24hr-format t  ; use 24hr format
       display-time-interval 10    ; redisplay every ten seconds
       display-time-default-load-average nil) ; don't display the system load average
+
 (display-time)
 
 ;; ;; Enable mouse wheel
@@ -36,16 +43,14 @@
 
 ;; ;; after init
 
-;; ;; Nerd tree
- (require 'neotree)
- (add-hook 'neotree-mode-hook 'hl-line-mode)
-;; ;;; limit line length
- (require 'whitespace)
-(setq whitespace-line-column 80)
-(setq whitespace-style '(face lines-tail))
-;; don't show start up screen, message; and define size
-(setq-default inhibit-startup-screen t)
-(setq initial-scratch-message nil)
+;; ;; highlight line
+(add-hook 'neotree-mode-hook 'hl-line-mode)
+;; ;;; limit line length ;; doesn't work
+;; (require 'whitespace)
+;; (setq whitespace-line-column 80)
+;; (setq whitespace-style '(face lines-tail))
+
+
 ;; Disable r-t-l (arabic, jewish, etc)
 (setq-default bidi-display-reordering nil)
 ;; scroll auto
@@ -63,7 +68,7 @@
 ;; 
 (font-lock-mode -1)
 ;; Spaces only, without tab chars
- (setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 ;;; ┌──────────────────────────────────┐
 ;;; │          color settings          │
 ;;; └──────────────────────────────────┘
