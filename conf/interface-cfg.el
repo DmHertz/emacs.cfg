@@ -9,10 +9,17 @@
 (seq-doseq (m '(menu tool scroll))
   (funcall (append-sym-postfix m "-bar-mode") -1))
 
-(setq inhibit-splash-screen t) ;; no splash
+;; no splash
+(setq inhibit-splash-screen t)
+;; don't show start up screen, message; and define size
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
 (line-number-mode 1)
+;; no blinking cursor
+(blink-cursor-mode 0)
 (setq cursor-type 'bar)
-(blink-cursor-mode 0)         ;; no blinking cursor
+;; (set-cursor-color "#ffff00")
+
 ;; fullscreen
 (add-to-list 'default-frame-alist '(fullscreen . fullboth)) ;; broken in 25.1 --with-cairo
 ;; ;; Mode bar preferences
@@ -21,6 +28,7 @@
       display-time-24hr-format t  ; use 24hr format
       display-time-interval 10    ; redisplay every ten seconds
       display-time-default-load-average nil) ; don't display the system load average
+
 (display-time)
 
 ;; ;; Enable mouse wheel
@@ -33,18 +41,13 @@
 (setq x-select-enable-clipboard t   ; cut and paste to the X clipboard
       mouse-yank-at-point t)        ; paste at point NOT at cursor
 
-;; ;; after init
+;; highlight line
+(add-hook 'neotree-mode-hook 'hl-line-mode)
+;; ;;; limit line length ;; doesn't work
+;; (require 'whitespace)
+;; (setq whitespace-line-column 80)
+;; (setq whitespace-style '(face lines-tail))
 
-;; ;; Nerd tree
- (require 'neotree)
- (add-hook 'neotree-mode-hook 'hl-line-mode)
-;; ;;; limit line length
-(require 'whitespace)
-(setq whitespace-line-column 80)
-(setq whitespace-style '(face lines-tail))
-;; don't show start up screen, message; and define size
-(setq-default inhibit-startup-screen t)
-(setq initial-scratch-message nil)
 ;; Disable r-t-l (arabic, jewish, etc)
 (setq-default bidi-display-reordering nil)
 ;; scroll auto
@@ -97,25 +100,55 @@
 (add-to-list 'default-frame-alist '(alpha 90 80))
 ;;;face font, bg and fg
 (cl-defun set-face! (&key (bg-color "#000000")
-                          face-font font-height)
+                          (font-height 120)
+                          face-font)
   (set-face-background 'fringe bg-color) ;;; l, r borders around frame
   (set-face-attribute 'default nil
                       :background bg-color
                       :font face-font
                       :height font-height))
 
-(defun face-settings ()
+(setq face-font-height 120
+      face-font-step 10
+      face-fonts '("Terminus" "Terminus (TTF)"
+                   "Monospace" "Liberation Mono"
+                   "DejaVu Sans Mono"))
+
+(defun choose-font (fontname)
+  (interactive
+   (list
+    (completing-read "Choose font: " face-fonts)))
+  (set-face! :face-font fontname))
+
+(defun set-face-settings ()
   (case system-type
-    ('gnu/linux (set-face! :face-font "Terminus"
-                           :font-height 120))
-    ('windows-nt (set-face! :face-font "Terminus (TTF)"
-                            :font-height 120))))
+    ('gnu/linux (set-face! :face-font (car face-fonts)))
+    ('windows-nt (set-face! :face-font (cadr face-fonts)))))
+
+(defun apply-font-height (fn)
+  (setq face-font-height
+        (mod (funcall fn face-font-height face-font-step) 360)))
+
+(defun set-font-height (num)
+  (interactive "nEnter height: ")
+  (setq face-font-height num)
+  (set-face-settings))
+
+(defun -font-height ()
+  (interactive)
+  (apply-font-height #'-)
+  (set-face-settings))
+
+(defun +font-height ()
+  (interactive)
+  (apply-font-height #'+)
+  (set-face-settings))
 
 (if (daemonp)
     (add-hook 'after-make-frame-functions
               (lambda (frame)
                 (select-frame frame)
-                (face-settings)))
-  (face-settings))
+                (set-face-settings)))
+  (set-face-settings))
 
 (provide 'interface-cfg)
