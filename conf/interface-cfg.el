@@ -6,9 +6,8 @@
                         (make-glyph-code ?│))
 
 ;; ;; menu, tool and scroll bars to /dev/null
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
+(seq-doseq (m '(menu tool scroll))
+  (funcall (append-sym-postfix m "-bar-mode") -1))
 
 ;; no splash
 (setq inhibit-splash-screen t)
@@ -16,10 +15,11 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
 (line-number-mode 1)
- ;; no blinking cursor
+;; no blinking cursor
 (blink-cursor-mode 0)
 (setq cursor-type 'bar)
 ;; (set-cursor-color "#ffff00")
+
 ;; fullscreen
 (add-to-list 'default-frame-alist '(fullscreen . fullboth)) ;; broken in 25.1 --with-cairo
 ;; ;; Mode bar preferences
@@ -41,15 +41,12 @@
 (setq x-select-enable-clipboard t   ; cut and paste to the X clipboard
       mouse-yank-at-point t)        ; paste at point NOT at cursor
 
-;; ;; after init
-
-;; ;; highlight line
+;; highlight line
 (add-hook 'neotree-mode-hook 'hl-line-mode)
 ;; ;;; limit line length ;; doesn't work
 ;; (require 'whitespace)
 ;; (setq whitespace-line-column 80)
 ;; (setq whitespace-style '(face lines-tail))
-
 
 ;; Disable r-t-l (arabic, jewish, etc)
 (setq-default bidi-display-reordering nil)
@@ -69,6 +66,17 @@
 (font-lock-mode -1)
 ;; Spaces only, without tab chars
 (setq-default indent-tabs-mode nil)
+
+;; monochrome? seriously? ;; was taken from: Phil Hagelberg / dotfiles
+(eval-after-load 'diff-mode
+  '(progn
+     (set-face-foreground 'diff-added "green4")
+     (set-face-foreground 'diff-removed "red3")))
+;; (eval-after-load 'magit
+;;   '(progn
+;;      (set-face-background 'magit-item-highlight "white smoke")
+;;      (set-face-foreground 'magit-diff-add "green4")
+;;      (set-face-foreground 'magit-diff-del "red3")))
 ;;; ┌──────────────────────────────────┐
 ;;; │          color settings          │
 ;;; └──────────────────────────────────┘
