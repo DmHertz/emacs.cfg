@@ -8,25 +8,9 @@
        "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
     (goto-char (point-max))
     (eval-print-last-sexp)))
-
-;; ;; using el-get via melpa
-;; (unless (require 'el-get nil 'noerror)
-;;   (require 'package)
-;;   (add-to-list 'package-archives
-;;                '("melpa" . "http://melpa.org/packages/"))
-;;   (package-refresh-contents)
-;;   (package-initialize)
-;;   (package-install 'el-get)
-;;   (require 'el-get))
-
-;; Locally defined recipe
-;; (el-get-bundle yaicomplete
-;;   :url "https://github.com/tarao/elisp.git"
-;;   :features yaicomplete)
-
 ;;; recipes 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-
+;; list of required packages
 (setq my:el-get-packages
       '(smex                ;;; | autocomplete an emacs commands in M-x menu
         magit               ;;; | an interface to git
@@ -63,11 +47,6 @@
 ;; (el-get-bundle pft/gimpmode)             ;; script-fu support
 ;; (el-get-bundle johnwalker/pixie-mode)    ;; pixie-lang support
 ;; (el-get-bundle skeeto/emacsql)           ;; improved sql support; broken
-
-;; With initialization code
-;;(el-get-bundle zenburn-theme
-;;  :url "https://.../bbatsov/zenburn-emacs/master/zenburn-theme.el"
-;;    (load-theme 'zenburn t))
 
 ;;; sync
 (el-get 'sync my:el-get-packages)
