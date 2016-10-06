@@ -87,9 +87,12 @@
   "The dark variant of the Solarized color theme")
 (create-solarized-theme 'dark 'solarized-dark)
 (provide-theme 'solarized-dark)
+
 ;; transparency '(alpha `active `inactive)
-(set-frame-parameter (selected-frame) 'alpha '(90 80))
-(add-to-list 'default-frame-alist '(alpha 90 80))
+(let ((active 90)
+      (inactive 80))
+  (set-frame-parameter (selected-frame) 'alpha (list active inactive))
+  (add-to-list 'default-frame-alist (list 'alpha active inactive)))
 ;;;face font, bg and fg
 (cl-defun set-face! (&key (bg-color "#000000")
                           (font-height 120)
