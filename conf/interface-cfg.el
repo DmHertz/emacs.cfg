@@ -6,13 +6,12 @@
                         (make-glyph-code ?│))
 
 ;; ;; menu, tool and scroll bars to /dev/null
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
+(seq-doseq (m '(menu tool scroll))
+  (funcall (append-sym-postfix m "-bar-mode") -1))
 
 (setq inhibit-splash-screen t) ;; no splash
 (line-number-mode 1)
-
+(setq cursor-type 'bar)
 (blink-cursor-mode 0)         ;; no blinking cursor
 ;; fullscreen
 (add-to-list 'default-frame-alist '(fullscreen . fullboth)) ;; broken in 25.1 --with-cairo
@@ -40,7 +39,7 @@
  (require 'neotree)
  (add-hook 'neotree-mode-hook 'hl-line-mode)
 ;; ;;; limit line length
- (require 'whitespace)
+(require 'whitespace)
 (setq whitespace-line-column 80)
 (setq whitespace-style '(face lines-tail))
 ;; don't show start up screen, message; and define size
@@ -63,7 +62,18 @@
 ;; 
 (font-lock-mode -1)
 ;; Spaces only, without tab chars
- (setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
+
+;; monochrome? seriously? ;; was taken from: Phil Hagelberg / dotfiles
+(eval-after-load 'diff-mode
+  '(progn
+     (set-face-foreground 'diff-added "green4")
+     (set-face-foreground 'diff-removed "red3")))
+(eval-after-load 'magit
+  '(progn
+     (set-face-background 'magit-item-highlight "white smoke")
+     (set-face-foreground 'magit-diff-add "green4")
+     (set-face-foreground 'magit-diff-del "red3")))
 ;;; ┌──────────────────────────────────┐
 ;;; │          color settings          │
 ;;; └──────────────────────────────────┘
