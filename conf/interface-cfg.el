@@ -17,7 +17,7 @@
 (line-number-mode 1)
 ;; no blinking cursor
 (blink-cursor-mode 0)
-(setq cursor-type 'bar)
+(setq-default cursor-type 'bar)
 ;; (set-cursor-color "#ffff00")
 
 ;; fullscreen
