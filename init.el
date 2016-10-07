@@ -85,6 +85,7 @@
 ;;    gimp        ;;; | gimp-mode settings
 ;;    fsharp      ;;; | fsharp
       db          ;;; | settings for access to databases
+      org         ;;; | org-mode settings
       keybindings ;;; | global set keys for global cases
       custom      ;;; | custom vars and faces
       backup      ;;; | backup settings
