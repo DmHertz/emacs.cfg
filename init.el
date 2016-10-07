@@ -11,46 +11,44 @@
 ;;; recipes 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 ;; list of required packages
-(setq my:el-get-packages
-      '(smex                ;;; | autocomplete an emacs commands in M-x menu
-        magit               ;;; | an interface to git
-        pdf-tools           ;;; | provides fast rendering a pdf docs
-        tramp               ;;; | connect to remote server via ssh
-        dired+              ;;; | improved ancient file manager
-        image-dired+        ;;; | create an image and image thumbnail viewer
-        dired-k             ;;; | highlighting dired buffer like k
-        edit-server         ;;; | editing textareas in Chromium
-        emacs-jabber        ;;; | emacs jabber support
-        dash                ;;; | clojure subset in elisp
-        lua-mode            ;;; | work with lua
-        slime               ;;; | work with common lisp
-        cider               ;;; | work with clojure
-        cl-lib              ;;; | improve support CL features in .el
-        emacs-neotree       ;;; | view directory tree of the current project
-        solarized-emacs     ;;; | my favorite color theme for Emacs
-        smartparens         ;;; | better support for operations on parens
-        switch-window       ;;; | Offer a *visual* way to switch window
-        systemd-mode        ;;; | systemd units syntax support
-        emmet-mode          ;;; | producing HTML from CSS-like selectors
-        company-mode        ;;; | a text completion framework
-        company-statistics  ;;; | company text completion statistics
-        rainbow-delimiters  ;;; | makes color difference between parens
-        websocket           ;;; | websocket support
-        markdown-preview-mode ; | dynamic markdown 
-        rainbow-mode        ;;; | colorize parens
-        emacs-fish))        ;;; | fish shell support
-;; simple package names     ;;; +-----------++
-(el-get-bundle clojure-emacs/inf-clojure)   ;; inferior clojure
-(el-get-bundle greghendershott/racket-mode) ;; racket-lang support
-(el-get-bundle spline1986/fb2-mode)         ;; fb2 support
-;; (el-get-bundle edpaget/parinfer-mode)    ;; improved parens support
-;; (el-get-bundle pft/gimpmode)             ;; script-fu support
-;; (el-get-bundle johnwalker/pixie-mode)    ;; pixie-lang support
-;; (el-get-bundle skeeto/emacsql)           ;; improved sql support; broken
-
-;;; sync
-(el-get 'sync my:el-get-packages)
-;;; ----------------------------------------------------------------------------
+(setq my:el-get-packages    ;;; +----------------------------------------------+
+      '(smex                ;;; | autocomplete an emacs commands in M-x menu   |
+        magit               ;;; | an interface to git                          |
+        pdf-tools           ;;; | provides fast rendering a pdf docs           |
+        tramp               ;;; | connect to remote server via ssh             |
+        dired+              ;;; | improved ancient file manager                |
+        image-dired+        ;;; | create an image and image thumbnail viewer   |
+        dired-k             ;;; | highlighting dired buffer like k             |
+        edit-server         ;;; | editing textareas in Chromium                |
+        emacs-jabber        ;;; | emacs jabber support                         |
+        dash                ;;; | clojure subset in elisp                      |
+        lua-mode            ;;; | work with lua                                |
+        slime               ;;; | work with common lisp                        |
+        cider               ;;; | work with clojure                            |
+        cl-lib              ;;; | improve support CL features in .el           |
+        emacs-neotree       ;;; | view directory tree of the current project   |
+        solarized-emacs     ;;; | my favorite color theme for Emacs            |
+        smartparens         ;;; | better support for operations on parens      |
+        switch-window       ;;; | Offer a *visual* way to switch window        |
+        systemd-mode        ;;; | systemd units syntax support                 |
+        emmet-mode          ;;; | producing HTML from CSS-like selectors       |
+        company-mode        ;;; | a text completion framework                  |
+        company-statistics  ;;; | company text completion statistics           |
+        rainbow-delimiters  ;;; | makes color difference between parens        |
+        websocket           ;;; | websocket support                            |
+        markdown-preview-mode ; | dynamic markdown                             |
+        rainbow-mode        ;;; | colorize parens                              |
+        emacs-fish))        ;;; | fish shell support                           |
+;; simple package names     ;;; +-----------++---------------------------------+
+(el-get-bundle clojure-emacs/inf-clojure)   ;; inferior clojure                |
+(el-get-bundle greghendershott/racket-mode) ;; racket-lang support             |
+(el-get-bundle spline1986/fb2-mode)         ;; fb2 support                     |
+;; (el-get-bundle edpaget/parinfer-mode)    ;; improved parens support         |
+;; (el-get-bundle pft/gimpmode)             ;; script-fu support               |
+;; (el-get-bundle johnwalker/pixie-mode)    ;; pixie-lang support              |
+;; (el-get-bundle skeeto/emacsql)           ;; improved sql support; broken    |                                                                               
+;; synchronize packages                     ++---------------------------------+
+(el-get 'sync my:el-get-packages)                                              
 ;;; set confdir and add it to load-path
 (setq confdir "~/.emacs.d/conf/")
 (add-to-list 'load-path confdir)
