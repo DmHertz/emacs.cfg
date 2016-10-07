@@ -11,6 +11,7 @@
 ;;; global hooks
 (add-hook 'after-init-hook #'global-company-mode)
 (add-hook 'after-init-hook #'company-statistics-mode)
+(add-hook 'prog-mode-hook #'linum-mode)
 ;;; archiver, needs for 'windows-nt
 (when (eq 'windows-nt system-type)
   (add-to-list 'exec-path "C:/Program Files/7-Zip"))
