@@ -36,6 +36,7 @@
         company-statistics  ;;; | company text completion statistics           |
         rainbow-delimiters  ;;; | makes color difference between parens        |
         websocket           ;;; | websocket support                            |
+        htmlize             ;;; | Convert buffer text and decorations to HTML  |
         markdown-preview-mode ; | dynamic markdown                             |
         rainbow-mode        ;;; | colorize parens                              |
         emacs-fish))        ;;; | fish shell support                           |
