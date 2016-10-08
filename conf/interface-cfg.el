@@ -102,31 +102,21 @@
   (set-frame-parameter (selected-frame) 'alpha (list active inactive))
   (add-to-list 'default-frame-alist (list 'alpha active inactive)))
 ;;;face font, bg and fg
-(cl-defun set-face! (&key (bg-color "#000000")
-                          (font-height 120)
-                          face-font)
-  (set-face-background 'fringe bg-color) ;;; l, r borders around frame
-  (set-face-attribute 'default nil
-                      :background bg-color
-                      :font face-font
-                      :height font-height))
-
-(setq face-font-height 120
+(setq bg-color "#000000"
+      face-font-height 120
       face-font-step 10
       face-fonts '("Terminus" "Terminus (TTF)"
                    "Monospace" "Liberation Mono"
-                   "DejaVu Sans Mono"))
+                   "DejaVu Sans Mono")
+      default-face-font (case system-type
+                          ('gnu/linux  (car  face-fonts))
+                          ('windows-nt (cadr face-fonts))))
 
 (defun choose-font (fontname)
   (interactive
    (list
     (completing-read "Choose font: " face-fonts)))
-  (set-face! :face-font fontname))
-
-(defun set-face-settings ()
-  (case system-type
-    ('gnu/linux (set-face! :face-font (car face-fonts)))
-    ('windows-nt (set-face! :face-font (cadr face-fonts)))))
+  (set-face-attribute 'default nil :font fontname))
 
 (defun apply-font-height (fn)
   (setq face-font-height
@@ -135,23 +125,31 @@
 (defun set-font-height (num)
   (interactive "nEnter height: ")
   (setq face-font-height num)
-  (set-face-settings))
+  (set-face! :font-height num))
 
 (defun -font-height ()
   (interactive)
   (apply-font-height #'-)
-  (set-face-settings))
+  (set-face-attribute 'default nil :height face-font-height))
 
 (defun +font-height ()
   (interactive)
   (apply-font-height #'+)
-  (set-face-settings))
+  (set-face-attribute 'default nil :height face-font-height))
 
-(if (daemonp)
-    (add-hook 'after-make-frame-functions
-              (lambda (frame)
-                (select-frame frame)
-                (set-face-settings)))
-  (set-face-settings))
+(defmacro set-default-face (body)
+  `(if (daemonp)
+      (add-hook 'after-make-frame-functions
+                (lambda (frame)
+                  (select-frame frame)
+                  ,body))
+     ,body))
+
+(set-default-face
+ (progn (set-face-background 'fringe bg-color) ;;; l, r borders around frame
+        (set-face-attribute 'default nil
+                            :background bg-color
+                            :font default-face-font
+                            :height face-font-height)))
 
 (provide 'interface-cfg)
