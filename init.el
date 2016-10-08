@@ -3,11 +3,11 @@
 (setq debug-on-error nil)                           ;;; | 
 ;;; use el-get and download it if not found
 (unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
+ (with-current-buffer
+  (url-retrieve-synchronously
+   "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
+  (goto-char (point-max))
+  (eval-print-last-sexp)))
 ;;; recipes 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 ;; list of required packages
