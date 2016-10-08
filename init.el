@@ -47,9 +47,9 @@
 ;; (el-get-bundle edpaget/parinfer-mode)    ;; improved parens support         |
 ;; (el-get-bundle pft/gimpmode)             ;; script-fu support               |
 ;; (el-get-bundle johnwalker/pixie-mode)    ;; pixie-lang support              |
-;; (el-get-bundle skeeto/emacsql)           ;; improved sql support; broken    |                  
+;; (el-get-bundle skeeto/emacsql)           ;; improved sql support; broken    |
 ;; synchronize packages                     ++---------------------------------+
-(el-get 'sync my:el-get-packages)                                              
+(el-get 'sync my:el-get-packages)
 ;;; set confdir and add it to load-path
 (setq confdir "~/.emacs.d/conf/")
 (add-to-list 'load-path confdir)
