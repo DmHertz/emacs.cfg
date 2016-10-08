@@ -1,0 +1,46 @@
+* ~/.emacs.d
+My set of small configs for Emacs.
+
+*** my dotemacs structure
+
+#+BEGIN_SRC shell
+~> tree ~/.emacs.d/
+├── conf
+│   ├── aliases-cfg.el
+│   ├── backup-cfg.el
+│   ├── cider-cfg.el
+│   ├── clojure-cfg.el
+│   ├── custom-cfg.el
+│   ├── db-cfg.el
+│   ├── dired-cfg.el
+│   ├── elisp-cfg.el
+│   ├── erc-cfg.el
+│   ├── erc-channels-mode.el
+│   ├── eshell-cfg.el
+│   ├── eww-cfg.el
+│   ├── fsharp-cfg.el
+│   ├── gimp-cfg.el
+│   ├── global-cfg.el
+│   ├── haskell-cfg.el
+│   ├── interface-cfg.el
+│   ├── keybindings-cfg.el
+│   ├── lisp-cfg.el
+│   ├── org-cfg.el
+│   ├── parens-cfg.el
+│   ├── racket-cfg.el
+│   ├── slime-cfg.el
+│   ├── snippets-cfg.el
+│   └── web-cfg.el
+├── eshell
+│   └── alias
+├── init.el
+└── README.org
+
+2 directories, 28 files
+#+END_SRC
+
+*** supported version
+I use latest release of Emacs, so the config should run in Emacs 25.1 
+in any Linux environment. I have some problems with work the configuration 
+in Windows (I can't build some packages like TRAMP), so working in Windows
+is not guaranteed.
