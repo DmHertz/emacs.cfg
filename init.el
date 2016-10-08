@@ -40,16 +40,21 @@
         markdown-preview-mode ; | dynamic markdown                             |
         rainbow-mode        ;;; | colorize parens                              |
         emacs-fish))        ;;; | fish shell support                           |
-;; simple package names     ;;; +-----------++---------------------------------+
-(el-get-bundle clojure-emacs/inf-clojure)   ;; inferior clojure                |
-(el-get-bundle greghendershott/racket-mode) ;; racket-lang support             |
-(el-get-bundle ptrv/company-lua)            ;; completion backend for Lua      |
-(el-get-bundle spline1986/fb2-mode)         ;; fb2 support                     |
-;; (el-get-bundle edpaget/parinfer-mode)    ;; improved parens support         |
-;; (el-get-bundle pft/gimpmode)             ;; script-fu support               |
-;; (el-get-bundle johnwalker/pixie-mode)    ;; pixie-lang support              |
-;; (el-get-bundle skeeto/emacsql)           ;; improved sql support; broken    |
-;; synchronize packages                     ++---------------------------------+
+;; bundles from github      ;;; +---++-----------------------------------------+
+(setq my:el-get-bundle-packages     ;;                                         |
+      '(clojure-emacs/inf-clojure   ;; inferior clojure                        |
+        greghendershott/racket-mode ;; racket-lang support                     |
+        ptrv/company-lua            ;; completion backend for Lua              |
+        ;; edpaget/parinfer-mode    ;; improved parens support                 |
+        ;; pft/gimpmode             ;; script-fu support                       |
+        spline1986/fb2-mode))       ;; fb2 support                             |
+;;----------------------------------++-----------------------------------------+
+(defmacro el-get-bundles-doseq (egdb)
+  "generates a list of calls (el-get-bundle author/package)"
+  (cons 'progn
+        (mapcar (lambda (p) `(el-get-bundle ,p)) my:el-get-bundle-packages)))
+;; synchronize packages
+(el-get-bundles-doseq my:el-get-bundle-packages)
 (el-get 'sync my:el-get-packages)
 ;;; set confdir and add it to load-path
 (setq confdir "~/.emacs.d/conf/")
