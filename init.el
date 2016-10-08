@@ -43,6 +43,7 @@
 ;; simple package names     ;;; +-----------++---------------------------------+
 (el-get-bundle clojure-emacs/inf-clojure)   ;; inferior clojure                |
 (el-get-bundle greghendershott/racket-mode) ;; racket-lang support             |
+(el-get-bundle ptrv/company-lua)            ;; completion backend for Lua      |
 (el-get-bundle spline1986/fb2-mode)         ;; fb2 support                     |
 ;; (el-get-bundle edpaget/parinfer-mode)    ;; improved parens support         |
 ;; (el-get-bundle pft/gimpmode)             ;; script-fu support               |
