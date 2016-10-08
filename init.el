@@ -12,7 +12,8 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 ;; list of required packages
 (setq my:el-get-packages    ;;; +----------------------------------------------+
-      '(smex                ;;; | autocomplete an emacs commands in M-x menu   |
+      '(f                   ;;; | modern API for working with files and dirs   |
+        smex                ;;; | autocomplete an emacs commands in M-x menu   |
         magit               ;;; | an interface to git                          |
         pdf-tools           ;;; | provides fast rendering a pdf docs           |
         tramp               ;;; | connect to remote server via ssh             |
