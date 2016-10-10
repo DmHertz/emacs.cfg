@@ -11,11 +11,10 @@
   (when (not (file-exists-p f))
     (write-region "" nil f))
   (load-file f)
-  (global-company-mode)
-  (add-to-list 'company-backends 'company-lua));
+  (add-to-list 'company-backends 'company-lua)
+  (add-hook 'after-init-hook #'global-company-mode)
+  (add-hook 'after-init-hook #'company-statistics-mode));
 ;;; global hooks
-(add-hook 'after-init-hook #'global-company-mode)
-(add-hook 'after-init-hook #'company-statistics-mode)
 (add-hook 'prog-mode-hook #'linum-mode)
 ;;; archiver, needs for 'windows-nt
 (when (eq 'windows-nt system-type)
