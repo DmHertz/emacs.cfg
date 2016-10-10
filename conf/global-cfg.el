@@ -6,13 +6,13 @@
 (prefer-coding-system 'utf-8)
 (setq file-name-coding-system 'utf-8)
 ;; company-statistics-cache check
+;; and activate company-mode globally
 (let ((f "~/.emacs.d/company-statistics-cache.el"))
   (when (not (file-exists-p f))
-    (write-region "" nil f)));
-;;; globals
-(global-company-mode)
-(load-file "~/.emacs.d/company-statistics-cache.el")
-(add-to-list 'company-backends 'company-lua)
+    (write-region "" nil f))
+  (load-file f)
+  (global-company-mode)
+  (add-to-list 'company-backends 'company-lua));
 ;;; global hooks
 (add-hook 'after-init-hook #'global-company-mode)
 (add-hook 'after-init-hook #'company-statistics-mode)
