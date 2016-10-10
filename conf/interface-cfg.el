@@ -103,7 +103,7 @@
   (add-to-list 'default-frame-alist (list 'alpha active inactive)))
 ;;;face font, bg and fg
 (setq bg-color "#000000"
-      face-font-height 120
+      face-font-height 80
       face-font-step 10
       face-fonts '("Terminus" "Terminus (TTF)"
                    "Monospace" "Liberation Mono"
