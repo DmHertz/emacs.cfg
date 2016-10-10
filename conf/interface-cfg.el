@@ -127,6 +127,11 @@
   (setq face-font-height num)
   (set-face! :font-height num))
 
+(defun check-font-height ()
+  "lets to know current height of the font which is using now"
+  (interactive)
+  (message (concat "Font height is " (number-to-string face-font-height))))
+
 (defun -font-height ()
   (interactive)
   (apply-font-height #'-)
