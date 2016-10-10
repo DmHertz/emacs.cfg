@@ -5,6 +5,10 @@
 ;; encoding
 (prefer-coding-system 'utf-8)
 (setq file-name-coding-system 'utf-8)
+;; company-statistics-cache check
+(let ((f "~/.emacs.d/company-statistics-cache.el"))
+  (when (not (file-exists-p f))
+    (write-region "" nil f)));
 ;;; globals
 (global-company-mode)
 (load-file "~/.emacs.d/company-statistics-cache.el")

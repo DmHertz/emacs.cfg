@@ -1,10 +1,6 @@
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get") ;;; | load el-get
 (setq debug-on-error nil)                           ;;; |
-;; company statistics check
-(let ((f "~/.emacs.d/company-statistics-cache.el"))
-  (when (not (file-exists-p f))
-    (write-region "" nil f)))
 ;;; use el-get and download it if not found
 (unless (require 'el-get nil 'noerror)
  (with-current-buffer
