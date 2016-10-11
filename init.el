@@ -54,7 +54,6 @@
  ;; pft/gimpmode             ;; | script-fu support                            |
  spline1986/fb2-mode)        ;; | fb2 support                                  |
 ;; synchronize packages      ;; +----------------------------------------------+
-(el-get-bundles-doseq my:el-get-bundle-packages)
 (el-get 'sync my:el-get-packages)
 ;;; set confdir and add it to load-path
 (setq confdir "~/.emacs.d/conf/")
