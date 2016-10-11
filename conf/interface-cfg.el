@@ -107,7 +107,7 @@
       face-font-step 10
       face-fonts '("Terminus" "Terminus (TTF)"
                    "Monospace" "Liberation Mono"
-                   "DejaVu Sans Mono")
+                   "DejaVu Sans Mono" "Inconsolata")
       default-face-font (case system-type
                           ('gnu/linux  (car  face-fonts))
                           ('windows-nt (cadr face-fonts))))
@@ -116,7 +116,7 @@
   (interactive
    (list
     (completing-read "Choose font: " face-fonts)))
-  (set-face-attribute 'default nil :font fontname))
+  (set-face-attribute 'default nil :font fontname)) 
 
 (defun apply-font-height (fn)
   (setq face-font-height
