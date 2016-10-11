@@ -7,13 +7,11 @@
 (setq file-name-coding-system 'utf-8)
 ;; company-statistics-cache check
 ;; and activate company-mode globally
-(let ((f "~/.emacs.d/company-statistics-cache.el"))
-  (when (not (file-exists-p f))
-    (write-region "" nil f))
-  (load-file f)
-  (add-to-list 'company-backends 'company-lua)
-  (add-hook 'after-init-hook #'global-company-mode)
-  (add-hook 'after-init-hook #'company-statistics-mode));
+;; (let ((f "~/.emacs.d/company-statistics-cache.el"))
+;;   (when (not (file-exists-p f))
+;;     (write-region "" nil f))
+;;   (load-file f)
+;;   (add-hook 'after-init-hook #'company-statistics-mode))
 ;;; global hooks
 (add-hook 'prog-mode-hook #'linum-mode)
 ;;; archiver, needs for 'windows-nt

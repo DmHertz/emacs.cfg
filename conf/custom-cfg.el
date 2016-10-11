@@ -15,9 +15,17 @@
    "(do (require 'weasel.repl.websocket) 
     (cemerick.piggieback/cljs-repl
       (weasel.repl.websocket/repl-env :ip \"127.0.0.1\" :port 9001)))" t)
+ '(company-auto-complete (quote (quote company-explicit-action-p)))
+ '(company-auto-complete-chars (quote (32 95 41 46)))
+ '(company-backends
+   (quote
+    (company-lua company-elisp company-nxml company-css company-cmake company-keywords company-clang company-xcode company-cmake company-capf company-files
+                 (company-dabbrev-code company-gtags company-etags company-abbrev)
+                 company-oddmuse company-dabbrev)))
  '(doc-view-resolution 96)
  '(eww-bookmarks-directory "~/.emacs.d/eww/bookmarks/")
  '(eww-use-external-browser-for-content-type "\\`\\(video/\\|audio/\\|application/ogg\\)")
+ '(global-company-mode t)
  '(markdown-command "multimarkdown")
  '(neo-theme (quote arrow))
  '(racket-images-inline t))

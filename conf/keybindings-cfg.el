@@ -11,8 +11,12 @@
                  (find-file user-init-file)))
 
    ;;; smex
-   ("M-x" smex)
+   ("M-x" smex) 
    ("M-X" smex-major-mode-commands)
+
+   ;; company mode
+   ("C-c C-i" company-complete)
+   ("C-c i" company-complete-common)
 
    ;; magit
    ("C-x g"   magit-status)

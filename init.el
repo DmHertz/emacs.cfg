@@ -1,6 +1,6 @@
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get") ;;; | load el-get
-(setq debug-on-error nil)                           ;;; |
+(setq debug-on-error nil)                           ;;; | 
 ;;; use el-get and download it if not found
 (unless (require 'el-get nil 'noerror)
  (with-current-buffer
@@ -34,7 +34,7 @@
         systemd-mode        ;;; | systemd units syntax support                 |
         emmet-mode          ;;; | producing HTML from CSS-like selectors       |
         company-mode        ;;; | a text completion framework                  |
-        company-statistics  ;;; | company text completion statistics           |
+;;      company-statistics  ;;; | company text completion statistics           |
         rainbow-delimiters  ;;; | makes color difference between parens        |
         websocket           ;;; | websocket support                            |
         htmlize             ;;; | Convert buffer text and decorations to HTML  |
