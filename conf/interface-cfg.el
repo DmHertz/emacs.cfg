@@ -125,7 +125,7 @@
 (defun set-font-height (num)
   (interactive "nEnter height: ")
   (setq face-font-height num)
-  (set-face! :font-height num))
+  (set-face-attribute 'default nil :height num))
 
 (defun check-font-height ()
   "lets to know current height of the font which is using now"
