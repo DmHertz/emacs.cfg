@@ -48,5 +48,22 @@
 (add-hook 'sql-interactive-mode-hook
           (lambda ()
             (toggle-truncate-lines t)))
+
+(add-hook 'sql-interactive-mode-hook
+          (lambda ()
+            (let ((lval 'sql-input-ring-file-name)
+                  (rval 'sql-product)
+                  (sqldir "~/.emacs.d/sql/"))
+              (when (not (file-exists-p sqldir))
+                (make-directory sqldir))
+              (if (symbol-value rval)
+                  (let ((filename 
+                         (concat sqldir
+                                 (symbol-name (symbol-value rval))
+                                 "-history.sql")))
+                    (set (make-local-variable lval) filename))
+                (error
+                 (format "SQL history will not be saved because %s is nil"
+                         (symbol-name rval)))))))
 ;;; -----------------------------------
 (provide 'db-cfg)
