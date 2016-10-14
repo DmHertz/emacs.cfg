@@ -29,7 +29,7 @@
         emacs-jabber         ;; | emacs jabber support                         |
         dash                 ;; | clojure subset in elisp                      |
         lua-mode             ;; | work with lua                                |
-        slime                ;; | work with common lisp                        |
+;;      slime                ;; | work with common lisp                        |
         cider                ;; | work with clojure                            |
         cl-lib               ;; | improve support CL features in .el           |
         emacs-neotree        ;; | view directory tree of the current project   |
