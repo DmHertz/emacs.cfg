@@ -109,4 +109,14 @@
 ;;   (setq edit-server-new-frame nil)
 ;;   (edit-server-start))
 
+(defun fix-macaddr ()
+  (interactive)
+  (goto-char 1)
+  (while (search-forward-regexp "\\([0-9A-Fa-f]\\{2\\}[:-]\\)\\{5\\}\\([0-9A-Fa-f]\\{2\\}\\)" nil t) 
+    (replace-match
+     (upcase
+      (replace-regexp-in-string
+       (regexp-quote "-") ":" (match-string 0) nil 'literal))
+     nil t)))
+
 (provide 'global-cfg)
