@@ -24,6 +24,9 @@
 
    ;;; kill this buffer
    ("C-x C-k" kill-this-buffer)
+   ("C-x C-<deletechar>" (lambda ()
+                           (interactive)
+                           (let ((inhibit-read-only t)) (kill-this-buffer))))
 
    ;; comment line
    ("C-;"     comment-line)
