@@ -28,6 +28,8 @@
         emacs-jabber         ;; | emacs jabber support                         |
         dash                 ;; | clojure subset in elisp                      |
         lua-mode             ;; | work with lua                                |
+        rust-mode            ;; | work with rust                               |
+        cargo                ;; | allows rust package manager commands         |
 ;;      slime                ;; | work with common lisp                        |
         cider                ;; | work with clojure                            |
         cl-lib               ;; | improve support CL features in .el           |
