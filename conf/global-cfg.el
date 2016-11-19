@@ -119,4 +119,9 @@
        (regexp-quote "-") ":" (match-string 0) nil 'literal))
      nil t)))
 
+(defun indent-buffer ()
+  "Indent current buffer according to major mode."
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
 (provide 'global-cfg)
