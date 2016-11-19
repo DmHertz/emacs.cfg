@@ -15,6 +15,9 @@
 
 ;; (setq eshell-aliases-file "~/.emacs.d/eshell/alias")
 
+(setenv "PATH" (concat (getenv "PATH") ":~/.cargo/bin"))
+(setq exec-path (append exec-path '("~/.cargo/bin")))
+
 (setq eshell-prompt-function
   (lambda nil
     (concat

@@ -91,6 +91,7 @@
       slime       ;;; | slime and common lisp
       cider       ;;; | cider and clojure
       racket      ;;; | racket
+      rust        ;;; | rust
       web         ;;; | html5 and css settings
 ;;    gimp        ;;; | gimp-mode settings
 ;;    fsharp      ;;; | fsharp
