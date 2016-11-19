@@ -16,3 +16,5 @@
 
 ;; rust fly syntax checking
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+
+(provide 'rust-cfg)
