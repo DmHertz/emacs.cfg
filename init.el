@@ -53,7 +53,7 @@
 (el-get-bundles-from-github  ;; +----------------------------------------------+
  clojure-emacs/inf-clojure   ;; | inferior clojure                             |
  greghendershott/racket-mode ;; | racket-lang support                          |
- ptrv/company-lua            ;; | completion backend for Lua                   |
+ ;; ptrv/company-lua         ;; | completion backend for Lua                   |
  ;; edpaget/parinfer-mode    ;; | improved parens support                      |
  ;; pft/gimpmode             ;; | script-fu support                            |
  spline1986/fb2-mode)        ;; | fb2 support                                  |

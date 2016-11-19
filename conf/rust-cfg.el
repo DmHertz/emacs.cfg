@@ -9,6 +9,7 @@
 ;; rust autocompletion
 (setq racer-cmd "~/.cargo/bin/racer") ;; Rustup binaries PATH
 (setq racer-rust-src-path "~/src/rust/src") ;; Rust source code PATH
+(setq company-tooltip-align-annotations t)
 
 (add-hook 'rust-mode-hook #'racer-mode)
 (add-hook 'racer-mode-hook #'eldoc-mode)
@@ -16,5 +17,6 @@
 
 ;; rust fly syntax checking
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+(add-hook 'rust-mode-hook #'flycheck-mode)
 
 (provide 'rust-cfg)
