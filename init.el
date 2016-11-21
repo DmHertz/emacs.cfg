@@ -28,6 +28,7 @@
         emacs-jabber         ;; | emacs jabber support                         |
         dash                 ;; | clojure subset in elisp                      |
         lua-mode             ;; | work with lua                                |
+        toml-mode            ;; | work with toml                               |
         rust-mode            ;; | work with rust                               |
         cargo                ;; | allows rust package manager commands         |
         emacs-racer          ;; | rust autocompletion                          |
