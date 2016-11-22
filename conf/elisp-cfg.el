@@ -5,4 +5,6 @@
 ;;         ;; highlight color sets, hex (anywhere) and rgb (if html/css)
 ;;            (rainbow-mode)))
 
+(add-hook 'emacs-lisp-mode-hook #'company-mode)
+
 (provide 'elisp-cfg)

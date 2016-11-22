@@ -15,4 +15,6 @@
 ;; drawing on all symbols in the current Racket namespace.
 (setq tab-always-indent 'complete)
 
+(add-hook 'racket-mode-hook #'company-mode)
+
 (provide 'racket-cfg)
