@@ -33,7 +33,6 @@
         cargo                ;; | allows rust package manager commands         |
         emacs-racer          ;; | rust autocompletion                          |
         flycheck-rust        ;; | rust fly syntax checking                     |
-;;      slime                ;; | work with common lisp                        |
         cider                ;; | work with clojure                            |
         cl-lib               ;; | improve support CL features in .el           |
         emacs-neotree        ;; | view directory tree of the current project   |
@@ -44,7 +43,6 @@
         emmet-mode           ;; | producing HTML from CSS-like selectors       |
         company-mode         ;; | a text completion framework                  |
 ;;      company-statistics   ;; | company text completion statistics           |
-        slime-company        ;; | company completion for slime                 |
         rainbow-delimiters   ;; | makes color difference between parens        |
         websocket            ;; | websocket support                            |
         htmlize              ;; | Convert buffer text and decorations to HTML  |
