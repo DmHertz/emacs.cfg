@@ -21,6 +21,7 @@
         smex                 ;; | autocomplete an emacs commands in M-x menu   |
         magit                ;; | an interface to git                          |
         pdf-tools            ;; | provides fast rendering a pdf docs           |
+        csv-mode             ;; | editing comma separated value files          |
         dired+               ;; | improved ancient file manager                |
         image-dired+         ;; | create an image and image thumbnail viewer   |
         dired-k              ;; | highlighting dired buffer like k             |

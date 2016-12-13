@@ -15,16 +15,12 @@
    "(do (require 'weasel.repl.websocket) 
     (cemerick.piggieback/cljs-repl
       (weasel.repl.websocket/repl-env :ip \"127.0.0.1\" :port 9001)))" t)
- ;; '(company-auto-complete (quote (quote company-explicit-action-p)))
- ;; '(company-auto-complete-chars (quote (32 95 41 46)))
- ;; '(company-backends
- ;;   (quote
- ;;    (company-lua company-elisp company-css company-capf company-keywords company-clang company-files)))
  '(doc-view-resolution 96)
  '(eww-bookmarks-directory "~/.emacs.d/eww/bookmarks/")
  '(eww-use-external-browser-for-content-type "\\`\\(video/\\|audio/\\|application/ogg\\)")
  '(markdown-command "multimarkdown")
  '(neo-theme (quote arrow))
+ '(package-selected-packages (quote (csv-mode rainbow-mode queue finalize)))
  '(racket-images-inline t))
 
 ;;; +---------------------------------------------------------------+
