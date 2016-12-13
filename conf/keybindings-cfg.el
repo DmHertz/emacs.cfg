@@ -24,6 +24,12 @@
 
    ;;; kill this buffer
    ("C-x C-k" kill-this-buffer)
+   ;;; kill this buffer and delete window
+   ("C-x M-k" (lambda ()
+                (interactive)
+                (kill-this-buffer)
+                (delete-window)))
+   ;;; kill read-only window
    ("C-x C-<deletechar>" (lambda ()
                            (interactive)
                            (let ((inhibit-read-only t)) (kill-this-buffer))))
