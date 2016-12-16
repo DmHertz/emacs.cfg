@@ -34,6 +34,10 @@
         cargo                ;; | allows rust package manager commands         |
         emacs-racer          ;; | rust autocompletion                          |
         flycheck-rust        ;; | rust fly syntax checking                     |
+        irony-mode           ;; | a c and cpp minor mode powered by libclang   |
+        irony-eldoc          ;; | integration with eldoc-mode                  |
+        company-irony        ;; | company-mode's backend                       |
+        flycheck-irony       ;; | flycheck's checker                           |
         cider                ;; | work with clojure                            |
         cl-lib               ;; | improve support CL features in .el           |
         emacs-neotree        ;; | view directory tree of the current project   |
@@ -92,6 +96,7 @@
       cider       ;;; | cider and clojure
       racket      ;;; | racket
       rust        ;;; | rust
+      c           ;;; | c and cpp
       web         ;;; | html5 and css settings
 ;;    gimp        ;;; | gimp-mode settings
 ;;    fsharp      ;;; | fsharp

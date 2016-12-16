@@ -11,8 +11,7 @@ url
 abbrev_defs
 ac-comphist.dat
 cider-repl-history
-company-statistics-cache.el
-company-statistics-cache.el~
+company-statistics-cache.*
 *.data
 ido.last
 places
@@ -20,3 +19,5 @@ smex-items
 tramp
 image-dired/
 sql/
+irony/
+conf/*.el~
