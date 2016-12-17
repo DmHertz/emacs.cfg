@@ -97,6 +97,7 @@
       cider       ;;; | cider and clojure
       racket      ;;; | racket
       rust        ;;; | rust
+      caml        ;;; | ocaml 
       c           ;;; | c and cpp
       web         ;;; | html5 and css settings
 ;;    gimp        ;;; | gimp-mode settings
@@ -119,3 +120,4 @@
 
 (load-library "erc-channels-mode")
 (require 'erc-channels-mode)
+
