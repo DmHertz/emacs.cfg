@@ -34,6 +34,7 @@
         cargo                ;; | allows rust package manager commands         |
         emacs-racer          ;; | rust autocompletion                          |
         flycheck-rust        ;; | rust fly syntax checking                     |
+        tuareg-mode          ;; | an emacs ocaml mode                          |
         irony-mode           ;; | a c and cpp minor mode powered by libclang   |
         irony-eldoc          ;; | integration with eldoc-mode                  |
         company-irony        ;; | company-mode's backend                       |
