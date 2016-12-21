@@ -68,8 +68,8 @@
 (setq confdir "~/.emacs.d/conf/")
 (add-to-list 'load-path confdir)
 ;;; custom-file, if set then customizations will be
-;;; saved where it's set, otherwise its will be saved
-;;; to the end of init.el
+;;; saved where it's set, otherwise customizations
+;;; will be saved to the end of init.el
 (setq custom-file (concat confdir "custom-cfg.el"))
 ;; useful util
 (defun append-sym-postfix (sym postfix-str)
