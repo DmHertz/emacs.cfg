@@ -48,21 +48,20 @@ in any Linux environment.
 
 ** dependencies
     
-|   | package       | optional?    | for what                                                     |
-|---+---------------+--------------+--------------------------------------------------------------|
-| / | <>            | <>           | <>                                                           |
-| # | make          | no           | for build some base packages taken by el-get                 |
-| # | autoconf      | no           | see above                                                    |
-| # | git           | no           | el-get                                                       |
-| # | cargo         | no           | rust                                                         |
-| # | opam          | yes          | caml                                                         |
-| # | merlin        | yes          | code completion tool for OCaml                               |
-| # | leiningen     | yes          | cider depends on                                             |
-| # | sbcl          | yes          | slime                                                        |
-| # | ccl           | yes          | slime                                                        |
-| # | racket        | yes          | racket, of course                                            |
-| # | terminus-font | no (linux)   | it's the default font for me in Emacs in Linux               |
-| # | terminus-ttf  | no (windows) | see above, but in this case actual for a windows environment |
+| package       | optional?    | for what                                                     |
+|---------------+--------------+--------------------------------------------------------------|
+| make          | no           | for build some base packages taken by el-get                 |
+| autoconf      | no           | see above                                                    |
+| git           | no           | el-get                                                       |
+| cargo         | no           | rust                                                         |
+| opam          | yes          | caml                                                         |
+| merlin        | yes          | code completion tool for OCaml                               |
+| leiningen     | yes          | cider depends on                                             |
+| sbcl          | yes          | slime                                                        |
+| ccl           | yes          | slime                                                        |
+| racket        | yes          | racket, of course                                            |
+| terminus-font | no (linux)   | it's the default font for me in Emacs in Linux               |
+| terminus-ttf  | no (windows) | see above, but in this case actual for a windows environment |
 
 ** how to install
 *** in an Arch Linux environment
