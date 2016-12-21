@@ -1,46 +1,85 @@
 * ~/.emacs.d
 My set of small configs for Emacs.
 
-*** my dotemacs structure
+** my dotemacs structure
 
-#+BEGIN_SRC shell
+#+BEGIN_EXAMPLE shell
 ~> tree ~/.emacs.d/
-├── conf
-│   ├── aliases-cfg.el
-│   ├── backup-cfg.el
-│   ├── cider-cfg.el
-│   ├── clojure-cfg.el
-│   ├── custom-cfg.el
-│   ├── db-cfg.el
-│   ├── dired-cfg.el
-│   ├── elisp-cfg.el
-│   ├── erc-cfg.el
-│   ├── erc-channels-mode.el
-│   ├── eshell-cfg.el
-│   ├── eww-cfg.el
-│   ├── fsharp-cfg.el
-│   ├── gimp-cfg.el
-│   ├── global-cfg.el
-│   ├── haskell-cfg.el
-│   ├── interface-cfg.el
-│   ├── keybindings-cfg.el
-│   ├── lisp-cfg.el
-│   ├── org-cfg.el
-│   ├── parens-cfg.el
-│   ├── racket-cfg.el
-│   ├── slime-cfg.el
-│   ├── snippets-cfg.el
-│   └── web-cfg.el
-├── eshell
-│   └── alias
-├── init.el
-└── README.org
+|--- conf
+|    |--- aliases-cfg.el
+|    |--- backup-cfg.el
+|    |--- c-cfg.el
+|    |--- caml-cfg.el
+|    |--- cider-cfg.el
+|    |--- clojure-cfg.el
+|    |--- custom-cfg.el
+|    |--- db-cfg.el
+|    |--- dired-cfg.el
+|    |--- elisp-cfg.el
+|    |--- erc-cfg.el
+|    |--- erc-channels-mode.el
+|    |--- eshell-cfg.el
+|    |--- eww-cfg.el
+|    |--- fsharp-cfg.el
+|    |--- gimp-cfg.el
+|    |--- global-cfg.el
+|    |--- haskell-cfg.el
+|    |--- interface-cfg.el
+|    |--- keybindings-cfg.el
+|    |--- lisp-cfg.el
+|    |--- org-cfg.el
+|    |--- parens-cfg.el
+|    |--- racket-cfg.el
+|    |--- rust-cfg.el
+|    |--- slime-cfg.el
+|    |--- snippets-cfg.el
+|    |--- web-cfg.el
+|--- eshell
+|    |--- alias
+|--- init.el
+|--- README.org
 
-2 directories, 28 files
-#+END_SRC
+2 directories, 31 files
+#+END_EXAMPLE
 
-*** supported version
+** supported version
 I use latest release of Emacs, so the config should run in Emacs 25.1 
-in any Linux environment. I have some problems with work the configuration 
-in Windows (I can't build some packages like TRAMP), so working in Windows
-is not guaranteed.
+in any Linux environment. 
+
+** dependencies
+    
+|   | package       | optional?    | for what                                                     |
+|---+---------------+--------------+--------------------------------------------------------------|
+| / | <>            | <>           | <>                                                           |
+| # | make          | no           | for build some base packages taken by el-get                 |
+| # | autoconf      | no           | see above                                                    |
+| # | git           | no           | el-get                                                       |
+| # | cargo         | no           | rust                                                         |
+| # | opam          | yes          | caml                                                         |
+| # | merlin        | yes          | code completion tool for OCaml                               |
+| # | leiningen     | yes          | cider depends on                                             |
+| # | sbcl          | yes          | slime                                                        |
+| # | ccl           | yes          | slime                                                        |
+| # | racket        | yes          | racket, of course                                            |
+| # | terminus-font | no (linux)   | it's the default font for me in Emacs in Linux               |
+| # | terminus-ttf  | no (windows) | see above, but in this case actual for a windows environment |
+
+** how to install
+*** in an Arch Linux environment
+#+BEGIN_EXAMPLE shell
+sudo pacman -S make autoconf git cargo
+git clone https://gitlab.com/dmhz/emacs.cfg.git <.emacs.d or something else>
+#+END_EXAMPLE
+
+*** in a Windows environment 
+The first step is install msys2 https://msys2.github.io/
+Install rust and add the path to cargo to PATH variable in msys2 console something like:
+#+BEGIN_EXAMPLE shell 
+PATH=$PATH:'C:\rust\' 
+#+END_EXAMPLE
+Install terminus-ttf
+
+In msys2 console:
+#+BEGIN_EXAMPLE shell
+pacman -S mingw-w32-x86_64-emacs make autoconf git
+#+END_EXAMPLE
