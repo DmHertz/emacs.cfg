@@ -129,6 +129,7 @@
     ;; Use opam switch to lookup ocamlmerlin binary
     (setq merlin-command "ocamlmerlin")))
 
+(add-to-list 'auto-mode-alist '("\\.ocamlinit$" . tuareg-mode))
 ;; ## merlin setup taken from https://github.com/ocaml/merlin
 ;; (push "<SHARE_DIR>/emacs/site-lisp" load-path) ; directory containing merlin.el
 ;; (setq merlin-command "<BIN_DIR>/ocamlmerlin")  ; needed only if ocamlmerlin not already in your PATH
