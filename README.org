@@ -46,6 +46,12 @@ My set of small configs for Emacs.
 I use latest release of Emacs, so the config should run in Emacs 25.1 
 in any Linux environment. 
 
+** useful stuff
+*** The reference cards
+- [[https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf][GNU Emacs Reference Card (for version 25)]]
+- [[https://www.gnu.org/software/emacs/refcards/pdf/orgcard.pdf][Org-Mode Reference Card (for version 8.2)]]
+- [[https://www.gnu.org/software/emacs/refcards/pdf/calccard.pdf][GNU Calc Reference Card (for version 25)]]
+- [[https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][Dired Reference Card (based on Dired in GNU Emacs 25)]]
 ** dependencies
     
 | package       | optional?    | for what                                                     |
