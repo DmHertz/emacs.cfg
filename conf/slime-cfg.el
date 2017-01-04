@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; Set your lisp system and, optionally, some contribs
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 ;; download slime-company package directly

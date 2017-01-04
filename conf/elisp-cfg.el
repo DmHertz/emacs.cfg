@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; ;; hooks
 ;; (add-hook 'emacs-lisp-mode-hook (lambda ()
 ;;         ;; highlight parenthes as rainbow 

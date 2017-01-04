@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get") ;;; | load el-get
 (setq debug-on-error nil)                           ;;; | 

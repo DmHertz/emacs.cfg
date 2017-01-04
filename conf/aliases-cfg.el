@@ -1,4 +1,4 @@
-;; Aliases 
+;; Aliases ;; -*- lexical-binding: t; -*-
 ;; For easier access to regex search/replace
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'ci  'company-indent-or-complete-common)

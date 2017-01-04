@@ -1,4 +1,4 @@
-
+;; -*- lexical-binding: t; -*-
 
 ;; How to open new website in new buffer?
 ;; Call rename-buffer to rename the first one.

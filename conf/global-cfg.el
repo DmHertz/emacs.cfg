@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; personal data
 (setq my-name  "Dmitry Hertz")
 (setq my-email "<dmitryhertz@gmail.com>")

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; exec path
 ;; (defun append-exec-paths (paths separator)
 ;;   (setenv "PATH"

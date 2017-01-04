@@ -1,4 +1,4 @@
-
+;; -*- lexical-binding: t; -*-
 ;; a simple major mode, erc-channels-mode
 
 (setq erc-channels-highlights

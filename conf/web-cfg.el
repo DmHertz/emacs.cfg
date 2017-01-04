@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; (add-hook 'html-mode-hook (lambda ()
 ;;                            (rainbow-delimiters-mode)
 ;;                            (rainbow-mode)))

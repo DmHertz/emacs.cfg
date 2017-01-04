@@ -1,4 +1,4 @@
-;; Cider Preferences
+;; Cider Preferences ;; -*- lexical-binding: t; -*-
 (require 'icomplete)
 ;; enable eldoc
 (add-hook 'cider-mode-hook #'eldoc-mode)

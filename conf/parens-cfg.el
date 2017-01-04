@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; Set smartparens config
 (require 'smartparens-config)
 

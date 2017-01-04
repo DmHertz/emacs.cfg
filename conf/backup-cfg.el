@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; don't make backup-files
 (setq make-backup-files -1)
 ;; prefs

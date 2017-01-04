@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (require 'dired+)
 (require 'image-dired+)
 

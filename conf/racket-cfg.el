@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; custom run racket
 ;; (add-hook 'racket-mode-hook
 ;;           (lambda ()

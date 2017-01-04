@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; for correct interactive mode
 (setq inferior-fsharp-program
       (case system-type

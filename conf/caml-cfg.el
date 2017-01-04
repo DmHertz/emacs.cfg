@@ -1,4 +1,4 @@
-;; Base configuration for OPAM
+;; Base configuration for OPAM ;; -*- lexical-binding: t; -*-
 
 (defun opam-shell-command-to-string (command)
   "Similar to shell-command-to-string, but returns nil unless the process

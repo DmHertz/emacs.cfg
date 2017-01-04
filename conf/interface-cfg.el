@@ -1,4 +1,4 @@
-;; ;; Interface setup
+;; Interface setup ;; -*- lexical-binding: t; -*-
 
 ;; set symbol for the border
 (set-display-table-slot standard-display-table

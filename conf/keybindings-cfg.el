@@ -1,4 +1,4 @@
-;;
+;; -*- lexical-binding: t; -*-;;
 (defun apply-keybindings (keys-and-fns)
   (dolist (kf keys-and-fns)
     (global-set-key (kbd (car kf)) (cadr kf))))
