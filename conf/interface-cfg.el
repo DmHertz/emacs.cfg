@@ -20,8 +20,11 @@
 (setq-default cursor-type 'bar)
 ;; (set-cursor-color "#ffff00")
 
+(setq scroll-preserve-screen-position t)
+(setq switch-to-buffer-preserve-window-point t)
+
 ;; fullscreen
-(add-to-list 'default-frame-alist '(fullscreen . fullboth)) ;; broken in 25.1 --with-cairo
+;; (add-to-list 'default-frame-alist '(fullscreen . fullboth)) ;; broken in 25.1 --with-cairo
 ;; ;; Mode bar preferences
 (column-number-mode 1)            ; show column number in mode-line
 (setq display-time-day-and-date t ; display the day and date in the mode line
