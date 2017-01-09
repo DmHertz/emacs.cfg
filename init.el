@@ -36,6 +36,8 @@
         emacs-racer          ;; | rust autocompletion                          |
         flycheck-rust        ;; | rust fly syntax checking                     |
         tuareg-mode          ;; | an emacs ocaml mode                          |
+        d-mode               ;; | work with dlang                              |
+        company-dcd          ;; | company backend for DCD                      |
         irony-mode           ;; | a c and cpp minor mode powered by libclang   |
         irony-eldoc          ;; | integration with eldoc-mode                  |
         company-irony        ;; | company-mode's backend                       |

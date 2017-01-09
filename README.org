@@ -61,6 +61,7 @@ in any Linux environment.
 | git           | no           | el-get                                                       |
 | cargo         | no           | rust                                                         |
 | opam          | yes          | caml                                                         |
+| dcd           | yes          | The D Completion Daemon for the D programming language       |
 | merlin        | yes          | code completion tool for OCaml                               |
 | leiningen     | yes          | cider depends on                                             |
 | sbcl          | yes          | slime                                                        |

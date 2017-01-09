@@ -33,6 +33,9 @@
 ;;; fictionbook support
 (add-to-list 'load-path "~/.emacs.d/el-get/fb2-mode")
 (require 'fb2-mode)
+;;; --- d lang ---
+(require 'company-dcd)
+(add-hook 'd-mode-hook #'company-dcd-mode)
 ;;; -----------------------------------
 
 (setq auto-mode-alist
