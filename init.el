@@ -37,7 +37,6 @@
         flycheck-rust        ;; | rust fly syntax checking                     |
         tuareg-mode          ;; | an emacs ocaml mode                          |
         d-mode               ;; | work with dlang                              |
-        company-dcd          ;; | company backend for DCD                      |
         irony-mode           ;; | a c and cpp minor mode powered by libclang   |
         irony-eldoc          ;; | integration with eldoc-mode                  |
         company-irony        ;; | company-mode's backend                       |
@@ -51,6 +50,9 @@
         systemd-mode         ;; | systemd units syntax support                 |
         emmet-mode           ;; | producing HTML from CSS-like selectors       |
         company-mode         ;; | a text completion framework                  |
+        yasnippet            ;; | snippets support                             |
+        popwin               ;; | Popup Window Manager for Emacs               |
+        swiper               ;; | compl. frontend, isearch with an overview    |
 ;;      company-statistics   ;; | company text completion statistics           |
         rainbow-delimiters   ;; | makes color difference between parens        |
         websocket            ;; | websocket support                            |
@@ -61,6 +63,8 @@
 (el-get-bundles-from-github  ;; +----------------------------------------------+
  clojure-emacs/inf-clojure   ;; | inferior clojure                             |
  greghendershott/racket-mode ;; | racket-lang support                          |
+ tsukimizake/company-dcd     ;; | company backend for DCD                      |
+ atilaneves/flycheck-dmd-dub ;; | flycheck for d-mode                          |
  ;; ptrv/company-lua         ;; | completion backend for Lua                   |
  ;; edpaget/parinfer-mode    ;; | improved parens support                      |
  ;; pft/gimpmode             ;; | script-fu support                            |
