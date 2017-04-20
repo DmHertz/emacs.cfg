@@ -14,7 +14,7 @@
     (list "dmd" (list "-c" local-file))))
 
 (add-to-list 'flymake-allowed-file-name-masks
-             '(".+\\.d$" flymake-D-init 
+             '(".+\\.d$" flymake-d-init 
                flymake-simple-cleanup flymake-get-real-file-name))
 
 (add-to-list 'flymake-err-line-patterns
