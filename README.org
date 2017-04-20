@@ -13,6 +13,7 @@ My set of small configs for Emacs.
 |    |--- cider-cfg.el
 |    |--- clojure-cfg.el
 |    |--- custom-cfg.el
+|    |--- d-cfg.el
 |    |--- db-cfg.el
 |    |--- dired-cfg.el
 |    |--- elisp-cfg.el
@@ -39,7 +40,7 @@ My set of small configs for Emacs.
 |--- init.el
 |--- README.org
 
-2 directories, 31 files
+2 directories, 32 files
 #+END_EXAMPLE
 
 ** supported version

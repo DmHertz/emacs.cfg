@@ -106,6 +106,7 @@
       rust        ;;; | rust
       caml        ;;; | ocaml 
       c           ;;; | c and cpp
+      d           ;;; | d language
       web         ;;; | html5 and css settings
 ;;    gimp        ;;; | gimp-mode settings
 ;;    fsharp      ;;; | fsharp
