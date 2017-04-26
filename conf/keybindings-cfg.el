@@ -33,6 +33,8 @@
    ("C-x C-<deletechar>" (lambda ()
                            (interactive)
                            (let ((inhibit-read-only t)) (kill-this-buffer))))
+   ;; edit file as root
+   ("C-x C-r" sudo-edit)
 
    ;; comment line
    ("C-;"     comment-line)
