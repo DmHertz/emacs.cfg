@@ -17,7 +17,7 @@
      (add-parens-hooks
       '(lisp common-lisp slime-repl emacs-lisp ielm racket racket-repl clojure cider-repl
              css html rust c d lua js
-             eshell gimp markdown))
+             eshell gimp markdown conf))
      ;;; customize
      (sp-pair "(" ")"   :wrap "C-)")
      (sp-pair "[" "]"   :wrap "C-]")
@@ -30,3 +30,4 @@
      (sp-local-pair 'emacs-lisp-mode "`" "'")))
 
 (provide 'parens-cfg)
+
