@@ -23,6 +23,8 @@
 ;;; If nil, confirmation is not requested.
 (setq confirm-nonexistent-file-or-buffer nil)
 ;;; -----------------------------------
+;; lua
+(add-hook #'lua-mode-hook #'company-mode)
 ;;; rainbow mode
 (seq-doseq (m '(css html emacs-lisp))
   (add-hook (append-sym-postfix m "-mode-hook") #'rainbow-mode))
