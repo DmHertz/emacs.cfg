@@ -1,4 +1,10 @@
 ;; -*- lexical-binding: t; -*-
+;;; system info
+(setq distro
+      (case system-type
+        ('gnu/linux
+         (substring (shell-command-to-string "lsb_release -si") 0 -1))
+        ('windows-nt "Windows")))
 ;;; personal data
 (setq my-name  "Dmitry Hertz")
 (setq my-email "<dmitryhertz@gmail.com>")
