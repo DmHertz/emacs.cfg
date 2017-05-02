@@ -108,12 +108,13 @@
 (setq bg-color "#000000"
       face-font-height 80
       face-font-step 10
-      face-fonts '("xos4 Terminus" "Terminus (TTF)"
+      face-fonts '("Terminus" "xos4 Terminus" "Terminus (TTF)"
                    "Monospace" "Liberation Mono"
                    "DejaVu Sans Mono" "Inconsolata")
-      default-face-font (case system-type
-                          ('gnu/linux  (car  face-fonts))
-                          ('windows-nt (cadr face-fonts))))
+      default-face-font (case distro
+                          ('arch       (cadr  face-fonts))
+                          ('ubuntu     (car   face-fonts))
+                          ('windows-nt (caddr face-fonts))))
 
 (defun choose-font (fontname)
   (interactive
