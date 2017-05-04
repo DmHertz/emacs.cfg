@@ -59,7 +59,7 @@
         htmlize              ;; | Convert buffer text and decorations to HTML  |
         markdown-preview-mode ; | dynamic markdown                             |
         rainbow-mode         ;; | colorize parens                              |
-        emacs-fish))         ;; | fish shell support                           |       
+        emacs-fish))         ;; | fish shell support                           |   
 (el-get-bundles-from-github  ;; +----------------------------------------------+
  clojure-emacs/inf-clojure   ;; | inferior clojure                             |
  greghendershott/racket-mode ;; | racket-lang support                          |
@@ -71,6 +71,10 @@
  spline1986/fb2-mode)        ;; | fb2 support                                  |
 ;; synchronize packages      ;; +----------------------------------------------+
 (el-get 'sync my:el-get-packages)
+;; packages with init code
+(el-get-bundle el-csv
+  :url "https://raw.githubusercontent.com/mrc/el-csv/master/parse-csv.el"
+  (require 'parse-csv))
 ;;; set confdir and add it to load-path
 (setq confdir "~/.emacs.d/conf/")
 (add-to-list 'load-path confdir)
