@@ -53,7 +53,7 @@
         yasnippet            ;; | snippets support                             |
         popwin               ;; | Popup Window Manager for Emacs               |
         swiper               ;; | compl. frontend, isearch with an overview    |
-;;      company-statistics   ;; | company text completion statistics           |
+        company-statistics   ;; | company text completion statistics           |
         rainbow-delimiters   ;; | makes color difference between parens        |
         websocket            ;; | websocket support                            |
         htmlize              ;; | Convert buffer text and decorations to HTML  |

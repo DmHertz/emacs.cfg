@@ -32,8 +32,14 @@
 ;;; If nil, confirmation is not requested.
 (setq confirm-nonexistent-file-or-buffer nil)
 ;;; -----------------------------------
+;; company-mode and company statistics
+(eval-after-load 'company
+  (global-company-mode 1))
+(eval-after-load 'company-statistics
+  (company-statistics-mode 1))
 ;; lua
-(add-hook #'lua-mode-hook #'company-mode)
+(add-hook 'lua-mode-hook
+          (lambda () (setq-local company-backends '(company-lua))))
 ;;; rainbow mode
 (seq-doseq (m '(css html emacs-lisp))
   (add-hook (append-sym-postfix m "-mode-hook") #'rainbow-mode))
