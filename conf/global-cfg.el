@@ -50,6 +50,8 @@
 ;;; fictionbook support
 (add-to-list 'load-path "~/.emacs.d/el-get/fb2-mode")
 (require 'fb2-mode)
+;;; csv parsing initialize
+(require 'parse-csv)
 ;;; -----------------------------------
 
 (setq auto-mode-alist

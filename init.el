@@ -65,16 +65,13 @@
  greghendershott/racket-mode ;; | racket-lang support                          |
  tsukimizake/company-dcd     ;; | company backend for DCD                      |
  atilaneves/flycheck-dmd-dub ;; | flycheck for d-mode                          |
+ mrc/el-csv                  ;; | parse CSV data in elisp                      |
  ;; ptrv/company-lua         ;; | completion backend for Lua                   |
  ;; edpaget/parinfer-mode    ;; | improved parens support                      |
  ;; pft/gimpmode             ;; | script-fu support                            |
  spline1986/fb2-mode)        ;; | fb2 support                                  |
 ;; synchronize packages      ;; +----------------------------------------------+
 (el-get 'sync my:el-get-packages)
-;; packages with init code
-(el-get-bundle el-csv
-  :url "https://raw.githubusercontent.com/mrc/el-csv/master/parse-csv.el"
-  (require 'parse-csv))
 ;;; set confdir and add it to load-path
 (setq confdir "~/.emacs.d/conf/")
 (add-to-list 'load-path confdir)
