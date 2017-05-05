@@ -66,7 +66,7 @@
  tsukimizake/company-dcd     ;; | company backend for DCD                      |
  atilaneves/flycheck-dmd-dub ;; | flycheck for d-mode                          |
  mrc/el-csv                  ;; | parse CSV data in elisp                      |
- ;; ptrv/company-lua         ;; | completion backend for Lua                   |
+ ptrv/company-lua            ;; | completion backend for Lua                   |
  ;; edpaget/parinfer-mode    ;; | improved parens support                      |
  ;; pft/gimpmode             ;; | script-fu support                            |
  spline1986/fb2-mode)        ;; | fb2 support                                  |
