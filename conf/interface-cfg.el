@@ -106,7 +106,7 @@
   (add-to-list 'default-frame-alist (list 'alpha active inactive)))
 ;;;face font, bg and fg
 (setq bg-color "#000000"
-      face-font-height (if (<= (display-pixel-height) 768) 80 100)
+      face-font-height 80
       face-font-step 10
       face-fonts '("Terminus" "xos4 Terminus" "Terminus (TTF)"
                    "Monospace" "Liberation Mono"
@@ -159,6 +159,8 @@
         (set-face-attribute 'default nil
                             :background bg-color
                             :font default-face-font
-                            :height face-font-height)))
+                            :height (if (and window-system
+                                             (<= (display-pixel-height) 768))
+                                        80 100))))
 
 (provide 'interface-cfg)
