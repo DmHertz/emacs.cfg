@@ -58,7 +58,7 @@
         websocket            ;; | websocket support                            |
         htmlize              ;; | Convert buffer text and decorations to HTML  |
         markdown-preview-mode ; | dynamic markdown                             |
-        rainbow-mode         ;; | colorize parens                              |
+        rainbow-mode         ;; | colorize color names and buffers             |
         emacs-fish))         ;; | fish shell support                           |   
 (el-get-bundles-from-github  ;; +----------------------------------------------+
  clojure-emacs/inf-clojure   ;; | inferior clojure                             |
