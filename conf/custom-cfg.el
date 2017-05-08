@@ -4,6 +4,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote eww-browse-url))
  '(c-default-style
    (quote
@@ -15,15 +16,39 @@
    "(do (require 'weasel.repl.websocket) 
     (cemerick.piggieback/cljs-repl
       (weasel.repl.websocket/repl-env :ip \"127.0.0.1\" :port 9001)))" t)
+ '(column-number-mode t)
+ '(cursor-type (quote bar))
+ '(display-time-24hr-format t)
+ '(display-time-day-and-date t)
+ '(display-time-default-load-average nil)
+ '(display-time-interval 10)
+ '(display-time-mode t)
  '(doc-view-resolution 96)
  '(eww-bookmarks-directory "~/.emacs.d/eww/bookmarks/")
  '(eww-use-external-browser-for-content-type "\\`\\(video/\\|audio/\\|application/ogg\\)")
+ '(indent-tabs-mode nil)
+ '(inhibit-startup-screen t)
+ '(initial-scratch-message nil)
+ '(line-number-mode t)
+ '(linum-format "%d ")
  '(markdown-command "multimarkdown")
  '(menu-bar-mode nil)
+ '(mouse-wheel-follow-mouse t)
+ '(mouse-wheel-mode t)
+ '(mouse-wheel-progressive-speed nil)
+ '(mouse-wheel-scroll-amount (quote (1)))
+ '(mouse-yank-at-point t)
+ '(neo-after-create-hook (quote (hl-line-mode)))
  '(neo-theme (quote arrow))
  '(package-selected-packages (quote (csv-mode rainbow-mode queue finalize)))
  '(racket-images-inline t)
  '(scroll-bar-mode nil)
+ '(scroll-conservatively 10000)
+ '(scroll-preserve-screen-position t)
+ '(select-enable-clipboard t)
+ '(solarized-distinct-fringe-background t)
+ '(solarized-high-contrast-mode-line t)
+ '(switch-to-buffer-preserve-window-point (quote already-displayed))
  '(tool-bar-mode nil))
 
 ;;; +---------------------------------------------------------------+
