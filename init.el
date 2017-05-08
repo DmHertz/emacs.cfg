@@ -27,6 +27,7 @@
         image-dired+         ;; | create an image and image thumbnail viewer   |
         dired-k              ;; | highlighting dired buffer like k             |
         edit-server          ;; | editing textareas in Chromium                |
+        emacs-async          ;; | asynchronous processing in Emacs             |
         emacs-jabber         ;; | emacs jabber support                         |
         dash                 ;; | clojure subset in elisp                      |
         lua-mode             ;; | work with lua                                |
