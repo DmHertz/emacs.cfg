@@ -11,7 +11,6 @@ My set of small configs for Emacs.
 |    |--- c-cfg.el
 |    |--- caml-cfg.el
 |    |--- cider-cfg.el
-|    |--- clojure-cfg.el
 |    |--- custom-cfg.el
 |    |--- d-cfg.el
 |    |--- db-cfg.el
@@ -40,11 +39,11 @@ My set of small configs for Emacs.
 |--- init.el
 |--- README.org
 
-2 directories, 32 files
+2 directories, 31 file
 #+END_EXAMPLE
 
 ** supported version
-I use latest release of Emacs, so the config should run in Emacs 25.1 
+I use latest release of Emacs, so the config should run in Emacs 25.2 
 in any Linux environment. 
 
 ** useful stuff
