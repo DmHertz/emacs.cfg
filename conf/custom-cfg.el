@@ -19,9 +19,12 @@
  '(eww-bookmarks-directory "~/.emacs.d/eww/bookmarks/")
  '(eww-use-external-browser-for-content-type "\\`\\(video/\\|audio/\\|application/ogg\\)")
  '(markdown-command "multimarkdown")
+ '(menu-bar-mode nil)
  '(neo-theme (quote arrow))
  '(package-selected-packages (quote (csv-mode rainbow-mode queue finalize)))
- '(racket-images-inline t))
+ '(racket-images-inline t)
+ '(scroll-bar-mode nil)
+ '(tool-bar-mode nil))
 
 ;;; +---------------------------------------------------------------+
 ;;; |            custom faces                                       |

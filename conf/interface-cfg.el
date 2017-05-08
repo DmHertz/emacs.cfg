@@ -2,9 +2,6 @@
 
 (setq ;; interface settings
  ;; disable useless garbage
- menu-bar-mode nil
- tool-bar-mode nil
- scroll-bar-mode nil
  inhibit-splash-screen t     ;; no start up splash
  inhibit-startup-screen t    ;; screen
  initial-scratch-message nil ;; and message
