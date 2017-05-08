@@ -50,5 +50,6 @@
 (add-hook 'd-mode-hook #'flycheck-dmd-dub-set-variables)
 (add-hook 'd-mode-hook #'flymake-d-load)
 (add-hook 'd-mode-hook #'company-dcd-mode)
+(add-hook 'd-mode-hook #'linum-mode)
 
 (provide 'd-cfg)
