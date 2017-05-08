@@ -77,8 +77,8 @@
                         'vertical-border
                         (make-glyph-code ?│))
 
-(add-to-list 'default-frame-alist      ;; fullscreen
-             '(fullscreen . fullboth)) ;; broken in 25.1 --with-cairo
+;; (add-to-list 'default-frame-alist      ;; fullscreen
+;;              '(fullscreen . fullboth)) ;; broken in 25.1 --with-cairo
 
 ;; Display full pathname for files
 (add-hook 'find-file-hooks
