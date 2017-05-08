@@ -13,6 +13,7 @@
  display-time-interval 10    ;; redisplay every ten seconds
  display-time-default-load-average nil ;; don't display the system load average
  ;;  screen, window, buffer
+ linum-format "%d "
  scroll-preserve-screen-position t
  switch-to-buffer-preserve-window-point t
   ;; x
