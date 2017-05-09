@@ -18,6 +18,7 @@
       (weasel.repl.websocket/repl-env :ip \"127.0.0.1\" :port 9001)))" t)
  '(column-number-mode t)
  '(cursor-type (quote bar))
+ '(dired-async-mode t)
  '(display-time-24hr-format t)
  '(display-time-day-and-date t)
  '(display-time-default-load-average nil)
