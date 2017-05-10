@@ -61,6 +61,7 @@
    irony-eldoc           ;; | integration with eldoc-mode                  |
    company-irony         ;; | company-mode's backend                       |
    flycheck-irony        ;; | flycheck's checker                           |
+   geiser                ;; | emacs and scheme talk to each other          |
    cider                 ;; | work with clojure                            |
    cl-lib                ;; | improve support CL features in .el           |
    emacs-neotree         ;; | view directory tree of the current project   |
