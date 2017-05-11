@@ -15,7 +15,7 @@
     'smartparens-config
   '(progn
      (add-parens-hooks
-      '(lisp common-lisp slime-repl emacs-lisp ielm scheme racket racket-repl clojure cider-repl
+      '(lisp common-lisp slime-repl emacs-lisp ielm scheme racket geiser-repl racket-repl clojure cider-repl
              css html rust c d lua js
              eshell gimp markdown conf))
      ;;; customize
