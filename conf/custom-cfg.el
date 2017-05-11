@@ -31,7 +31,7 @@
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
  '(line-number-mode t)
- '(linum-format "%d ")
+ '(linum-format (if window-system 'dynamic "%d "))
  '(markdown-command "multimarkdown")
  '(menu-bar-mode nil)
  '(mouse-wheel-follow-mouse t)
