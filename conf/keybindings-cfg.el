@@ -72,11 +72,6 @@
    ("M-n" scroll-up-line)
    ("M-p" scroll-down-line)
 
-   ;; visual end of the current line
-   ("C-e" (lambda ()
-            (interactive)
-            (move-to-column (- (window-body-width) 2))))
-
    ;;; Navigation between windows
    ("<up>"    windmove-up)
    ("<down>"  windmove-down)
