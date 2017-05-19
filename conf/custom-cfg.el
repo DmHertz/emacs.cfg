@@ -69,10 +69,10 @@
  '(rainbow-delimiters-depth-3-face ((t (:foreground "#FFFF00"))))
  '(rainbow-delimiters-depth-4-face ((t (:foreground "#00FF00"))))
  '(rainbow-delimiters-depth-5-face ((t (:foreground "#00FFFF"))))
- '(rainbow-delimiters-depth-6-face ((t (:foreground "#0080FF"))))
- '(rainbow-delimiters-depth-7-face ((t (:foreground "#0000FF"))))
- '(rainbow-delimiters-depth-8-face ((t (:foreground "#9900FF"))))
- '(rainbow-delimiters-depth-9-face ((t (:foreground "#FF00FF")))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "#0060FF"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "#9900FF"))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "#FF00FF"))))
+ '(rainbow-delimiters-depth-9-face ((t (:foreground "#FCFCFC")))))
 
 ;;; set off disables of up- and downcase fns
 (put 'upcase-region 'disabled nil)
