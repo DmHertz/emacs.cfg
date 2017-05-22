@@ -32,6 +32,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
+ '(ispell-program-name "hunspell")
  '(line-number-mode t)
  '(linum-format (if window-system (quote dynamic) "%d "))
  '(markdown-command "multimarkdown")

@@ -157,4 +157,12 @@
                          (ido-read-file-name "Find file(as root): ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
+;; ispell
+;; stolen from: http://pragmaticemacs.com/emacs/basic-spell-checking/
+(setq ispell-really-hunspell t)
+;; tell ispell that apostrophes are part of words
+;; and select Bristish dictionary
+(setq ispell-local-dictionary-alist
+      `((nil "[[:alpha:]]" "[^[:alpha:]]" "[']" t ("-d" "en_GB") nil utf-8)))
+
 (provide 'global-cfg)
