@@ -43,6 +43,7 @@
  '(mouse-wheel-scroll-amount (quote (1)))
  '(mouse-yank-at-point t)
  '(neo-after-create-hook (quote (hl-line-mode)))
+ '(neo-autorefresh nil)
  '(neo-theme (quote arrow))
  '(package-selected-packages (quote (csv-mode rainbow-mode queue finalize)))
  '(racket-images-inline t)
