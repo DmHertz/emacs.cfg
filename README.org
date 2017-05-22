@@ -68,6 +68,7 @@ in any Linux environment.
 | racket        | yes          | racket, of course                                            |
 | terminus-font | no (linux)   | it's the default font for me in Emacs in Linux               |
 | terminus-ttf  | no (windows) | see above, but in this case actual for a windows environment |
+| hunspell      | yes          | basic spell checking                                         |
 
 ** how to install
 *** in an Arch Linux environment
