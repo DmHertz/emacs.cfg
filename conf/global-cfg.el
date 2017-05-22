@@ -165,4 +165,8 @@
 (setq ispell-local-dictionary-alist
       `((nil "[[:alpha:]]" "[^[:alpha:]]" "[']" t ("-d" "en_GB") nil utf-8)))
 
+;; wttr.in
+(setq wttrin-default-cities '("Novosibirsk"))
+(setq wttrin-default-accept-language '("Accept-Language" . "en-GB"))
+
 (provide 'global-cfg)

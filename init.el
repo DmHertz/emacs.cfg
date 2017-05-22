@@ -80,6 +80,7 @@
    htmlize               ;; | Convert buffer text and decorations to HTML     |
    markdown-preview-mode ;; | dynamic markdown                                |
    rainbow-mode          ;; | colorize color names and buffers                |
+   xterm-color           ;; | ANSI & xterm-256 color text property translator |
    emacs-fish)           ;; | fish shell support                              |
  el-get-gh-packages      ;; +-----+-------------------------------------------+
  [clojure-emacs/inf-clojure    ;; | inferior clojure                          |
@@ -91,6 +92,7 @@
   ptrv/company-lua             ;; | completion backend for Lua                |
   ;; edpaget/parinfer-mode     ;; | improved parens support                   |
   ;; pft/gimpmode              ;; | script-fu support                         |
+  bcbcarl/emacs-wttrin         ;; | emacs frontend for a weather web service  |
   spline1986/fb2-mode])        ;; | fb2 support                               |
 ;; try to init and launch el-get  +-------------------------------------------+
 (add-to-list 'load-path (concat user-emacs-directory "el-get/el-get"))
