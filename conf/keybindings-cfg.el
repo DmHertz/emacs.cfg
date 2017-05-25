@@ -137,7 +137,8 @@
    ("C-cb" org-iswitchb)))
 
 ;;; symbols
-(when (equalp major-mode 'racket-mode)
+(when (or (equalp major-mode 'racket-mode)
+          (equalp major-mode 'scheme-mode))
   (global-set-key (kbd "C-\\") "λ")) 
 
 (provide 'keybindings-cfg)
