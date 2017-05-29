@@ -27,7 +27,10 @@
      (sp-pair "`" nil :actions :rem)
 
      ;; adds `' as a local pair in emacs-lisp-mode
-     (sp-local-pair 'emacs-lisp-mode "`" "'")))
+     (sp-local-pair 'emacs-lisp-mode "`" "'")
+
+     (sp-with-modes '(racket-mode racket-repl-mode scheme-mode lisp-mode)
+       (sp-local-pair "#|" "|#")))
 
 (provide 'parens-cfg)
 
