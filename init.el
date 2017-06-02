@@ -92,6 +92,7 @@
   ptrv/company-lua             ;; | completion backend for Lua                |
   ;; edpaget/parinfer-mode     ;; | improved parens support                   |
   ;; pft/gimpmode              ;; | script-fu support                         |
+  calancha/Gited               ;; | operate on Git branches like dired        |
   bcbcarl/emacs-wttrin         ;; | emacs frontend for a weather web service  |
   spline1986/fb2-mode])        ;; | fb2 support                               |
 ;; try to init and launch el-get  +-------------------------------------------+

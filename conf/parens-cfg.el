@@ -30,7 +30,7 @@
      (sp-local-pair 'emacs-lisp-mode "`" "'")
 
      (sp-with-modes '(racket-mode racket-repl-mode scheme-mode lisp-mode)
-       (sp-local-pair "#|" "|#")))
+       (sp-local-pair "#|" "|#" :trigger "\\#|"))))
 
 (provide 'parens-cfg)
 
