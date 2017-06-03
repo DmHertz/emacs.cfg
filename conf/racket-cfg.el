@@ -1,4 +1,6 @@
 ;; -*- lexical-binding: t; -*-
+;; autoload racket-mode when some rkt file is opened
+(add-to-list 'auto-mode-alist '("\\.rkt\\'" . racket-mode))
 ;;; custom run racket
 ;; (add-hook 'racket-mode-hook
 ;;           (lambda ()
