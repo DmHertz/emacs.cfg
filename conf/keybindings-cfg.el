@@ -11,7 +11,7 @@
                  (find-file user-init-file)))
 
    ;;; smex
-   ("M-x" smex) 
+   ("M-x" smex)
    ("M-X" smex-major-mode-commands)
 
    ;; company mode
@@ -66,7 +66,7 @@
 
    ;;; Neo tree toggle
    ("<f3>" neotree-toggle)
-   
+
    ;; navigation in the current window
    ;;; for easy window scrolling up and down
    ("M-n" scroll-up-line)
@@ -78,38 +78,38 @@
    ("<left>"  windmove-left)
    ("<right>" windmove-right)
 
-   ;;; visual way window switching
+   ;; visual way window switching
    ("C-x o" switch-window)
-   ;;; Navigation between next-prev buffers
+   ;; Navigation between next-prev buffers
    ("C-x ," previous-buffer)
    ("C-x ." next-buffer)
    ("C-<prior>" previous-buffer) ;; C-pageup
    ("C-<next>" next-buffer)      ;; C-pagedown
 
-   ;;; Comment/uncomment block
+   ;; Comment/uncomment block
    ("C-x /"   comment-or-uncomment-region)
    ("C-x C-_" uncomment-region)
 
-   ;;; undo, redo
+   ;; undo, redo
    ("C-z"   undo)
    ("C-M-z" redo)
 
-   ;;; save
+   ;; save
    ("<f2>" save-buffer)
 
    ;;; insert char
    ("<f6>" insert-char)
 
-   ;;; line highlighting
+   ;; line highlighting
    ("<f7>" hl-line-mode)
 
-   ;;; linum
+   ;; linum
    ("<f8>" linum-mode)
 
-   ;;; compare windows
+   ;; compare windows
    ("C-c w" compare-windows)
 
-   ;;; cyrillic binds
+   ;; cyrillic binds
    ("C-а" forward-char)
    ("C-и" backward-char)
 
@@ -124,11 +124,11 @@
 
    ("C-м" scroll-up)
    ("M-м" scroll-down)
-   
-   ;;; snippets                                                  
+
+   ;; snippets
    ("C-c <f10>" debian-control-description)))
 
-;;; org-mode                               
+;; org-mode
 (when (equalp major-mode 'org-mode)
   (apply-keybindings
    ("C-cl" org-store-link)
@@ -139,6 +139,7 @@
 ;;; symbols
 (when (or (equalp major-mode 'racket-mode)
           (equalp major-mode 'scheme-mode))
-  (global-set-key (kbd "C-\\") "λ")) 
+  (global-set-key (kbd "C-\\") "λ")
+  (global-set-key (kbd "C-c C-\\") "λ"))
 
 (provide 'keybindings-cfg)
