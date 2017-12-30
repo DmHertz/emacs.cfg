@@ -25,6 +25,8 @@
 (require 'erc-log)
 ;;(require 'erc-spelling)
 (require 'erc-autoaway)
+(require 'erc-join)
+(erc-autojoin-mode 1)
 
 (defun parse-channels-file (filepath)
   "read file, delete comments, add entries to list, remove empties"
@@ -42,7 +44,7 @@
       erc-server-coding-system '(utf-8 . utf-8) ;; utf-8 always and forever
       erc-autojoin-timing 'ident
       ;; join the a couple of interesting channels whenever connecting to.
-      erc-autojoin-channels-alist (ercchannels "~/.erc/channels")      
+      erc-autojoin-channels-alist (ercchannels "~/.erc/channels")
       ;; Interpret mIRC-style color commands in IRC chats
       erc-interpret-mirc-color t
       ;; The following are commented out by default, but users of other

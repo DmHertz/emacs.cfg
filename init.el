@@ -20,7 +20,7 @@
              cider       ;; | cider and clojure                               |
              racket      ;; | racket                                          |
              rust        ;; | rust                                            |
-             caml        ;; | ocaml                                           |
+             ;; caml     ;; | ocaml                                           |
              c           ;; | c and cpp                                       |
              d           ;; | d language                                      |
              web         ;; | html5 and css settings                          |

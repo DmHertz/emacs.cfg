@@ -12,11 +12,11 @@
       face-font-step 10
       face-fonts '("Terminus" "xos4 Terminus" "Terminus (TTF)"
                    "Monospace" "Liberation Mono"
-                   "DejaVu Sans Mono" "Inconsolata")
+                   "DejaVu Sans Mono" "Inconsolata" "Consolas")
       default-face-font (case distro
-                          ('arch       (cadr  face-fonts))
-                          ('ubuntu     (car   face-fonts))
-                          ('windows-nt (caddr face-fonts))))
+                          ('arch       (cadr face-fonts))
+                          ('ubuntu     (car  face-fonts))
+                          ('windows-nt (last face-fonts))))
 
 (defun choose-font (fontname)
   (interactive

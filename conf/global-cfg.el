@@ -3,10 +3,13 @@
 (setq distro
       (case system-type
         ('gnu/linux
-         (-> (shell-command-to-string "lsb_release -si")
-             (substring 0 -1)
-             (downcase)
-             (intern)))
+         (->
+          (mapcar (lambda (x)
+                    (string-match "[[:word:]]+" x 5)
+                    (match-string 0 x))
+                  (file-expand-wildcards "/etc/*-release"))
+          (sort 'string-lessp)
+          car intern))
         ('windows-nt 'windows-nt)))
 ;;; personal data
 (setq my-name  "Dmitry Hertz")

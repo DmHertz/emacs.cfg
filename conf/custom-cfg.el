@@ -35,6 +35,7 @@
  '(ispell-program-name "hunspell")
  '(line-number-mode t)
  '(linum-format (if window-system (quote dynamic) "%d "))
+ '(magit-log-section-arguments (quote ("--decorate" "-n256")))
  '(markdown-command "multimarkdown")
  '(menu-bar-mode nil)
  '(mouse-wheel-follow-mouse t)
