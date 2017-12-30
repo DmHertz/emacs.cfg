@@ -19,13 +19,13 @@
              slime       ;; | slime and common lisp                           |
              cider       ;; | cider and clojure                               |
              racket      ;; | racket                                          |
-             rust        ;; | rust                                            |
-             ;; caml     ;; | ocaml                                           |
+          ;; rust        ;; | rust                                            |
+          ;; caml        ;; | ocaml                                           |
              c           ;; | c and cpp                                       |
              d           ;; | d language                                      |
              web         ;; | html5 and css settings                          |
-             ;; gimp     ;; | gimp-mode settings                              |
-             ;; fsharp   ;; | fsharp                                          |
+          ;; gimp        ;; | gimp-mode settings                              |
+          ;; fsharp      ;; | fsharp                                          |
              db          ;; | settings for access to databases                |
              org         ;; | org-mode settings                               |
              keybindings ;; | global set keys for global cases                |
@@ -83,7 +83,7 @@
    xterm-color           ;; | ANSI & xterm-256 color text property translator |
    emacs-fish)           ;; | fish shell support                              |
  el-get-gh-packages      ;; +-----+-------------------------------------------+
- [Wilfred/helpful              ;; | a better Emacs *help* buffer              |
+ (Wilfred/helpful              ;; | a better Emacs *help* buffer              |
   clojure-emacs/inf-clojure    ;; | inferior clojure                          |
   greghendershott/racket-mode  ;; | racket-lang support                       |
   emacs-lsp/lsp-mode           ;; | a client for the language server protocol |
@@ -95,7 +95,7 @@
   ;; pft/gimpmode              ;; | script-fu support                         |
   calancha/Gited               ;; | operate on Git branches like dired        |
   bcbcarl/emacs-wttrin         ;; | emacs frontend for a weather web service  |
-  spline1986/fb2-mode])        ;; | fb2 support                               |
+  spline1986/fb2-mode))        ;; | fb2 support                               |
 ;; try to init and launch el-get  +-------------------------------------------+
 (add-to-list 'load-path (concat user-emacs-directory "el-get/el-get"))
 ;;; use el-get and download it if not found
