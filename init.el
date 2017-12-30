@@ -51,11 +51,11 @@
    dash                  ;; | clojure subset in elisp                         |
    lua-mode              ;; | work with lua                                   |
    toml-mode             ;; | work with toml                                  |
-   rust-mode             ;; | work with rust                                  |
-   cargo                 ;; | allows rust package manager commands            |
-   emacs-racer           ;; | rust autocompletion                             |
-   flycheck-rust         ;; | rust fly syntax checking                        |
-   tuareg-mode           ;; | an emacs ocaml mode                             |
+;; rust-mode             ;; | work with rust                                  |
+;; cargo                 ;; | allows rust package manager commands            |
+;; emacs-racer           ;; | rust autocompletion                             |
+;; flycheck-rust         ;; | rust fly syntax checking                        |
+;; tuareg-mode           ;; | an emacs ocaml mode                             |
    d-mode                ;; | work with dlang                                 |
    irony-mode            ;; | a c and cpp minor mode powered by libclang      |
    irony-eldoc           ;; | integration with eldoc-mode                     |
