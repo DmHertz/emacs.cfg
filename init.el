@@ -99,7 +99,6 @@
   spline1986/fb2-mode))        ;; | fb2 support                               |
 ;; try to init and launch el-get  +-------------------------------------------+
 (add-to-list 'load-path (concat user-emacs-directory "el-get/el-get"))
-(add-to-list 'load-path (concat user-emacs-directory "el-get/el-get/flycheck"))
 ;;; use el-get and download it if not found
 (unless (require 'el-get nil 'noerror)
  (with-current-buffer
