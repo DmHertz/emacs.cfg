@@ -60,6 +60,7 @@
    irony-mode            ;; | a c and cpp minor mode powered by libclang      |
    irony-eldoc           ;; | integration with eldoc-mode                     |
    company-irony         ;; | company-mode's backend                          |
+   flycheck              ;; | syntax checking                                 |
    flycheck-irony        ;; | flycheck's checker                              |
    geiser                ;; | emacs and scheme talk to each other             |
    cider                 ;; | work with clojure                               |
@@ -83,7 +84,7 @@
    xterm-color           ;; | ANSI & xterm-256 color text property translator |
    emacs-fish)           ;; | fish shell support                              |
  el-get-gh-packages      ;; +-----+-------------------------------------------+
- (Wilfred/helpful              ;; | a better Emacs *help* buffer              |
+'(Wilfred/helpful              ;; | a better Emacs *help* buffer              |
   clojure-emacs/inf-clojure    ;; | inferior clojure                          |
   greghendershott/racket-mode  ;; | racket-lang support                       |
   emacs-lsp/lsp-mode           ;; | a client for the language server protocol |
@@ -98,6 +99,7 @@
   spline1986/fb2-mode))        ;; | fb2 support                               |
 ;; try to init and launch el-get  +-------------------------------------------+
 (add-to-list 'load-path (concat user-emacs-directory "el-get/el-get"))
+(add-to-list 'load-path (concat user-emacs-directory "el-get/el-get/flycheck"))
 ;;; use el-get and download it if not found
 (unless (require 'el-get nil 'noerror)
  (with-current-buffer
