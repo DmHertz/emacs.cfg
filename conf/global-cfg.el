@@ -64,7 +64,7 @@
        auto-mode-alist))
 ;;; -----------------------------------
 (defun arch ()
-  (if (string-equal "x86_64" (substring (shell-command-to-string "arch") 0 -1))
+  (if (string-equal "x86_64" (substring (shell-command-to-string "uname -m") 0 -1))
       "amd64" "x86"))
 
 ;; (defun deb-package-root-dir ()
