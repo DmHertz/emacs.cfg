@@ -19,13 +19,13 @@
              slime       ;; | slime and common lisp                           |
              cider       ;; | cider and clojure                               |
              racket      ;; | racket                                          |
-          ;; rust        ;; | rust                                            |
-          ;; caml        ;; | ocaml                                           |
+             rust        ;; | rust                                            |
+             caml        ;; | ocaml                                           |
              c           ;; | c and cpp                                       |
              d           ;; | d language                                      |
              web         ;; | html5 and css settings                          |
-          ;; gimp        ;; | gimp-mode settings                              |
-          ;; fsharp      ;; | fsharp                                          |
+             gimp        ;; | gimp-mode settings                              |
+             fsharp      ;; | fsharp                                          |
              db          ;; | settings for access to databases                |
              org         ;; | org-mode settings                               |
              keybindings ;; | global set keys for global cases                |
@@ -51,11 +51,11 @@
    dash                  ;; | clojure subset in elisp                         |
    lua-mode              ;; | work with lua                                   |
    toml-mode             ;; | work with toml                                  |
-;; rust-mode             ;; | work with rust                                  |
-;; cargo                 ;; | allows rust package manager commands            |
-;; emacs-racer           ;; | rust autocompletion                             |
-;; flycheck-rust         ;; | rust fly syntax checking                        |
-;; tuareg-mode           ;; | an emacs ocaml mode                             |
+   rust-mode             ;; | work with rust                                  |
+   cargo                 ;; | allows rust package manager commands            |
+   emacs-racer           ;; | rust autocompletion                             |
+   flycheck-rust         ;; | rust fly syntax checking                        |
+   tuareg-mode           ;; | an emacs ocaml mode                             |
    d-mode                ;; | work with dlang                                 |
    irony-mode            ;; | a c and cpp minor mode powered by libclang      |
    irony-eldoc           ;; | integration with eldoc-mode                     |
@@ -92,12 +92,35 @@
   atilaneves/flycheck-dmd-dub  ;; | flycheck for d-mode                       |
   mrc/el-csv                   ;; | parse CSV data in elisp                   |
   ptrv/company-lua             ;; | completion backend for Lua                |
-  ;; edpaget/parinfer-mode     ;; | improved parens support                   |
-  ;; pft/gimpmode              ;; | script-fu support                         |
+  edpaget/parinfer-mode        ;; | improved parens support                   |
+  pft/gimpmode                 ;; | script-fu support                         |
   calancha/Gited               ;; | operate on Git branches like dired        |
   bcbcarl/emacs-wttrin         ;; | emacs frontend for a weather web service  |
   spline1986/fb2-mode))        ;; | fb2 support                               |
-;; try to init and launch el-get  +-------------------------------------------+
+;; --------------------------- ;; +-------------------------------------------+
+(defun slurp (fpath)
+  (with-temp-buffer
+    (insert-file-contents fpath)
+    (buffer-string)))
+;; a macro for the exclusion packages from loading
+(defmacro exclude-stuff ()
+  (let ((exclusion-list
+         (read
+          (slurp
+           (car
+            (sort (file-expand-wildcards
+                   (expand-file-name
+                    (concat user-emacs-directory "exclusions*.el")))
+                  'string-greaterp))))))
+    (apply 'append '(progn)
+           (mapcar (lambda (x)
+                     (mapcar (lambda (element)
+                               `(delete (quote ,element) ,(car x)))
+                             (cdr x)))
+                   exclusion-list))))
+;; exclude packages and configs mentioned in exclusions.el
+(exclude-stuff)
+;; try to init and launch el-get
 (add-to-list 'load-path (concat user-emacs-directory "el-get/el-get"))
 ;;; use el-get and download it if not found
 (unless (require 'el-get nil 'noerror)
@@ -106,7 +129,7 @@
    "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
   (goto-char (point-max))
   (eval-print-last-sexp)))
-;;; el-get recipes 
+;;; el-get recipes
 (add-to-list 'el-get-recipe-path
              (expand-file-name (concat user-emacs-directory
                                        "el-get-user/recipes")))
@@ -134,7 +157,7 @@
 ;; require all the configs automatically
 (seq-doseq (lib (append lib-list
                         ;; define the config names: to avoid potential conflicts
-                        ;; between libraries and the config names 
+                        ;; between libraries and the config names
                         ;; all the latest have «-cfg» suffix
                         (mapcar (lambda (sym)
                                   "append -cfg postfix to symbol"

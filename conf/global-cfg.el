@@ -74,11 +74,6 @@
 ;;       (file-name-directory (directory-file-name default-directory))
 ;;     (message "You aren't in DEBIAN dir!")))
 
-(defun slurp (fpath)
-  (with-temp-buffer
-  (insert-file-contents fpath)
-  (buffer-string)))
-
 (defun debian-control-description ()
   (interactive)
   (let* ((data-str (substring default-directory 0 -1))
