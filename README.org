@@ -35,10 +35,12 @@ My set of small configs for Emacs.
 |    |--- web-cfg.el
 |--- eshell
 |    |--- alias
+|--- delete-compiled-el.sh
+|--- exclusions-example.el
 |--- init.el
 |--- README.org
 
-2 directories, 30 files
+2 directories, 32 files
 #+END_EXAMPLE
 
 ** supported version
