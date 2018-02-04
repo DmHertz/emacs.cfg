@@ -102,16 +102,22 @@
   (with-temp-buffer
     (insert-file-contents fpath)
     (buffer-string)))
+
+(defun shortest-filename (fpath)
+  "returns the shortest filename using wildcard"
+  (car
+   (sort (file-expand-wildcards
+          (expand-file-name fpath))
+         'string-greaterp)))
+
+(defun read-lines (path)
+  (with-temp-buffer
+    (insert-file-contents path)
+    (split-string (buffer-string) "\n" t)))
 ;; a macro for the exclusion packages from loading
 (defmacro exclude-stuff ()
   (let ((exclusion-list
-         (read
-          (slurp
-           (car
-            (sort (file-expand-wildcards
-                   (expand-file-name
-                    (concat user-emacs-directory "exclusions*.el")))
-                  'string-greaterp))))))
+         (read (slurp (shortest-filename "exclusions*.el")))))
     (apply 'append '(progn)
            (mapcar (lambda (x)
                      (mapcar (lambda (element)
@@ -120,6 +126,10 @@
                    exclusion-list))))
 ;; exclude packages and configs mentioned in exclusions.el
 (exclude-stuff)
+;; set exec-path by using exec-path*.txt values
+(setq exec-path
+      (append exec-path
+              (read-lines (shortest-filename "exec-path*.txt"))))
 ;; try to init and launch el-get
 (add-to-list 'load-path (concat user-emacs-directory "el-get/el-get"))
 ;;; use el-get and download it if not found
