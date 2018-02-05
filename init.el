@@ -8,8 +8,8 @@
  ;;; will be saved to the end of init.el
  custom-file (concat confdir "custom-cfg.el")
  ;; cfg, lib, el-get pkgs   +-------------------------------------------------+
- conf-list '(global      ;; | some global setiings                            |
-             interface   ;; | iface settings, colour theme                    |
+ conf-list '(global      ;; | some global settings                            |
+             interface   ;; | interface settings, colour theme                |
              erc         ;; | IRC settings                                    |
              dired       ;; | dired customizations                            |
              eww         ;; | eww settings                                    |
@@ -99,6 +99,7 @@
   spline1986/fb2-mode))        ;; | fb2 support                               |
 ;; --------------------------- ;; +-------------------------------------------+
 (defun slurp (fpath)
+  "opens a file and reads all its content, then returns it as a string"
   (with-temp-buffer
     (insert-file-contents fpath)
     (buffer-string)))
@@ -111,9 +112,8 @@
          'string-greaterp)))
 
 (defun read-lines (path)
-  (with-temp-buffer
-    (insert-file-contents path)
-    (split-string (buffer-string) "\n" t)))
+  "reads a file's content, splits on \n then returns lines"
+  (split-string (slurp path) "\n" t))
 ;; a macro for the exclusion packages from loading
 (defmacro exclude-stuff ()
   (let ((exclusion-list
