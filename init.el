@@ -99,11 +99,13 @@
   bcbcarl/emacs-wttrin         ;; | emacs frontend for a weather web service  |
   spline1986/fb2-mode))        ;; | fb2 support                               |
 ;; --------------------------- ;; +-------------------------------------------+
-(defun slurp (fpath)
+(defmacro slurp (fpath &optional fn)
   "opens a file and reads all its content, then returns it as a string"
-  (with-temp-buffer
-    (insert-file-contents fpath)
-    (buffer-string)))
+  `(with-temp-buffer
+     (insert-file-contents ,fpath)
+     ,(if fn
+          `(,fn (buffer-string))
+        `(buffer-string))))
 
 (defun shortest-filename (fpath)
   "returns the shortest filename using wildcard"
@@ -114,7 +116,7 @@
 
 (defun read-lines (path)
   "reads a file's content, splits on \n then returns lines"
-  (split-string (slurp path) "\n" t))
+  (slurp path (lambda (str) (split-string str "\n" t))))
 ;; a macro for the exclusion packages from loading
 (defmacro exclude-stuff ()
   (let ((exclusion-list
@@ -128,9 +130,8 @@
 ;; exclude packages and configs mentioned in exclusions.el
 (exclude-stuff)
 ;; set exec-path by using exec-path*.txt values
-(setq exec-path
-      (append exec-path
-              (read-lines (shortest-filename "exec-path*.txt"))))
+(mapc (lambda (path) (add-to-list 'exec-path path))
+        (read-lines (shortest-filename "exec-path*.txt")))
 ;; try to init and launch el-get
 (add-to-list 'load-path (concat user-emacs-directory "el-get/el-get"))
 ;;; use el-get and download it if not found
@@ -160,7 +161,7 @@
   (message "Loaded %s." config))
 ;;; add confdir to load-path
 (add-to-list 'load-path confdir)
-(load-library "erc-channels-mode")
+;; (load-library "erc-channels-mode")
 ;; suffix-appending
 (defun append-sym-postfix (sym postfix-str)
   "append postfix to symbol"
