@@ -35,13 +35,16 @@ My set of small configs for Emacs.
 |    |--- web-cfg.el
 |--- eshell
 |    |--- alias
+|--- el-get-user
+|    |--- recipes
+|         |--- services-mode.rcp
 |--- delete-compiled-el.sh
 |--- exclusions-example.el
 |--- exec-path-example.txt
 |--- init.el
 |--- README.org
 
-2 directories, 33 files
+4 directories, 34 files
 #+END_EXAMPLE
 
 ** supported version
