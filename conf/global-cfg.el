@@ -3,7 +3,7 @@
 (setq distro
       (case system-type
         ('gnu/linux
-         (->
+         (thread-first
           (mapcar (lambda (x)
                     (string-match "[[:word:]]+" x 5)
                     (match-string 0 x))
