@@ -161,7 +161,6 @@
   (message "Loaded %s." config))
 ;;; add confdir to load-path
 (add-to-list 'load-path confdir)
-;; (load-library "erc-channels-mode")
 ;; suffix-appending
 (defun append-sym-postfix (sym postfix-str)
   "append postfix to symbol"
