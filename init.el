@@ -104,31 +104,30 @@
   `(with-temp-buffer
      (insert-file-contents ,fpath)
      ,(if fn
-          `(,fn (buffer-string))
+          `(funcall ,fn (buffer-string))
         `(buffer-string))))
 
 (defun shortest-filename (fpath)
   "returns the shortest filename using wildcard"
   (car
    (sort (file-expand-wildcards
-          (expand-file-name fpath))
+          (expand-file-name (concat user-emacs-directory fpath)))
          'string-greaterp)))
+
+;; exclude packages and configs mentioned in exclusions.el
+(let ((exclusion-list
+       (read (slurp (shortest-filename "exclusions*.el")))))
+  (mapc (lambda (seq)
+          (let ((var (car seq)))
+            (mapc (lambda (key)
+                    ;;(set var (delete key (symbol-value var)))
+                    (delete key (symbol-value var)))
+                  (cdr seq))))
+        exclusion-list))
 
 (defun read-lines (path)
   "reads a file's content, splits on \n then returns lines"
   (slurp path (lambda (str) (split-string str "\n" t))))
-;; a macro for the exclusion packages from loading
-(defmacro exclude-stuff ()
-  (let ((exclusion-list
-         (read (slurp (shortest-filename "exclusions*.el")))))
-    (apply 'append '(progn)
-           (mapcar (lambda (x)
-                     (mapcar (lambda (element)
-                               `(delete (quote ,element) ,(car x)))
-                             (cdr x)))
-                   exclusion-list))))
-;; exclude packages and configs mentioned in exclusions.el
-(exclude-stuff)
 ;; set exec-path by using exec-path*.txt values
 (mapc (lambda (path) (add-to-list 'exec-path path))
         (read-lines (shortest-filename "exec-path*.txt")))
@@ -148,8 +147,8 @@
 ;; a small helper
 (defmacro el-get-bundles-from-github ()
   "generates a list of calls (el-get-bundle author/package)"
-  (cons 'progn
-        (mapcar (lambda (p) `(el-get-bundle ,p)) el-get-gh-packages)))
+  `(progn
+     ,@(mapcar (lambda (p) `(el-get-bundle ,p)) el-get-gh-packages)))
 ;; synchronize packages
 (el-get 'sync my:el-get-packages)
 ;; from github directly
