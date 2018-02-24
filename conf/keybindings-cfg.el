@@ -64,9 +64,6 @@
                    (align-regexp m n
                                  (concat "\\(\\s-*\\)" "\\(|\\)") 1 1 t))))
 
-   ;;; Neo tree toggle
-   ("<f3>" neotree-toggle)
-
    ;; navigation in the current window
    ;;; for easy window scrolling up and down
    ("M-n" scroll-up-line)
@@ -96,6 +93,9 @@
 
    ;; save
    ("<f2>" save-buffer)
+
+   ;; Neo tree toggle
+   ("<f3>" neotree-toggle)
 
    ;;; insert char
    ("<f6>" insert-char)
