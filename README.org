@@ -48,15 +48,54 @@ My set of small configs for Emacs.
 #+END_EXAMPLE
 
 ** supported version
-I use latest release of Emacs, so the config should run in Emacs 25.2 
+I use the latest release of Emacs, so the config should run in Emacs 25.2 
 in any Linux environment. 
 
 ** useful stuff
-*** The reference cards
+*** the reference cards
 - [[https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf][GNU Emacs Reference Card (for version 25)]]
 - [[https://www.gnu.org/software/emacs/refcards/pdf/orgcard.pdf][Org-Mode Reference Card (for version 8.2)]]
 - [[https://www.gnu.org/software/emacs/refcards/pdf/calccard.pdf][GNU Calc Reference Card (for version 25)]]
-- [[https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][Dired Reference Card (based on Dired in GNU Emacs 25)]]
+- [[https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][Dired Reference Card (based on Dired in GNU Emacs 25)]] 
+*** global keybindings
+| key                     | description                            |
+| C-x f3                  | open init file (~/.emacs.d/init.el)    |
+| M-x                     | smex                                   |
+| M-X                     | major mode smex                        |
+| C-c C-i                 | company complete                       |
+| C-c i                   | company-complete-common                |
+| C-x g                   | magit status                           |
+| C-x M-g                 | magit dispatch popup                   |
+| C-x C-k                 | kill this buffer                       |
+| C-x M-k                 | kill this buffer and delete the window |
+| C-x C-delete            | kill the readonly window               |
+| C-x C-r                 | sudo edit                              |
+| C-; or C-c ; or C-c C-; | comment line                           |
+| C-x r v                 | string rectangle                       |
+| C-c f8                  | aligning with whitespaces              |
+| C-c f9                  | aligning with pipes                    |
+| M-n                     | scroll up line                         |
+| M-p                     | scroll down line                       |
+| up                      | windmove up                            |
+| down                    | windmove down                          |
+| left                    | windmove left                          |
+| right                   | windmove right                         |
+| C-x o                   | switch window                          |
+| C-x , or C-pageup       | previous buffer                        |
+| C-x , or C-pagedown     | next buffer                            |
+| C-x /                   | comment or uncomment region            |
+| C-x C-_                 | uncomment region                       |
+| C-z                     | undo                                   |
+| C-M-z                   | redo                                   |
+| f2                      | save buffer                            |
+| f3                      | neotree toggle                         |
+| f6                      | insert char                            |
+| f7                      | line highlighting toggle               |
+| f8                      | linum mode toggle                      |
+| C-c w                   | compare windows                        |
+| C-c f10                 | fill debian CONTROL description        |
+
+
 ** dependencies
 
 Note: optional? means «for the first startup with the just downloaded ~/.emacs.d».
