@@ -1,5 +1,5 @@
 (:name services-mode
        :description "An Emacs UI for managing init system services"
-       :website "https://github.com/cbowdon/services-mode"
+       :website "https://github.com/cbowdon/daemons.el"
        :type github
-       :pkgname "cbowdon/services-mode")
+       :pkgname "cbowdon/daemons.el")
