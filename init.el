@@ -41,6 +41,7 @@
    smex                  ;; | autocomplete an emacs commands in M-x menu      |
    magit                 ;; | an interface to git                             |
    services-mode         ;; | An Emacs UI for managing init system services   |
+   auctex                ;; | advanced TeX                                    |
    pdf-tools             ;; | provides fast rendering a pdf docs              |
    csv-mode              ;; | editing comma separated value files             |
    dired+                ;; | improved ancient file manager                   |
@@ -102,7 +103,7 @@
 (defmacro slurp (fpath &optional fn)
   "opens a file and reads all its content, then returns it as a string"
   `(with-temp-buffer
-     (insert-file-contents ,fpath)
+     (insert-file-contents-literally ,fpath)
      ,(if fn
           `(funcall ,fn (buffer-string))
         `(buffer-string))))
