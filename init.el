@@ -10,6 +10,7 @@
  ;; cfg, lib, el-get pkgs   +-------------------------------------------------+
  conf-list '(global      ;; | some global settings                            |
              interface   ;; | interface settings, colour theme                |
+             tex         ;; | AUCTeX                                          |
              erc         ;; | IRC settings                                    |
              dired       ;; | dired customizations                            |
              eww         ;; | eww settings                                    |

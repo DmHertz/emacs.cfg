@@ -46,6 +46,7 @@
  '(neo-after-create-hook (quote (hl-line-mode)))
  '(neo-autorefresh nil)
  '(neo-theme (quote arrow))
+ '(org-latex-inputenc-alist (quote (("utf8" . "utf8x"))))
  '(package-selected-packages (quote (csv-mode rainbow-mode queue finalize)))
  '(racket-images-inline t)
  '(scroll-bar-mode nil)
