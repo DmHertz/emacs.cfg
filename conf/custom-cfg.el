@@ -4,6 +4,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(TeX-auto-save t)
+ '(TeX-engine (quote xetex))
+ '(TeX-parse-self t)
  '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote eww-browse-url))
  '(c-default-style
