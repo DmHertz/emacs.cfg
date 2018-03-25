@@ -90,6 +90,7 @@
 '(Wilfred/helpful              ;; | a better Emacs *help* buffer              |
   clojure-emacs/inf-clojure    ;; | inferior clojure                          |
   greghendershott/racket-mode  ;; | racket-lang support                       |
+  emacs-pe/scribble-mode       ;; | scribble documents support                |
   emacs-lsp/lsp-mode           ;; | a client for the language server protocol |
   tsukimizake/company-dcd      ;; | company backend for DCD                   |
   atilaneves/flycheck-dmd-dub  ;; | flycheck for d-mode                       |
