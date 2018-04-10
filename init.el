@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t; -*-
-;; (package-initialize)
+(package-initialize)
 (setq
  debug-on-error nil
  confdir (expand-file-name (concat user-emacs-directory "conf/"))
@@ -14,7 +14,7 @@
              erc         ;; | IRC settings                                    |
              dired       ;; | dired customizations                            |
              eww         ;; | eww settings                                    |
-             parens      ;; | smartparens, rainbow delimiters                 |
+             parens      ;; | parentheses, rainbow delimiters                 |
              eshell      ;; | emacs shell                                     |
              elisp       ;; | emacs lisp                                      |
              slime       ;; | slime and common lisp                           |
@@ -71,6 +71,8 @@
    emacs-neotree         ;; | view directory tree of the current project      |
    solarized-emacs       ;; | my favorite color theme for Emacs               |
    smartparens           ;; | better support for operations on parens         |
+   lispy                 ;; | a package which is used as a parinfer extension |
+   paredit               ;; | a package which is used as a parinfer extension |
    switch-window         ;; | Offer a *visual* way to switch window           |
    systemd-mode          ;; | systemd units syntax support                    |
    emmet-mode            ;; | producing HTML from CSS-like selectors          |
@@ -80,6 +82,7 @@
    swiper                ;; | compl. frontend, isearch with an overview       |
    company-statistics    ;; | company text completion statistics              |
    rainbow-delimiters    ;; | makes color difference between parens           |
+   highlight-parentheses ;; | highlight surrounding parentheses               |
    websocket             ;; | websocket support                               |
    htmlize               ;; | Convert buffer text and decorations to HTML     |
    markdown-preview-mode ;; | dynamic markdown                                |
@@ -87,20 +90,20 @@
    xterm-color           ;; | ANSI & xterm-256 color text property translator |
    emacs-fish)           ;; | fish shell support                              |
  el-get-gh-packages      ;; +-----+-------------------------------------------+
-'(Wilfred/helpful              ;; | a better Emacs *help* buffer              |
-  clojure-emacs/inf-clojure    ;; | inferior clojure                          |
-  greghendershott/racket-mode  ;; | racket-lang support                       |
-  emacs-pe/scribble-mode       ;; | scribble documents support                |
-  emacs-lsp/lsp-mode           ;; | a client for the language server protocol |
-  tsukimizake/company-dcd      ;; | company backend for DCD                   |
-  atilaneves/flycheck-dmd-dub  ;; | flycheck for d-mode                       |
-  mrc/el-csv                   ;; | parse CSV data in elisp                   |
-  ptrv/company-lua             ;; | completion backend for Lua                |
-  edpaget/parinfer-mode        ;; | improved parens support                   |
-  pft/gimpmode                 ;; | script-fu support                         |
-  calancha/Gited               ;; | operate on Git branches like dired        |
-  bcbcarl/emacs-wttrin         ;; | emacs frontend for a weather web service  |
-  spline1986/fb2-mode))        ;; | fb2 support                               |
+ '(Wilfred/helpful             ;; | a better Emacs *help* buffer              |
+   clojure-emacs/inf-clojure   ;; | inferior clojure                          |
+   greghendershott/racket-mode ;; | racket-lang support                       |
+   emacs-pe/scribble-mode      ;; | scribble documents support                |
+   emacs-lsp/lsp-mode          ;; | a client for the language server protocol |
+   tsukimizake/company-dcd     ;; | company backend for DCD                   |
+   atilaneves/flycheck-dmd-dub ;; | flycheck for d-mode                       |
+   mrc/el-csv                  ;; | parse CSV data in elisp                   |
+   ptrv/company-lua            ;; | completion backend for Lua                |
+   DogLooksGood/parinfer-mode  ;; | improved parens support                   |
+   pft/gimpmode                ;; | script-fu support                         |
+   calancha/Gited              ;; | operate on Git branches like dired        |
+   bcbcarl/emacs-wttrin        ;; | emacs frontend for a weather web service  |
+   spline1986/fb2-mode))       ;; | fb2 support                               |
 ;; --------------------------- ;; +-------------------------------------------+
 (defmacro slurp (fpath &optional fn)
   "opens a file and reads all its content, then returns it as a string"

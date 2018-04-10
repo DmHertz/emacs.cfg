@@ -85,4 +85,10 @@
                                 (start-figwheel!) 
                                 (cljs-repl))")
 
+;; lambda
+(eval-after-load 'cider
+  '(progn
+     (define-key cider-mode-map (kbd "C-\\") "fn")
+     (define-key cider-mode-map (kbd "C-c C-\\") "fn")))
+
 (provide 'cider-cfg)

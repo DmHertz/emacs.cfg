@@ -20,4 +20,10 @@
 
 (add-hook 'racket-mode-hook #'company-mode)
 
+;; lambda
+(eval-after-load 'racket-mode
+  '(progn
+     (define-key racket-mode-map (kbd "C-\\") "λ")
+     (define-key racket-mode-map (kbd "C-c C-\\") "λ")))
+
 (provide 'racket-cfg)

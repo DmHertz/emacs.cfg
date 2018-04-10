@@ -136,10 +136,4 @@
    ("C-cc" org-capture)
    ("C-cb" org-iswitchb)))
 
-;;; symbols
-(when (or (equalp major-mode 'racket-mode)
-          (equalp major-mode 'scheme-mode))
-  (global-set-key (kbd "C-\\") "λ")
-  (global-set-key (kbd "C-c C-\\") "λ"))
-
 (provide 'keybindings-cfg)
