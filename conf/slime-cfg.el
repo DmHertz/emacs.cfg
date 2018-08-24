@@ -40,6 +40,10 @@
 ;; keybinding for launch SLIME
 (define-key slime-mode-map (kbd "C-c <f5>") 'slime)
 
+;; lambda
+(define-key slime-mode-map (kbd "C-\\") "lambda")
+(define-key slime-mode-map (kbd "C-c C-\\") "lambda")
+
 ;; (require 'slime-autoloads)
 ;;(setq-default slime-contribs 'slime-fancy)
 ;;(setq slime-contribs '(slime-scratch slime-editing-commands))
