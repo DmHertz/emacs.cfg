@@ -35,7 +35,7 @@
          smart-tab     ;; C-b & C-f jump positions and smart shift with tab & S-tab.
          smart-yank))  ;; Yank behavior depend on mode.
 
-(eval-after-load
+(with-eval-after-load
     'smartparens-config
   '(progn
      ;; customize
