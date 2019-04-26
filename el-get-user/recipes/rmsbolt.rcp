@@ -1,0 +1,5 @@
+(:name rmsbolt
+       :description "An implementation of the godbolt compiler-explorer for Emacs"
+       :website "https://gitlab.com/jgkamat/rmsbolt"
+       :type github
+       :pkgname "emacsmirror/rmsbolt")
