@@ -1,5 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 (package-initialize)
+;;(require 'company-mode)
 (setq
  debug-on-error nil
  confdir (expand-file-name (concat user-emacs-directory "conf/"))
@@ -58,6 +59,7 @@
    cargo                 ;; | allows rust package manager commands            |
    emacs-racer           ;; | rust autocompletion                             |
    flycheck-rust         ;; | rust fly syntax checking                        |
+   haskell-mode          ;; | a mode for editing, debugging and developing hs |
    tuareg-mode           ;; | an emacs ocaml mode                             |
    d-mode                ;; | work with dlang                                 |
    irony-mode            ;; | a c and cpp minor mode powered by libclang      |
@@ -91,6 +93,8 @@
    emacs-fish)           ;; | fish shell support                              |
  el-get-gh-packages      ;; +-----+-------------------------------------------+
  '(Wilfred/helpful             ;; | a better Emacs *help* buffer              |
+   rukano/emacs-faust-mode     ;; | a major mode for editing faust code (dsp) |
+   emacsmirror/rmsbolt         ;; | a compiler output viewer                  |
    clojure-emacs/inf-clojure   ;; | inferior clojure                          |
    greghendershott/racket-mode ;; | racket-lang support                       |
    emacs-pe/scribble-mode      ;; | scribble documents support                |

@@ -10,17 +10,20 @@
 (defun dub-packages-srcdir (dub-packages-root)
   (when (file-exists-p dub-packages-root)
     (let ((src-paths nil))
-      (mapc (lambda (path)
+      (mapcar (lambda (path)
               (let ((matched (string-match-p "\\(src/\\|source/\\)" path)))
                 (when matched
                   (push (concat "-I"
                                 (substring path 0 matched)
                                 (car (split-string (substring path matched nil)
                                                    "/")))
-                        src-paths)))) 
-            (mapcar #'file-name-directory
-                    (directory-files-recursively dub-packages-root
-                                                 "\\(src\\|source\\)" t)))
+                        src-paths))))
+              (remove-duplicates
+               (mapcar #'file-name-directory
+                       (directory-files-recursively dub-packages-root
+                                                    ;;"\\(src\\|source\\)"
+                                                    "\\.d$" t))
+               :test (lambda (x y) (or (null y) (equal x y)))))
       src-paths)))
 
 (defun flymake-d-init ()
@@ -29,9 +32,9 @@
          (local-file (file-relative-name
                       temp-file
                       (file-name-directory buffer-file-name))))
-    (list "dmd" (append (dub-packages-srcdir (expand-file-name "~/.dub/packages"))
+    (list "dmd" (append (dub-packages-srcdir (expand-file-name "~/.dub/packages/"))
                         (list "-c" local-file)))))
-
+ 
 (add-to-list 'flymake-allowed-file-name-masks
              '(".+\\.d$" flymake-d-init 
                flymake-simple-cleanup flymake-get-real-file-name))

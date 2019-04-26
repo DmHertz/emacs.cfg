@@ -36,10 +36,12 @@
 (setq confirm-nonexistent-file-or-buffer nil)
 ;;; -----------------------------------
 ;; company-mode and company statistics
+(require 'company)
 (eval-after-load 'company
   (global-company-mode 1))
-(eval-after-load 'company-statistics
-  (company-statistics-mode 1))
+;; (eval-after-load 'company-statistics
+;;   (company-statistics-mode 1))
+(add-hook 'after-init-hook 'global-company-mode)
 ;; lua
 (add-hook 'lua-mode-hook
           (lambda () (setq-local company-backends '(company-lua))))
