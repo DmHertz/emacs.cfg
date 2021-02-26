@@ -51,7 +51,8 @@
    dired-k               ;; | highlighting dired buffer like k                |
    edit-server           ;; | editing textareas in Chromium                   |
    emacs-async           ;; | asynchronous processing in Emacs                |
-   emacs-jabber          ;; | emacs jabber support                            |
+   ;; emacs-jabber       ;; | emacs jabber support                            |
+   pos-tip               ;; | provides displaying a tooltip at mouse position |
    dash                  ;; | clojure subset in elisp                         |
    lua-mode              ;; | work with lua                                   |
    toml-mode             ;; | work with toml                                  |
@@ -90,6 +91,8 @@
    markdown-preview-mode ;; | dynamic markdown                                |
    rainbow-mode          ;; | colorize color names and buffers                |
    xterm-color           ;; | ANSI & xterm-256 color text property translator |
+   dockerfile-mode       ;; | .Dockerfile support                             |
+   yaml-mode             ;; | yaml config support                             |
    emacs-fish)           ;; | fish shell support                              |
  el-get-gh-packages      ;; +-----+-------------------------------------------+
  '(Wilfred/helpful             ;; | a better Emacs *help* buffer              |

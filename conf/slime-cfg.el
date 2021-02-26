@@ -24,7 +24,7 @@
 (setq slime-lisp-implementations
       (case system-type
         ('gnu/linux
-         '((sbcl ("/usr/local/bin/sbcl") :coding-system utf-8-unix)
+         '((sbcl ("/usr/bin/sbcl") :coding-system utf-8-unix)
            (ccl ("~/.bin/ccl/lx86cl64"))))
         ('windows-nt
          '((sbcl ("C:/cl/sbcl/sbcl.exe") :coding-system utf-8)

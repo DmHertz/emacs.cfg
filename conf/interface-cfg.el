@@ -1,16 +1,20 @@
 ;; Interface setup ;; -*- lexical-binding: t; -*-
 
 ;; turn on Solarized theme
-(require 'solarized)
-(deftheme solarized-dark
-  "The dark variant of the Solarized color theme")
-(create-solarized-theme 'dark 'solarized-dark)
-(provide-theme 'solarized-dark)
+;;(require 'solarized)
+;;(deftheme solarized-dark
+;;  "The dark variant of the Solarized color theme")
+;;(create-solarized-theme 'dark 'solarized-dark)
+;;emacs-color-theme-solarized
+;;(load-theme 'solarized t)
+;;(provide-theme 'solarized-dark)
+
+(load-theme 'solarized-dark t)
 
 (setq bg-color "#000000"
-      face-font-height 80
+      face-font-height 120
       face-font-step 10
-      face-fonts '("Terminus" "xos4 Terminus" "Terminus (TTF)"
+      face-fonts '("Terminus" "Terminus (TTF)"
                    "Monospace" "Liberation Mono"
                    "DejaVu Sans Mono" "Inconsolata" "Consolas")
       default-face-font (case distro
@@ -39,7 +43,7 @@
                             :font default-face-font
                             :height (if (and window-system
                                              (<= (display-pixel-height) 768))
-                                        80 100))))
+                                        80 face-font-height))))
 
 ;; monochrome? seriously? ;; was taken from: Phil Hagelberg / dotfiles
 (eval-after-load 'diff-mode
