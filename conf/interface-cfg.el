@@ -14,9 +14,14 @@
 (setq bg-color "#000000"
       face-font-height 120
       face-font-step 10
-      face-fonts '("Terminus" "Terminus (TTF)"
-                   "Monospace" "Liberation Mono"
-                   "DejaVu Sans Mono" "Inconsolata" "Consolas")
+      ;; font | arch package
+      face-fonts '("Terminus"       ;; terminus-font
+                   "Terminus (TTF)" ;; terminus-font-ttf (aur)
+                   "Inconsolata"    ;; ttf-inconsolata                   
+                   "Monospace"
+                   "Liberation Mono"
+                   "DejaVu Sans Mono"
+                   "Consolas")
       default-face-font (case distro
                           ('arch       (cadr face-fonts))
                           ('ubuntu     (car  face-fonts))
