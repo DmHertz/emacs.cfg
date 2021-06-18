@@ -108,6 +108,11 @@ Note: optional? means «for the first startup with the just downloaded ~/.emacs.
 | git                         | no           | el-get                                                       |
 | texinfo                     | no           | makeinfo                                                     |
 | texlive-latex-base          | no           | pdftex                                                       |
+| libpng-dev                  | no           | pdf-tools                                                    |
+| libglib2.0-dev              | no           | pdf-tools                                                    |
+| libpoppler-dev              | no           | pdf-tools                                                    |
+| libpoppler-glib-dev         | no           | pdf-tools                                                    |
+| libpoppler-private-dev      | no           | pdf-tools                                                    |
 | python                      | no           | cask                                                         |
 | cargo                       | yes          | rust                                                         |
 | opam                        | yes          | caml                                                         |
