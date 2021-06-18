@@ -107,6 +107,7 @@ Note: optional? means «for the first startup with the just downloaded ~/.emacs.
 | autoconf (or dh-autoreconf) | no           | see above                                                    |
 | git                         | no           | el-get                                                       |
 | texinfo                     | no           | makeinfo                                                     |
+| texlive-latex-base          | no           | pdftex                                                       |
 | python                      | no           | cask                                                         |
 | cargo                       | yes          | rust                                                         |
 | opam                        | yes          | caml                                                         |
@@ -128,7 +129,7 @@ sudo pacman -S make autoconf git cargo
 git clone https://gitlab.com/dmhz/emacs.cfg.git <.emacs.d or something else>
 #+END_SRC
 
-*** in a Windows environment 
+*** in MSYS2: a Windows environment
 - The first step is install [[https://msys2.github.io/][msys2]]
 - Install rust and add the path to cargo to PATH variable in msys2 console something like:
 #+BEGIN_SRC sh
@@ -139,3 +140,5 @@ PATH=$PATH:'C:\rust\'
 #+BEGIN_SRC sh
 pacman -S mingw-w32-x86_64-emacs make autoconf git
 #+END_SRC
+
+
