@@ -25,6 +25,7 @@
       default-face-font (case distro
                           ('arch       (cadr face-fonts))
                           ('ubuntu     (car  face-fonts))
+                          ('lsb        (car  face-fonts))
                           ('windows-nt (last face-fonts))))
 
 (defun choose-font (fontname)

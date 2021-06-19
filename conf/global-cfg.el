@@ -11,10 +11,6 @@
           (sort 'string-lessp)
           car intern))
         ('windows-nt 'windows-nt)))
-;;; personal data
-(setq my-name  "Dmitry Hertz")
-(setq my-email "<dmitryhertz@gmail.com>")
-(setq my-page  "http://dmhz.xyz")
 ;; encoding
 (prefer-coding-system 'utf-8)
 (setq file-name-coding-system 'utf-8)
