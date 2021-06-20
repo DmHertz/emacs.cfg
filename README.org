@@ -101,31 +101,42 @@ in any Linux environment.
 
 Note: optional? means «for the first startup with the just downloaded ~/.emacs.d».
 
-| package (archlinux)         | optional?    | for what                                                     |
-|-----------------------------+--------------+--------------------------------------------------------------|
-| make                        | no           | for build some base packages taken by el-get                 |
-| autoconf (or dh-autoreconf) | no           | see above                                                    |
-| git                         | no           | el-get                                                       |
-| texinfo                     | no           | makeinfo                                                     |
-| texlive-latex-base          | no           | pdftex                                                       |
-| libpng-dev                  | no           | pdf-tools                                                    |
-| libglib2.0-dev              | no           | pdf-tools                                                    |
-| libpoppler-dev              | no           | pdf-tools                                                    |
-| libpoppler-glib-dev         | no           | pdf-tools                                                    |
-| libpoppler-private-dev      | no           | pdf-tools                                                    |
-| python                      | no           | cask                                                         |
-| cargo                       | yes          | rust                                                         |
-| opam                        | yes          | caml                                                         |
-| dcd                         | yes          | The D Completion Daemon for the D programming language       |
-| merlin                      | yes          | code completion tool for OCaml                               |
-| leiningen                   | yes          | cider depends on                                             |
-| sbcl                        | yes          | slime                                                        |
-| ccl                         | yes          | slime                                                        |
-| racket                      | yes          | racket, of course                                            |
-| terminus-font               | no (linux)   | it's the default font for me in Emacs in Linux               |
-| terminus-font-ttf (aur)     | no (windows) | see above, but in this case actual for a windows environment |
-| ttf-inconsolata             | yes          | an avalailable font                                          |
-| hunspell                    | yes          | basic spell checking                                         |
+| package (archlinux or *buntu) | optional?    | for what                                                     |
+|-------------------------------+--------------+--------------------------------------------------------------|
+| make                          | no           | for build some base packages taken by el-get                 |
+| autoconf (or dh-autoreconf)   | no           | see above                                                    |
+| git                           | no           | el-get                                                       |
+| texinfo                       | no           | makeinfo                                                     |
+| texlive-latex-base            | no           | pdftex                                                       |
+| libpng-dev                    | no           | pdf-tools                                                    |
+| libglib2.0-dev                | no           | pdf-tools                                                    |
+| libpoppler-dev                | no           | pdf-tools                                                    |
+| libpoppler-glib-dev           | no           | pdf-tools                                                    |
+| libpoppler-private-dev        | no           | pdf-tools                                                    |
+| python                        | no           | cask                                                         |
+| cargo                         | yes          | rust                                                         |
+| opam                          | yes          | caml                                                         |
+| dcd                           | yes          | The D Completion Daemon for the D programming language       |
+| merlin                        | yes          | code completion tool for OCaml                               |
+| leiningen                     | yes          | cider depends on                                             |
+| sbcl                          | yes          | slime                                                        |
+| ccl                           | yes          | slime                                                        |
+| racket                        | yes          | racket, of course                                            |
+| terminus-font                 | no (linux)   | it's the default font for me in Emacs in Linux               |
+| terminus-font-ttf (aur)       | no (windows) | see above, but in this case actual for a windows environment |
+| ttf-inconsolata               | yes          | an avalailable font                                          |
+| hunspell                      | yes          | basic spell checking                                         |
+
+*** common lisp env setup
+#+BEGIN_SRC sh
+curl -O https://beta.quicklisp.org/quicklisp.lisp
+sbcl --load quicklisp.lisp
+#+END_SRC
+
+In SBCL env:
+\ast{} (quicklisp-quickstart:install)
+\ast{} (ql:quickload "quicklisp-slime-helper")
+
 
 ** how to install
 *** in an Arch Linux environment
