@@ -1,6 +1,5 @@
 ;; -*- lexical-binding: t; -*-
 (package-initialize)
-(require 'cl)
 (setq
  debug-on-error nil
  confdir (expand-file-name (concat user-emacs-directory "conf/"))

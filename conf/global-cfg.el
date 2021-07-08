@@ -1,16 +1,28 @@
 ;; -*- lexical-binding: t; -*-
-;;; system info
+;;
+(defmacro linux-and-windows (with-linux with-windows)
+  `(pcase system-type
+     ('gnu/linux ,with-linux)
+     ('windows ,with-windows)))
+;; a crappy implementation of a parser
+(defun parse-simple-conf (file)
+  (with-temp-buffer
+    (insert-file-contents file)    
+    (mapcar (lambda (x)
+              (let ((lst (mapcar (lambda (x)
+                                   (car (read-from-string x)))
+                                 (split-string x "=" t))))
+                (cons (car lst)
+                      (cadr lst))))
+            (split-string (buffer-string)
+                          (linux-and-windows "\n" "\r\n")
+                          t))))
+;; system info
 (setq distro
-      (case system-type
-        ('gnu/linux
-         (thread-first
-          (mapcar (lambda (x)
-                    (string-match "[[:word:]]+" x 5)
-                    (match-string 0 x))
-                  (file-expand-wildcards "/etc/*-release"))
-          (sort 'string-lessp)
-          car intern))
-        ('windows-nt 'windows-nt)))
+      (let ((lst (linux-and-windows
+                  (parse-simple-conf "/etc/os-release")
+                  (cons 'ID 'windows-nt))))
+        (alist-get 'ID lst)))
 ;; encoding
 (prefer-coding-system 'utf-8)
 (setq file-name-coding-system 'utf-8)

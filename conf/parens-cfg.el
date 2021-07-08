@@ -13,13 +13,13 @@
          (let ((mode-name (symbol-name (car lst))))
            (add-hook (intern (concat mode-name "-mode-hook"))
                      (lambda ()
-                       (case pmode
+                       (pcase pmode
                          (1 (progn
                               (show-smartparens-mode 1)
                               (smartparens-strict-mode 1)))
                          (2 (parinfer-mode)))
 
-                       (case cmode
+                       (pcase cmode
                          (1 (rainbow-delimiters-mode))
                          (2 (highlight-parentheses-mode)))))
 

@@ -22,7 +22,7 @@
                    "Liberation Mono"
                    "DejaVu Sans Mono"
                    "Consolas")
-      default-face-font (case distro
+      default-face-font (pcase distro
                           ('arch       (cadr face-fonts))
                           ('ubuntu     (car  face-fonts))
                           ('lsb        (car  face-fonts))
