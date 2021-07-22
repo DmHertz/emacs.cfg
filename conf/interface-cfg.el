@@ -1,14 +1,4 @@
 ;; Interface setup ;; -*- lexical-binding: t; -*-
-
-;; turn on Solarized theme
-;;(require 'solarized)
-;;(deftheme solarized-dark
-;;  "The dark variant of the Solarized color theme")
-;;(create-solarized-theme 'dark 'solarized-dark)
-;;emacs-color-theme-solarized
-;;(load-theme 'solarized t)
-;;(provide-theme 'solarized-dark)
-
 (load-theme 'solarized-dark t)
 
 (setq bg-color "#000000"
@@ -17,22 +7,24 @@
       ;; font | arch package
       face-fonts '("Terminus"       ;; terminus-font
                    "Terminus (TTF)" ;; terminus-font-ttf (aur)
-                   "Inconsolata"    ;; ttf-inconsolata                   
+                   "Inconsolata"    ;; ttf-inconsolata
                    "Monospace"
                    "Liberation Mono"
                    "DejaVu Sans Mono"
                    "Consolas")
       default-face-font (pcase distro
-                          ('arch       (cadr face-fonts))
-                          ('ubuntu     (car  face-fonts))
-                          ('lsb        (car  face-fonts))
-                          ('windows-nt (last face-fonts))))
+                          ('arch
+                           (cadr face-fonts))
+                          ((or 'ubuntu 'lsb)
+                           (car  face-fonts))
+                          ('windows-nt
+                           (last face-fonts))))
 
 (defun choose-font (fontname)
   (interactive
    (list
     (completing-read "Choose font: " face-fonts)))
-  (set-face-attribute 'default nil :font fontname)) 
+  (set-face-attribute 'default nil :font fontname))
 
 (defmacro set-default-face (body)
   `(if (daemonp)
