@@ -1,13 +1,14 @@
 ;; -*- lexical-binding: t; -*-
 ;;
-(defmacro linux-and-windows (with-linux with-windows)
+(defmacro systype-switch (with-linux with-windows with-bsd)
   `(pcase system-type
      ('gnu/linux ,with-linux)
-     ('windows ,with-windows)))
+     ('windows ,with-windows)
+     ('berkeley-unix ,with-bsd)))
 ;; a crappy implementation of a parser
 (defun parse-simple-conf (file)
   (with-temp-buffer
-    (insert-file-contents file)    
+    (insert-file-contents file)
     (mapcar (lambda (x)
               (let ((lst (mapcar (lambda (x)
                                    (car (read-from-string x)))
@@ -15,14 +16,17 @@
                 (cons (car lst)
                       (cadr lst))))
             (split-string (buffer-string)
-                          (linux-and-windows "\n" "\r\n")
+                          (systype-switch "\n" "\r\n" "\n")
                           t))))
 ;; system info
 (setq distro
-      (let ((lst (linux-and-windows
+      (alist-get 'ID
+                 (systype-switch
                   (parse-simple-conf "/etc/os-release")
-                  (cons 'ID 'windows-nt))))
-        (alist-get 'ID lst)))
+                  '((ID . windows-nt))
+                  (with-temp-buffer
+                    (insert-file-contents "/etc/motd")
+                    (current-word)))))
 ;; encoding
 (prefer-coding-system 'utf-8)
 (setq file-name-coding-system 'utf-8)

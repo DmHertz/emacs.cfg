@@ -100,13 +100,14 @@ in any Linux environment.
 ** dependencies
 
 Note: optional? means «for the first startup with the just downloaded ~/.emacs.d».
-
++-------------------------------+--------------+--------------------------------------------------------------+
 | package (archlinux or *buntu) | optional?    | for what                                                     |
-|-------------------------------+--------------+--------------------------------------------------------------|
++-------------------------------+--------------+--------------------------------------------------------------+
 | make                          | no           | for build some base packages taken by el-get                 |
 | autoconf (or dh-autoreconf)   | no           | see above                                                    |
+| gmake                         | no (openbsd) | for build some base packages taken by el-get                 |
 | git                           | no           | el-get                                                       |
-| texinfo                       | no           | makeinfo                                                     |
+| texinfo                       | no (openbsd) | makeinfo, swiper, haskell                                    |
 | texlive-latex-base            | no           | pdftex                                                       |
 | libpng-dev                    | no           | pdf-tools                                                    |
 | libglib2.0-dev                | no           | pdf-tools                                                    |

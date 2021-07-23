@@ -1,14 +1,16 @@
 ;; -*- lexical-binding: t; -*-
 ;;; for correct interactive mode
 (setq inferior-fsharp-program
-      (linux-and-windows
+      (systype-switch
        "/usr/bin/fsharpi --readline-"
-       "\"C:/Program Files (x86)/Microsoft SDKs/F#/4.0/Framework/v4.0/fsi.exe\""))
+       "\"C:/Program Files (x86)/Microsoft SDKs/F#/4.0/Framework/v4.0/fsi.exe\""
+       nil))
 
 (setq fsharp-compiler
-      (linux-and-windows
+      (systype-switch
        "/usr/bin/fsharpc"
-       "\"C:/Program Files (x86)/Microsoft SDKs/F#/4.0/Framework/v4.0/fsc.exe\""))
+       "\"C:/Program Files (x86)/Microsoft SDKs/F#/4.0/Framework/v4.0/fsc.exe\""
+       nil))
 
 ;;; msvs keybindings
 (add-hook 'fsharp-mode-hook

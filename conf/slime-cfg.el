@@ -22,11 +22,12 @@
    ql-slime-company-full-path t))
 
 (setq slime-lisp-implementations
-      (linux-and-windows
+      (systype-switch
        '((sbcl ("/usr/bin/sbcl") :coding-system utf-8-unix)
          (ccl ("~/.bin/ccl/lx86cl64")))
        '((sbcl ("C:/cl/sbcl/sbcl.exe") :coding-system utf-8)
-         (ccl ("C:/cl/ccl/lx86cl64.exe")))))
+         (ccl ("C:/cl/ccl/lx86cl64.exe")))
+       '((sbcl ("/usr/local/bin/sbcl") :coding-system utf-8-unix))))
 
 (slime-setup '(slime-company))
 

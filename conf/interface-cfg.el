@@ -8,6 +8,7 @@
       face-fonts '("Terminus"       ;; terminus-font
                    "Terminus (TTF)" ;; terminus-font-ttf (aur)
                    "Inconsolata"    ;; ttf-inconsolata
+                   "spleen"
                    "Monospace"
                    "Liberation Mono"
                    "DejaVu Sans Mono"
@@ -17,6 +18,8 @@
                            (cadr face-fonts))
                           ((or 'ubuntu 'lsb)
                            (car  face-fonts))
+                          ('OpenBSD
+                           (cadddr face-fonts))
                           ('windows-nt
                            (last face-fonts))))
 
