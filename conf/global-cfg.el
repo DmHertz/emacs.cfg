@@ -20,13 +20,12 @@
                           t))))
 ;; system info
 (setq distro
-      (alist-get 'ID
-                 (systype-switch
-                  (parse-simple-conf "/etc/os-release")
-                  '((ID . windows-nt))
-                  (with-temp-buffer
-                    (insert-file-contents "/etc/motd")
-                    (current-word)))))
+      (systype-switch
+       (alist-get 'ID (parse-simple-conf "/etc/os-release"))
+       'windows-nt
+       (with-temp-buffer
+         (insert-file-contents "/etc/motd")
+         (current-word))))
 ;; encoding
 (prefer-coding-system 'utf-8)
 (setq file-name-coding-system 'utf-8)
