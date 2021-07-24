@@ -2,6 +2,9 @@
   rust caml gimp fsharp)
  (lib-list dash)
  (my:el-get-packages
+  auctex
+  pdf-tools
+  haskell-mode
   rust-mode
   cargo
   toml-mode

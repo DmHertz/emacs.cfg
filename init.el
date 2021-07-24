@@ -4,9 +4,9 @@
 
 (defconst confdir (expand-file-name (concat user-emacs-directory "conf/")))
 (defconst custom-file (concat confdir "custom-cfg.el")
-  "custom-file, if set then customizations will be saved where it's set, 
+  "custom-file, if set then customizations will be saved where it's set,
 otherwise customizations will be saved to the end of init.el")
-;; list of confings located at (concat user-emacs-directory "conf/") 
+;; list of confings located at (concat user-emacs-directory "conf/")
 (defvar conf-list)
 ;; list of required built-in or self-defined libraries
 (defvar lib-list)
