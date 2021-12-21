@@ -21,7 +21,7 @@
 ;; system info
 (setq distro
       (systype-switch
-       (alist-get 'ID (parse-simple-conf "/etc/os-release"))
+       (intern (alist-get 'ID (parse-simple-conf "/etc/os-release")))
        'windows-nt
        (with-temp-buffer
          (insert-file-contents "/etc/motd")

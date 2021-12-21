@@ -4,20 +4,26 @@
 (setq bg-color "#000000"
       face-font-height 120
       face-font-step 10
-      ;; font | arch package
-      face-fonts '("Terminus"       ;; terminus-font
-                   "Terminus (TTF)" ;; terminus-font-ttf (aur)
-                   "Inconsolata"    ;; ttf-inconsolata
+      ;; font
+      ;; have to use old school xfont version of Terminus because there is no other
+      face-fonts '("-xos4-xos4 Terminus-normal-normal-normal-*-12-*-*-*-c-60-iso10646-1"
+                   "Terminus"
+                   "Terminus (TTF)"
                    "spleen"
+                   "Anonymous Pro"
+                   "Monoid"
+                   "Inconsolata"
                    "Monospace"
                    "Liberation Mono"
                    "DejaVu Sans Mono"
                    "Consolas")
       default-face-font (pcase distro
+                          ((or 'funtoo 'gentoo)
+                           (car face-fonts))
                           ('arch
                            (cadr face-fonts))
                           ((or 'ubuntu 'lsb)
-                           (car  face-fonts))
+                           (caddr  face-fonts))
                           ('OpenBSD
                            (cadddr face-fonts))
                           ('windows-nt

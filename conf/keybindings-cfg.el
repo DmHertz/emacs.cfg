@@ -37,7 +37,7 @@
    ("C-x C-r" sudo-edit)
 
    ;; comment line
-   ("C-;"     comment-line)
+   ;; ("C-;"     comment-line)
    ("C-c ;"   comment-line)
    ("C-c C-;" comment-line)
 

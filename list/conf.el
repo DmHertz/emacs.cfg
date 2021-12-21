@@ -1,4 +1,4 @@
-((conf-list
+((conf-list   ;; |                                                 |                                                    
   global      ;; | some global settings                            |
   interface   ;; | interface settings, colour theme                |
   tex         ;; | AUCTeX                                          |
@@ -25,15 +25,16 @@
   backup      ;; | backup settings                                 |
   aliases)    ;; | short aliases of most often use commands        |
  ;; -------------+-------------------------------------------------+
- (lib-list
-  cl-lib             ; | common lisp subset                              |
-  dash               ; | clojure subset                                  |
-  erc-channels-mode) ; | erc-channels syntax highlighting                |
- ;; -------------------+-----------------------------------
- (my:el-get-packages
+ (lib-list           ; |                                           |
+  cl-lib             ; | common lisp subset                        |
+  dash               ; | clojure subset                            |
+  erc-channels-mode) ; | erc-channels syntax highlighting          |
+ ;; -------------------+-------------------------------------------+---------+
+ (my:el-get-packages    ;; |                                                 |
   f                     ;; | modern API for working with files and dirs      |
   smex                  ;; | autocomplete an emacs commands in M-x menu      |
   magit                 ;; | an interface to git                             |
+  ebuild-mode           ;; | Gentoo/Funtoo ebuild highlight                  |
   services-mode         ;; | An Emacs UI for managing init system services   |
   auctex                ;; | advanced TeX                                    |
   pdf-tools             ;; | provides fast rendering a pdf docs              |
@@ -86,7 +87,7 @@
   yaml-mode             ;; | yaml config support                             |
   emacs-fish)           ;; | fish shell support                              |
  ;; -----------------------+-------------------------------------------------+
- (el-get-gh-packages
+ (el-get-gh-packages          ;; |                                           |
   Wilfred/helpful             ;; | a better Emacs *help* buffer              |
   rukano/emacs-faust-mode     ;; | a major mode for editing faust code (dsp) |
   emacsmirror/rmsbolt         ;; | a compiler output viewer                  |

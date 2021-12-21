@@ -44,7 +44,7 @@
       erc-server-coding-system '(utf-8 . utf-8) ;; utf-8 always and forever
       erc-autojoin-timing 'ident
       ;; join the a couple of interesting channels whenever connecting to.
-      erc-autojoin-channels-alist (ercchannels "~/.erc/channels")
+      erc-autojoin-channels-alist (ercchannels "~/.emacs.d/channels")
       ;; Interpret mIRC-style color commands in IRC chats
       erc-interpret-mirc-color t
       ;; The following are commented out by default, but users of other
