@@ -37,19 +37,23 @@ My set of small configs for Emacs.
 |    |--- alias
 |--- el-get-user
 |    |--- recipes
+|         |--- geiser.rcp
+|         |--- rmsbolt.rcp
 |         |--- services-mode.rcp
+|--- list
+|    |--- conf.el
+|    |--- exclusions-example.el
 |--- delete-compiled-el.sh
-|--- exclusions-example.el
 |--- exec-path-example.txt
 |--- init.el
 |--- README.org
 
-4 directories, 34 files
+4 directories, 37 files
 #+END_EXAMPLE
 
 ** supported version
-I use the latest release of Emacs, so the config should run in Emacs 25.2 
-in any Linux environment. 
+I use the latest release of Emacs, the config should run in Emacs 25.2
+in any Linux environment.
 
 ** useful stuff
 *** the reference cards
@@ -71,7 +75,7 @@ in any Linux environment.
 | C-x M-k                 | kill this buffer and delete the window |
 | C-x C-delete            | kill the readonly window               |
 | C-x C-r                 | sudo edit                              |
-| C-; or C-c ; or C-c C-; | comment line                           |
+| C-c ; or C-c C-;        | comment line                           |
 | C-x r v                 | string rectangle                       |
 | C-c f8                  | aligning with whitespaces              |
 | C-c f9                  | aligning with pipes                    |
@@ -100,9 +104,7 @@ in any Linux environment.
 ** dependencies
 
 Note: optional? means «for the first startup with the just downloaded ~/.emacs.d».
-+-------------------------------+--------------+--------------------------------------------------------------+
 | package (archlinux or *buntu) | optional?    | for what                                                     |
-+-------------------------------+--------------+--------------------------------------------------------------+
 | make                          | no           | for build some base packages taken by el-get                 |
 | autoconf (or dh-autoreconf)   | no           | see above                                                    |
 | gmake                         | no (openbsd) | for build some base packages taken by el-get                 |
@@ -147,17 +149,4 @@ In SBCL env:
 sudo pacman -S make autoconf git cargo
 git clone https://gitlab.com/dmhz/emacs.cfg.git <.emacs.d or something else>
 #+END_SRC
-
-*** in MSYS2: a Windows environment
-- The first step is install [[https://msys2.github.io/][msys2]]
-- Install rust and add the path to cargo to PATH variable in msys2 console something like:
-#+BEGIN_SRC sh
-PATH=$PATH:'C:\rust\' 
-#+END_SRC
-- Install [[http://terminus-font.sourceforge.net/][terminus-ttf]]
-- In msys2 console:
-#+BEGIN_SRC sh
-pacman -S mingw-w32-x86_64-emacs make autoconf git
-#+END_SRC
-
 
