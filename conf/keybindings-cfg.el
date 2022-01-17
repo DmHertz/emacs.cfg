@@ -80,8 +80,10 @@
    ;; Navigation between next-prev buffers
    ("C-x ," previous-buffer)
    ("C-x ." next-buffer)
-   ("C-<prior>" previous-buffer) ;; C-pageup
-   ("C-<next>" next-buffer)      ;; C-pagedown
+   ;; <prior> pageup
+   ;; <next> pagedown
+   ("M-<down>" previous-buffer)
+   ("M-<up>" next-buffer)
 
    ;; Comment/uncomment block
    ("C-x /"   comment-or-uncomment-region)
